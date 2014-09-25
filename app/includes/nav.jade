@@ -1,6 +1,21 @@
-nav.main
-	ul
-		li
-			a(href="#") About
-		li
-			a(href="#") Contact
+nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+	.container
+		.navbar-header.page-scroll
+			button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-ex1-collapse')
+				span.sr-only Toggle navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand.page-scroll(href='#page-top') Start Bootstrap
+		.collapse.navbar-collapse.navbar-ex1-collapse
+			ul.nav.navbar-nav
+				//- Hidden li included to remove active class from about link when scrolled up past about section
+				li.hidden
+					a.page-scroll(href='#page-top')
+				li
+					a.page-scroll(href='#about') About
+				li
+					a.page-scroll(href='#services') Services
+				li
+					a.page-scroll(href='#contact') Contact
+

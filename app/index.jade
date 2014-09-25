@@ -1,16 +1,30 @@
 extends layout
 
 block content
-	.row.intro
-		.col-lg-6
-			h1 #{user.name}
-			p HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+	.row.intro	
+		.circle
+			img(src="http://placehold.it/60x60")
+		h1 Macarena Carrizosa
+		h2 Photography / Video
 
-			h4 Sass
-			p Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
-
-			h4 Bootstrap
-			p Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.
-
-			h4 Modernizr
-			p Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.
+	//- About Section
+	section#about.about-section
+		.container
+			.row
+				.col-lg-12
+					h1 About Section
+		
+		//- Services Section
+		section#services.services-section
+			.container
+				.row
+					.col-lg-12
+						h1 Services Section
+		
+		//- Contact Section
+		section#contact.contact-section
+			.container
+				.row
+					.col-lg-12
+						h1 Contact Section
+		
