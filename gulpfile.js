@@ -18,7 +18,7 @@ gulp.task('styles', function () {
 });
 
 gulp.task('scripts', function () {
-    return gulp.src('app/scripts/**/*.js')
+    return gulp.src('app/scripts/*.js')
         .pipe($.jshint())
         .pipe($.jshint.reporter(require('jshint-stylish')))
         .pipe($.size());
@@ -50,11 +50,11 @@ gulp.task('html', ['views', 'styles', 'scripts'], function () {
 
 gulp.task('images', function () {
     return gulp.src('app/images/**/*')
-        .pipe($.cache($.imagemin({
+        .pipe($.imagemin({
             optimizationLevel: 3,
             progressive: true,
             interlaced: true
-        })))
+        }))
         .pipe(gulp.dest('dist/images'))
         .pipe($.size());
 });
@@ -132,7 +132,7 @@ gulp.task('watch', ['connect', 'serve'], function () {
     ]).on('change', function (file) {
         server.changed(file.path);
     });
-    gulp.watch('app/*.jade', ['views']);
+    gulp.watch('app/**/*.jade', ['views']);
     gulp.watch('app/styles/**/*.scss', ['styles']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/images/**/*', ['images']);
