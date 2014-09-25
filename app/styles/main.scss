@@ -8,5 +8,51 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "utilities";
 @import "mixins";
 
+@import "variables";
 @import "colors";
 @import "fonts";
+
+
+
+@media(min-width: $screen-sm){
+	.navbar {
+		background: #000;
+    	padding: 20px 0;
+    	transition: background $speed ease-in-out, padding $speed ease-in-out;
+    	border-bottom: none;
+	}
+	.top-nav-collapse {
+	    padding: 0;
+	}	
+}
+
+
+
+section {
+
+	position: relative;
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: #fff;
+	
+    &:nth-child(odd){
+    	background: #ddd;
+    	color: #222;
+    }
+    &:nth-child(even){
+    	background: #111;
+    	color: #ccc;
+    }
+    .content{
+    	@extend .col-lg-12;
+    }
+    .image-container{
+		
+    }
+}
+.services-section{
+	.col{
+		@extend .col-sm-4;
+	}
+}
