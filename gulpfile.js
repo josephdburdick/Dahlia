@@ -10,6 +10,7 @@ gulp.task('styles', function () {
     return gulp.src('app/styles/main.scss')
         .pipe($.plumber())
         .pipe($.rubySass({
+            sourcemap: true,
             style: 'expanded',
             precision: 10
         }))
