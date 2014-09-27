@@ -4,21 +4,24 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
+@import "config";
 @import "base";
+@import "helpers";
 @import "utilities";
-@import "mixins";
-
-@import "variables";
-@import "colors";
-@import "fonts";
 
 
 
+body{
+	position: relative;
+}
+nav.main{
+	text-transform: uppercase;
+}
 @media(min-width: $screen-sm){
 	.navbar {
 		background: #000;
-    	padding: 20px 0;
-    	transition: background $speed ease-in-out, padding $speed ease-in-out;
+    	@include rem(padding, 2, 0);
+    	transition: background $base__speed $base__ease, padding $base__speed $base__ease;
     	border-bottom: none;
 	}
 	.top-nav-collapse {
@@ -32,7 +35,7 @@ section {
 
 	position: relative;
     height: 100%;
-    padding-top: 150px;
+    @include rem(padding-top, 15);
     text-align: center;
     background: #fff;
 	
@@ -50,6 +53,39 @@ section {
     .image-container{
 		
     }
+}
+#bgVid{
+	position: fixed;
+	right: 0;
+	bottom: 0;
+
+    min-width: 100%;
+    min-height: 100%;
+
+    width: auto;
+    height: auto;
+    z-index: -100;
+
+    background: url(../images/bg_video-placeholder.png) no-repeat;
+
+    background-size: cover;
+
+}
+#intro{
+	background: none;
+	display: table;
+	height: 100%;
+	width: 100%;
+	padding-top: 0;
+	.container{
+		vertical-align: middle;
+		display: table-cell;
+		text-align: center;
+		@include rem(padding, 0, 2.5 0);
+	}
+	h1, h2{
+		text-transform: uppercase;
+	}
 }
 .services-section{
 	.col{

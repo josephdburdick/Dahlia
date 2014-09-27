@@ -1,9 +1,101 @@
-/*
+// ==========================================================================
+// Utilities
+// ==========================================================================
 
-Utilities
+// Import if Google Fonts URL is defined
 
-*/
-
-@if variable-exists(font-url--google){
+@if variable-exists(font-url--google) {
 	@import url($font-url--google);
 }
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+@mixin line-height($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+//
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@mixin rem($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value*16}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  } 
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  } 
+  
+  #{$property}: $pxValues; 
+  #{$property}: $remValues; 
+}
+
+// Calculate em values
+@function em($target, $context: $base__font-size) {
+	@return ($target / $context) * 1em;
+}
+	
+// Call the color palette modifiers
+
+@function palette($palette, $shade: 'base') {
+  @return map-get(map-get($palettes, $palette), $shade);
+}
+
+// Mixins
+  
+@mixin bg-colors($map) {
+	@each $theme, $color in $map {
+		&--#{$theme} {
+			background-color: $color;    
+		}
+	}
+}
+  
+@mixin img-replace($img, $w, $h, $disp: block) {
+   background-image: url('#{$path--rel}/#{$img}');
+   background-repeat: no-repeat;
+   width: $w;
+   height: $h;
+   display: $disp;
+}
+   
+@mixin p-el(
+    $el,
+    $el-w: null,
+    $el-h: null) {
+    
+    @if $el == "before" or $el == "after" {
+      &:#{$el} {
+        @extend %pseudos;
+        width: $el-w;
+        height: $el-h;
+        @content;
+      }
+     }
+     @else {
+      @error "`#{$el}` is not a valid pseudo-element.";
+     }     
+}
+   
+   
+  
