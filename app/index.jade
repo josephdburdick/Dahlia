@@ -1,13 +1,15 @@
 extends layout
 
 block content
+	video(autoplay muted loop poster="images/bg_video-placeholder.png" id="bgVid")
+		source(src="videos/Reel_MacarenaCarrizosa.webm" type="video/webm")
+		source(src="videos/Reel_MacarenaCarrizosa.mp4" type="video/mp4")
 	//- Intro Section
 	section#intro.intro-section
 		.container
-			.row
-				.content
-					h1 Macarena Carrizosa
-					h2 Filmmaker
+			.content
+				h1 Macarena Carrizosa
+				h2 Director &amp; Producer
 
 	//- About Section
 	section#about.about-section
