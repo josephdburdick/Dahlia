@@ -8,6 +8,7 @@ var $ = require('gulp-load-plugins')();
 
 gulp.task('styles', function () {
     return gulp.src('app/styles/main.scss')
+        .pipe($.plumber())
         .pipe($.rubySass({
             style: 'expanded',
             precision: 10
@@ -19,6 +20,7 @@ gulp.task('styles', function () {
 
 gulp.task('scripts', function () {
     return gulp.src('app/scripts/*.js')
+        .pipe($.plumber())
         .pipe($.jshint())
         .pipe($.jshint.reporter(require('jshint-stylish')))
         .pipe($.size());
@@ -26,6 +28,7 @@ gulp.task('scripts', function () {
 
 gulp.task('views', function () {
     return gulp.src(['app/*.jade', '!app/layout.jade'])
+        .pipe($.plumber())
         .pipe($.jade({pretty: true}))
         .pipe(gulp.dest('.tmp'));
 });
@@ -35,6 +38,7 @@ gulp.task('html', ['views', 'styles', 'scripts'], function () {
     var cssFilter = $.filter('**/*.css');
     var assets = $.useref.assets({searchPath: '{.tmp,app}'});
     return gulp.src('.tmp/*.html')
+        .pipe($.plumber())
         .pipe(assets)
         .pipe(jsFilter)
         .pipe($.uglify())
@@ -50,6 +54,7 @@ gulp.task('html', ['views', 'styles', 'scripts'], function () {
 
 gulp.task('images', function () {
     return gulp.src('app/images/**/*')
+        .pipe($.plumber())
         .pipe($.imagemin({
             optimizationLevel: 3,
             progressive: true,
@@ -61,6 +66,7 @@ gulp.task('images', function () {
 
 gulp.task('fonts', function () {
     return $.bowerFiles()
+        .pipe($.plumber())
         .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
         .pipe($.flatten())
         .pipe(gulp.dest('dist/fonts'))
