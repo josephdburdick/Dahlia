@@ -4,27 +4,33 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
+@import "utilities";
 @import "config";
 @import "base";
 @import "helpers";
-@import "utilities";
 
-
-
-body{
-	position: relative;
-}
-nav.main{
+nav[role="navigation"]{
 	text-transform: uppercase;
 }
+// .navbar-brand {
+// 	@include rem(padding, 1.5);
+// 	@include rem(height, 5);
+// }
+// .navbar-brand, .navbar-default .navbar-nav > li > a{
+// 	@include font-size(1.8);
+// 	@include line-height(2);
+// 	text-transform: uppercase;
+// 	letter-spacing: 1px;
+// }
 @media(min-width: $screen-sm){
 	.navbar {
-		background: #000;
+		background: transparent;
     	@include rem(padding, 2, 0);
     	transition: background $base__speed $base__ease, padding $base__speed $base__ease;
     	border-bottom: none;
 	}
 	.top-nav-collapse {
+		background: rgba(#000, .85);
 	    padding: 0;
 	}	
 }
@@ -81,7 +87,7 @@ section {
 		vertical-align: middle;
 		display: table-cell;
 		text-align: center;
-		@include rem(padding, 0, 2.5 0);
+		@include rem(padding, 0, 2.5, 0);
 	}
 	h1, h2{
 		text-transform: uppercase;

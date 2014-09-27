@@ -8,16 +8,6 @@
 	@import url($font-url--google);
 }
 
-@mixin font-size($sizeValue: 1.6) {
-  font-size: ($sizeValue * 10) + px;
-  font-size: $sizeValue + rem;
-}
-
-@mixin line-height($sizeValue: 1.6) {
-  font-size: ($sizeValue * 10) + px;
-  font-size: $sizeValue + rem;
-}
-
 //
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);
