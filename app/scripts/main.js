@@ -45,6 +45,11 @@ function interfaces(){
 		toggleVideo($(this), e);
 	});
 
+	$('.vid').on('click', function(){
+		$(this).fadeOut(200).parent('.vid-container').toggleClass('active');
+		toggleVideo($($(this).closest('video')));
+	})
+
 	// Window scroll fadeout hero
 	$win.on('scroll', function(){
 		var ratio = function(){
@@ -59,7 +64,6 @@ function interfaces(){
 				return 0;
 			}
 		};
-		console.log(ratio());
 		$bgVid.css('opacity', ratio());
 		if ($win.scrollTop() > $intro.height()) {
 			$bgVid.get(0).pause();

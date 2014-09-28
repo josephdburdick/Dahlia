@@ -4,6 +4,7 @@
 
 // Clearfix
 
+%upcase{ text-transform: uppercase; }
 %clearfix {
   &:after {
     content: "";
@@ -20,6 +21,11 @@
   }
 }
 
+%circle{
+  display: inline-block;
+  border-radius: 9999rem;
+  overflow: hidden;
+}
 
 // Screen reader text
 

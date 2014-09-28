@@ -1,16 +1,5 @@
-.navbar-inverse {
-	border: none;
-	@media(max-width: $screen-sm){
-		background: none;
-	}
-	.navbar-nav > li > a{
-		transition: color $base__speed $base__ease;
-		outline: none;
-	}
-}
-
 nav[role="navigation"]{
-	text-transform: uppercase;
+	@extend %upcase;
 	width: 100%;
 	margin-bottom: 0;
 	z-index: 50;
@@ -24,6 +13,10 @@ nav[role="navigation"]{
 		bottom: 0;
 		top: auto;
 		padding: 20px 0;
+		@media (max-width: $screen-sm){
+			padding: 0;
+			display: none;
+		}
 	}
 	&.affix{
 		position: fixed;
@@ -33,6 +26,17 @@ nav[role="navigation"]{
 		.navbar-brand{
 			color: rgba($grey, 1);
 		}
+	}
+}
+
+.navbar-inverse {
+	border: none;
+	@media(max-width: $screen-sm){
+		background: none;
+	}
+	.navbar-nav > li > a{
+		transition: color $base__speed $base__ease;
+		outline: none;
 	}
 }
 
@@ -55,6 +59,7 @@ Collapsing Mobile Menu
 			margin: 8px 0;
 			float: none !important;
 			width: 100%;
+			background: black;
 			li{
 				text-align: center;
 			}

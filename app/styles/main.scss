@@ -17,7 +17,7 @@ section {
 
 	position: relative;
     height: auto;
-    padding: 110px 0 50px;
+    padding: 8% 0;
     text-align: center;
     background: #fff;
 	
@@ -35,6 +35,11 @@ section {
     .content{
     	@extend .col-lg-12;
     	@extend %clearfix;
+        p, blockquote{
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
     }
     .image-container{
 		
@@ -45,8 +50,42 @@ section {
 
 .services-section{
 	.col{
+        @extend .col-md-3;
 		@extend .col-sm-4;
+        @media(max-width: $screen-sm){
+            margin-bottom: 10%;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
 	}
+    .image-container{
+        img{
+            width: 100%;
+        }
+    }
+    .arrow{
+        @extend .col-sm-1;
+        height: 200px;
+        svg{
+            position: absolute;
+            
+            left: 25%;
+
+            @media(min-width: $screen-sm){
+                top: 30%;
+            }
+            @media(min-width: $screen-md){
+                top: 41%;
+            }
+        }
+        @media(max-width: $screen-md){
+            display: none;
+        }
+    }
+    .image-container{
+        @extend %circle;
+    }
 }
 .work-section{
 	video{

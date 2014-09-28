@@ -1,10 +1,10 @@
 extends layout
 
 block content
-	video(autoplay loop muted poster="images/bg_video-placeholder.png" id="bgVid")
+	video#bgVid(autoplay loop muted poster="images/bg_video-placeholder.png")
 		source(src="videos/SmokeLoopSlow.mp4" type="video/mp4")
 		source(src="videos/SmokeLoopSlow.webm" type="video/webm")
-		source(src="videos/SmokeLoopSlow.ogv" type="video/ogg")	
+		source(src="videos/SmokeLoopSlow.ogv" type="video/ogg")
 	//- Intro Section
 	section#intro.intro-section
 		.container
@@ -18,38 +18,45 @@ block content
 		.container
 			.row
 				.content
-					video(poster="images/bg_video-placeholder.png")
+					h1 Work
+					video(poster="images/bg_video-reel-placeholder.png")
 						source(src="videos/Reel_MacarenaCarrizosa.webm" type="video/webm")
 						source(src="videos/Reel_MacarenaCarrizosa.mp4" type="video/mp4")
-						source(src="videos/Reel_MacarenaCarrizosa.ogv" type="video/ogv")
-		
+						source(src="videos/Reel_MacarenaCarrizosa.ogv" type="video/ogg")
+
 	//- Services Section
 	section#services.services-section
 		.container
 			.row
 				.content
-					h1 Services Section
+					h1 I know what it takes to bring a concept to life
 			.row
 				.col
 					.image-container
-						img(src="http://placehold.it/200x200")
-					h2 Service Category 1
+						img(src="http://placehold.it/200x200/ffcc00")
+					h2 Concepting
 					p.
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 						Aliquam molestie condimentum justo rutrum aliquam. 
 						Nulla convallis imperdiet sollicitudin.
+				.arrow
+					svg(width="40px" height="40px" viewBox="0 0 20 20")
+						path(fill="none" d="M1.729,9.212h14.656l-4.184-4.184c-0.307-0.306-0.307-0.801,0-1.107c0.305-0.306,0.801-0.306,1.106,0l5.481,5.482c0.018,0.014,0.037,0.019,0.053,0.034c0.181,0.181,0.242,0.425,0.209,0.66c-0.004,0.038-0.012,0.071-0.021,0.109c-0.028,0.098-0.075,0.188-0.143,0.271c-0.021,0.026-0.021,0.061-0.045,0.085c-0.015,0.016-0.034,0.02-0.051,0.033l-5.483,5.483c-0.306,0.307-0.802,0.307-1.106,0c-0.307-0.305-0.307-0.801,0-1.105l4.184-4.185H1.729c-0.436,0-0.788-0.353-0.788-0.788S1.293,9.212,1.729,9.212z")
 				.col
 					.image-container
-						img(src="http://placehold.it/200x200")
-					h2 Service Category 2
+						img(src="http://placehold.it/200x200/ccff00")
+					h2 Shooting
 					p.
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 						Aliquam molestie condimentum justo rutrum aliquam. 
 						Nulla convallis imperdiet sollicitudin.
+				.arrow
+					svg(width="40px" height="40px" viewBox="0 0 20 20")
+						path(fill="none" d="M1.729,9.212h14.656l-4.184-4.184c-0.307-0.306-0.307-0.801,0-1.107c0.305-0.306,0.801-0.306,1.106,0l5.481,5.482c0.018,0.014,0.037,0.019,0.053,0.034c0.181,0.181,0.242,0.425,0.209,0.66c-0.004,0.038-0.012,0.071-0.021,0.109c-0.028,0.098-0.075,0.188-0.143,0.271c-0.021,0.026-0.021,0.061-0.045,0.085c-0.015,0.016-0.034,0.02-0.051,0.033l-5.483,5.483c-0.306,0.307-0.802,0.307-1.106,0c-0.307-0.305-0.307-0.801,0-1.105l4.184-4.185H1.729c-0.436,0-0.788-0.353-0.788-0.788S1.293,9.212,1.729,9.212z")
 				.col
 					.image-container
-						img(src="http://placehold.it/200x200")
-					h2 Service Category 3
+						img(src="http://placehold.it/200x200/00ccff")
+					h2 Delivery
 					p.
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 						Aliquam molestie condimentum justo rutrum aliquam. 
