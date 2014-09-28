@@ -16,7 +16,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 section {
 
 	position: relative;
-    height: 100%;
+    height: auto;
     padding: 110px 0 50px;
     text-align: center;
     background: #fff;
@@ -50,12 +50,19 @@ section {
 }
 .work-section{
 	video{
+        position: relative;
 		border-radius: 8px;
 		background-size: cover;
-		box-shadow: 0 0 50px 20px #333;
+		box-shadow: 0 0 0px 2px darken($color-primary, 60%);
 		transition: box-shadow $base__speed $base__ease;
+        &:after{
+            @extend %pseudos;
+            top: 0; right: 0; left:0; bottom: 0;
+            content: "Play Video";
+            background: darken(rgba($color-primary, .85), 20%);
+        }
 		&.active{
-			box-shadow: 0 0 50px 20px #000;
+			box-shadow: 0 0 0px 2px #000;
 		}
 	}
 }
