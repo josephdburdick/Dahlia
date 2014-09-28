@@ -16,7 +16,7 @@ function intro(){
 	});
 }
 
-function toggleVideo(el, e){
+function toggleVideo(el){
 	var video = el.get(0);
 	if (el.visible(true)){
 		if (video.paused) {
@@ -46,16 +46,19 @@ function interfaces(){
 	});
 
 	// Window scroll fadeout hero
-	$win.on('scroll', function(e){
-		var ratio = (function(){
+	$win.on('scroll', function(){
+		var ratio = function(){
 			var alg = (($win.scrollTop() - $intro.outerHeight()) / -1200);
-			if (alg > 0)
+			if (alg > 0){
 				return alg;
-			else if (alg > bgVidMaxOpacity)
+			}
+			else if (alg > bgVidMaxOpacity){
 				return bgVidMaxOpacity;
-			else
+			}
+			else{
 				return 0;
-		});
+			}
+		};
 		console.log(ratio());
 		$bgVid.css('opacity', ratio());
 		if ($win.scrollTop() > $intro.height()) {
