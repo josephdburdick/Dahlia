@@ -1,28 +1,25 @@
 extends layout
 
 block content
-	video(muted poster="images/bg_video-placeholder.png" id="bgVid")
-		source(src="videos/Reel_MacarenaCarrizosa.webm" type="video/webm")
-		source(src="videos/Reel_MacarenaCarrizosa.mp4" type="video/mp4")
+	video(autoplay loop muted poster="images/bg_video-placeholder.png" id="bgVid")
+		source(src="videos/SmokeLoopSlow.webm" type="video/webm")
+		source(src="videos/SmokeLoopSlow.mp4" type="video/mp4")
 	//- Intro Section
 	section#intro.intro-section
 		.container
 			.content
 				h1 Macarena Carrizosa
 				h2 Director &amp; Producer
-				a#bgVid-trigger(href="#") View Reel
+				a.btn.btn-lg.stroke.sunglo.page-scroll#bgVid-trigger(href="#work") View Work	
 
-	//- About Section
-	section#about.about-section
+	//- Work Section
+	section#work.work-section
 		.container
 			.row
 				.content
-					blockquote.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-						Aliquam molestie condimentum justo rutrum aliquam. 
-						Nulla convallis imperdiet sollicitudin. Donec nibh mauris, 
-						mollis ac sodales eget, faucibus quis lorem. Morbi semper.
-
+					video(poster="images/bg_video-placeholder.png")
+						source(src="videos/Reel_MacarenaCarrizosa.webm" type="video/webm")
+						source(src="videos/Reel_MacarenaCarrizosa.mp4" type="video/mp4")
 		
 	//- Services Section
 	section#services.services-section
@@ -56,7 +53,17 @@ block content
 						Aliquam molestie condimentum justo rutrum aliquam. 
 						Nulla convallis imperdiet sollicitudin.
 
-					
+	//- About Section
+	section#about.about-section
+		.container
+			.row
+				.content
+					blockquote.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+						Aliquam molestie condimentum justo rutrum aliquam. 
+						Nulla convallis imperdiet sollicitudin. Donec nibh mauris, 
+						mollis ac sodales eget, faucibus quis lorem. Morbi semper.
+				
 	
 	//- Contact Section
 	section#contact.contact-section

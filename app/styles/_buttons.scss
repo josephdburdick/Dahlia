@@ -1,0 +1,35 @@
+.btn{
+	transition: all $base__speed $base__ease;
+	&.stroke{
+		box-shadow: none;
+		border: 1px solid rgba(black, 0);
+		&.white{
+			color: white;
+			&:hover{ border-color: rgba(white, 1);}
+			svg path{
+				fill: white;
+			}
+		}
+		&.black{
+			color: $black;
+			&:hover{ border-color: rgba($black, 1);}
+			svg path{
+				fill: $black;
+			}
+		}
+		&.grey{
+			color: $grey;
+			&:hover{ border-color: rgba($grey, 1);}
+			svg path{
+				fill: $grey;
+			}
+		}
+		&.sunglo{
+			color: $sunglo;
+			&:hover{ border-color: rgba($sunglo, 1);}
+			svg path{
+				fill: $sunglo;
+			}
+		}
+	}
+}

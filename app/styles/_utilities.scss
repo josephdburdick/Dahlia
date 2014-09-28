@@ -7,6 +7,9 @@
 @if variable-exists(font-url--google) {
 	@import url($font-url--google);
 }
+@if variable-exists(font-url--fontawesome) {
+  @import url($font-url--google);
+}
 
 //
 @function strip-unit($num) {

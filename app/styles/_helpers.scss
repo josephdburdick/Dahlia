@@ -12,6 +12,15 @@
   }
 }
 
+%break {
+  &:before {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+
 // Screen reader text
 
 .srt {
