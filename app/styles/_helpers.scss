@@ -51,3 +51,14 @@
 .text-left{ text-align: left; }
 .text-center{ text-align: center; }
 .text-right{ text-align: right; }
+
+.form-group{ @extend .text-left; }
+
+.display-table{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  .cell{
+    display: table-cell;
+  }
+}

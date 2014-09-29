@@ -19,12 +19,13 @@ section {
 
 	position: relative;
     height: auto;
+    min-height: 100%;
     padding: 8% 0;
     text-align: center;
     background: #fff;
 	
     &:nth-child(even){
-    	background: #fff;
+    	background: #fcfcfb;
     	color: #222;
     	h1{
     		color: #666;
@@ -52,40 +53,33 @@ section {
 
 @import "intro";
 .about-section{
-    // .content{
-    //     @extend .col-sm-
-    // }
+
 }
 .services-section{
-	.col{
-        @extend .col-md-3;
-		@extend .col-sm-4;
-        @media(max-width: $screen-sm){
-            margin-bottom: 10%;
+    .col{
+        @extend .col-sm-4;
+        position: relative;
+        @media(max-width: $screen-md){
+            margin-bottom: 15%;
             &:last-child{
                 margin-bottom: 0;
             }
         }
-	}
+    }
     .image-container{
         img{
             width: 100%;
         }
     }
     .arrow{
-        @extend .col-sm-1;
+        position: absolute;
+        right: -20%;
+        top: 116px;
         height: 200px;
         svg{
             position: absolute;
-            
+            top: 100px;
             left: 25%;
-
-            @media(min-width: $screen-sm){
-                top: 30%;
-            }
-            @media(min-width: $screen-md){
-                top: 41%;
-            }
         }
         @media(max-width: $screen-md){
             display: none;
