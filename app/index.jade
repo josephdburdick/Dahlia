@@ -17,55 +17,66 @@ block content
 	section#about.about-section
 		.container-fluid
 			.row
-				.content
+				.col-sm-6.col-sm-offset-3
 					h1 My moves are better than the dance
+			.row
+				.col-sm-8.col-sm-offset-2
 					.row
-						.col-sm-4
-							img.fit(src="images/the-macarena.gif")
-						.col-sm-8
+						.col-sm-12.text-center
+							img(src="images/the-macarena.gif")
+
+					.row
+						.col-sm-8.col-sm-offset-2
+							p
 							p.text-left.
-								I’m a quadrilingual American-born videographer and editor based in the Brooklyn, New York. 
-								I have worked extensively in the field and studio environments. 
-								I am currently a freelance videographer working for various 
-								film/video/TV projects. 
+								Hi, I'm Macarena.
+							p.text-left.
+								I'm a freelance Director/Producer living in Brooklyn
+								working on various film/video/TV projects. 
+								I've worked extensively in the field and in studio environments. 
 							p.text-left
-								a.page-scroll(href="contact") Feel free to contact me about freelance or full-time opportunities.
+								a.page-scroll(href="#contact") Feel free to contact me
+								|  about freelance or full-time opportunities.
 				
 	//- Work Section
 	section#work.work-section
 		.container-fluid
 			.row
-				.content
+				.col-sm-6.col-sm-offset-3
 					h1 Work
-					.carousel.slide#work-gallery
-						.carousel-inner
-							.item.active
-								video(poster="images/bg_video-reel-placeholder.jpg")
-									source(src="videos/Reel_MacarenaCarrizosa.webm" type="video/webm")
-									source(src="videos/Reel_MacarenaCarrizosa.mp4" type="video/mp4")
-									source(src="videos/Reel_MacarenaCarrizosa.ogv" type="video/ogg")
-							.item
-								video(poster="images/bg_video-PersonalEstamosCurados-placeholder.jpg")
-									source(src="videos/PersonalEstamosCurados.webm" type="video/webm")
-									source(src="videos/PersonalEstamosCurados.mp4" type="video/mp4")
-									source(src="videos/PersonalEstamosCurados.ogv" type="video/ogg")
-							.item
-								video(poster="images/bg_video-SuenolarEpocas-placeholder.jpg")
-									source(src="videos/Sueñolar-épocas.webm" type="video/webm")
-									source(src="videos/Sueñolar-épocas.mp4" type="video/mp4")
-									source(src="videos/Sueñolar-épocas.ogv" type="video/ogg")
-						a(class="left carousel-control" href="#work-gallery" role="button" data-slide="prev")
-							svg(viewBox="0 0 20 20" class="carousel-arrow left")
-								path(fill="none" d="M14.989,9.491L6.071,0.537C5.78,0.246,5.308,0.244,5.017,0.535c-0.294,0.29-0.294,0.763-0.003,1.054l8.394,8.428L5.014,18.41c-0.291,0.291-0.291,0.763,0,1.054c0.146,0.146,0.335,0.218,0.527,0.218c0.19,0,0.382-0.073,0.527-0.218l8.918-8.919C15.277,10.254,15.277,9.784,14.989,9.491z")
-						a(class="right carousel-control" href="#work-gallery" role="button" data-slide="next")
-							svg(viewBox="0 0 20 20" class="carousel-arrow right")
-								path(fill="none" d="M14.989,9.491L6.071,0.537C5.78,0.246,5.308,0.244,5.017,0.535c-0.294,0.29-0.294,0.763-0.003,1.054l8.394,8.428L5.014,18.41c-0.291,0.291-0.291,0.763,0,1.054c0.146,0.146,0.335,0.218,0.527,0.218c0.19,0,0.382-0.073,0.527-0.218l8.918-8.919C15.277,10.254,15.277,9.784,14.989,9.491z")
+			.row
+				.col-sm-10.col-sm-offset-1
+					.display-table
+						.carousel.slide#work-gallery
+							.carousel-inner
+								.item.active
+									video(poster="images/bg_video-reel-placeholder.jpg")
+										source(src="videos/Reel_MacarenaCarrizosa.webm" type="video/webm")
+										source(src="videos/Reel_MacarenaCarrizosa.mp4" type="video/mp4")
+										source(src="videos/Reel_MacarenaCarrizosa.ogv" type="video/ogg")
+								.item
+									video(poster="images/bg_video-PersonalEstamosCurados-placeholder.jpg")
+										source(src="videos/PersonalEstamosCurados.webm" type="video/webm")
+										source(src="videos/PersonalEstamosCurados.mp4" type="video/mp4")
+										source(src="videos/PersonalEstamosCurados.ogv" type="video/ogg")
+								.item
+									video(poster="images/bg_video-SuenolarEpocas-placeholder.jpg")
+										source(src="videos/Sueñolar-épocas.webm" type="video/webm")
+										source(src="videos/Sueñolar-épocas.mp4" type="video/mp4")
+										source(src="videos/Sueñolar-épocas.ogv" type="video/ogg")
+							a(class="left carousel-control" href="#work-gallery" role="button" data-slide="prev")
+								svg(viewBox="0 0 20 20" class="carousel-arrow left")
+									path(fill="none" d="M14.989,9.491L6.071,0.537C5.78,0.246,5.308,0.244,5.017,0.535c-0.294,0.29-0.294,0.763-0.003,1.054l8.394,8.428L5.014,18.41c-0.291,0.291-0.291,0.763,0,1.054c0.146,0.146,0.335,0.218,0.527,0.218c0.19,0,0.382-0.073,0.527-0.218l8.918-8.919C15.277,10.254,15.277,9.784,14.989,9.491z")
+							a(class="right carousel-control" href="#work-gallery" role="button" data-slide="next")
+								svg(viewBox="0 0 20 20" class="carousel-arrow right")
+									path(fill="none" d="M14.989,9.491L6.071,0.537C5.78,0.246,5.308,0.244,5.017,0.535c-0.294,0.29-0.294,0.763-0.003,1.054l8.394,8.428L5.014,18.41c-0.291,0.291-0.291,0.763,0,1.054c0.146,0.146,0.335,0.218,0.527,0.218c0.19,0,0.382-0.073,0.527-0.218l8.918-8.919C15.277,10.254,15.277,9.784,14.989,9.491z")
 	//- Services Section
 	section#services.services-section
 		.container-fluid
 			.row
-				.content
-					h1 I have what it takes to bring your concepts to reality
+				.col-md-6.col-md-offset-3
+					h1 I have what it takes to make your concepts a reality
+			.row
 				.col
 					.image-container
 						img(src="http://placehold.it/200x200/ffcc00")
@@ -74,9 +85,9 @@ block content
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 						Aliquam molestie condimentum justo rutrum aliquam. 
 						Nulla convallis imperdiet sollicitudin.
-				.arrow
-					svg(width="40px" height="40px" viewBox="0 0 20 20")
-						path(fill="none" d="M1.729,9.212h14.656l-4.184-4.184c-0.307-0.306-0.307-0.801,0-1.107c0.305-0.306,0.801-0.306,1.106,0l5.481,5.482c0.018,0.014,0.037,0.019,0.053,0.034c0.181,0.181,0.242,0.425,0.209,0.66c-0.004,0.038-0.012,0.071-0.021,0.109c-0.028,0.098-0.075,0.188-0.143,0.271c-0.021,0.026-0.021,0.061-0.045,0.085c-0.015,0.016-0.034,0.02-0.051,0.033l-5.483,5.483c-0.306,0.307-0.802,0.307-1.106,0c-0.307-0.305-0.307-0.801,0-1.105l4.184-4.185H1.729c-0.436,0-0.788-0.353-0.788-0.788S1.293,9.212,1.729,9.212z")
+					.col.arrow
+						svg(width="40px" height="40px" viewBox="0 0 20 20")
+							path(fill="none" d="M1.729,9.212h14.656l-4.184-4.184c-0.307-0.306-0.307-0.801,0-1.107c0.305-0.306,0.801-0.306,1.106,0l5.481,5.482c0.018,0.014,0.037,0.019,0.053,0.034c0.181,0.181,0.242,0.425,0.209,0.66c-0.004,0.038-0.012,0.071-0.021,0.109c-0.028,0.098-0.075,0.188-0.143,0.271c-0.021,0.026-0.021,0.061-0.045,0.085c-0.015,0.016-0.034,0.02-0.051,0.033l-5.483,5.483c-0.306,0.307-0.802,0.307-1.106,0c-0.307-0.305-0.307-0.801,0-1.105l4.184-4.185H1.729c-0.436,0-0.788-0.353-0.788-0.788S1.293,9.212,1.729,9.212z")
 				.col
 					.image-container
 						img(src="http://placehold.it/200x200/ccff00")
@@ -85,24 +96,34 @@ block content
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 						Aliquam molestie condimentum justo rutrum aliquam. 
 						Nulla convallis imperdiet sollicitudin.
-				.arrow
-					svg(width="40px" height="40px" viewBox="0 0 20 20")
-						path(fill="none" d="M1.729,9.212h14.656l-4.184-4.184c-0.307-0.306-0.307-0.801,0-1.107c0.305-0.306,0.801-0.306,1.106,0l5.481,5.482c0.018,0.014,0.037,0.019,0.053,0.034c0.181,0.181,0.242,0.425,0.209,0.66c-0.004,0.038-0.012,0.071-0.021,0.109c-0.028,0.098-0.075,0.188-0.143,0.271c-0.021,0.026-0.021,0.061-0.045,0.085c-0.015,0.016-0.034,0.02-0.051,0.033l-5.483,5.483c-0.306,0.307-0.802,0.307-1.106,0c-0.307-0.305-0.307-0.801,0-1.105l4.184-4.185H1.729c-0.436,0-0.788-0.353-0.788-0.788S1.293,9.212,1.729,9.212z")
+					.col.arrow
+						svg(width="40px" height="40px" viewBox="0 0 20 20")
+							path(fill="none" d="M1.729,9.212h14.656l-4.184-4.184c-0.307-0.306-0.307-0.801,0-1.107c0.305-0.306,0.801-0.306,1.106,0l5.481,5.482c0.018,0.014,0.037,0.019,0.053,0.034c0.181,0.181,0.242,0.425,0.209,0.66c-0.004,0.038-0.012,0.071-0.021,0.109c-0.028,0.098-0.075,0.188-0.143,0.271c-0.021,0.026-0.021,0.061-0.045,0.085c-0.015,0.016-0.034,0.02-0.051,0.033l-5.483,5.483c-0.306,0.307-0.802,0.307-1.106,0c-0.307-0.305-0.307-0.801,0-1.105l4.184-4.185H1.729c-0.436,0-0.788-0.353-0.788-0.788S1.293,9.212,1.729,9.212z")
 				.col
 					.image-container
 						img(src="http://placehold.it/200x200/00ccff")
 					h3 Delivery
 					p.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-						Aliquam molestie condimentum justo rutrum aliquam. 
-						Nulla convallis imperdiet sollicitudin.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Aliquam molestie condimentum justo rutrum aliquam.
 
-	//- Contact Section
 	section#contact.contact-section
 		.container-fluid
 			.row
-				.content
-					h1 Contact Section
+				.col-md-6.col-md-offset-3
+					h1 Reach me at the following
+			.row
+				.col-md-8.col-md-offset-2
+					form.col-sm-12(role="form")
+					.form-group.col-sm-6
+						label(for="input-name") Name
+						input.form-control(type="text" id="input-name" placeholder="Name")
+					.form-group.col-sm-6
+						label(for="input-email") Email address
+						input.form-control(type="email" id="input-email" placeholder="Enter email")
+					.form-group.col-sm-12
+						textarea.form-control
+					button(type="submit" class="btn btn-default") Submit
 
 	//- Footer
 	//- footer.main
