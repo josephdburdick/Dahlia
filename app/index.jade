@@ -23,7 +23,7 @@ block content
 				.col-sm-8.col-sm-offset-2
 					.row
 						.col-sm-12.text-center
-							img(src="images/the-macarena.gif")
+							img.fit(src="images/the-macarena.gif" style="max-width: 500px;")
 
 					.row
 						.col-sm-8.col-sm-offset-2
@@ -111,18 +111,16 @@ block content
 		.container-fluid
 			.row
 				.col-md-6.col-md-offset-3
-					h1 Reach me at the following
+					h1 Contact
 			.row
 				.col-md-8.col-md-offset-2
 					form.col-sm-12(role="form")
-					.form-group.col-sm-6
-						label(for="input-name") Name
-						input.form-control(type="text" id="input-name" placeholder="Name")
-					.form-group.col-sm-6
-						label(for="input-email") Email address
-						input.form-control(type="email" id="input-email" placeholder="Enter email")
-					.form-group.col-sm-12
-						textarea.form-control
+					.form-group
+						input.form-control(type="text" id="input-name" placeholder="Hi, what's your name?")
+					.form-group
+						input.form-control(type="email" id="input-email" placeholder="An Email to Reach you at?")
+					.form-group
+						textarea.form-control(placeholder="Enter your message")
 					button(type="submit" class="btn btn-default") Submit
 
 	//- Footer

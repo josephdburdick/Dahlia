@@ -52,8 +52,29 @@
 .text-center{ text-align: center; }
 .text-right{ text-align: right; }
 
-.form-group{ @extend .text-left; }
-
+.form-group{ @extend .text-left;
+  input[type="text"], 
+  input[type="email"],
+  textarea{
+    background: transparent;
+    border: 0;
+    box-shadow: none !important;
+    height: auto;
+    font-size: 3vw;
+    padding: 2vw 4vw 0 .5vw;
+    border-bottom: 1px dotted $grey;
+    color: white;
+  }
+  textarea{
+    font-size: 1.5vw;
+    height: 20vh;
+    border-bottom: 0;
+    color: white;
+    @media(max-width: $screen-md){
+      font-size: 3vw;
+    }
+  }
+}
 .display-table{
   display: table;
   width: 100%;

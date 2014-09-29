@@ -60,7 +60,7 @@
 			}	
 		}
 		a{
-			transition: opacity ($base__speed * 10) $base__ease 3s, border-color $base__speed, box-shadow $base__speed;
+			transition: opacity ($base__speed * 8) $base__ease 1s, border-color $base__speed, box-shadow $base__speed;
 			font-size : 18px;
 			box-shadow: inset 0 0 10px rgba(0,0,0,0), 0 0 10px rgba(0,0,0,0);
 			&.active{

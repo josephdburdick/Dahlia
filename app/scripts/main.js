@@ -49,7 +49,7 @@ function interfaces(){
 
 	// Window scroll fadeout hero
 	$(window).bind('scroll', function(){
-		$(window).trigger('resize');
+
 		var ratio = function(){
 			var alg = (($win.scrollTop() - $intro.outerHeight()) / -1200);
 			if (alg > 0){
@@ -67,6 +67,7 @@ function interfaces(){
 			$bgVid.get(0).pause();
 	  } else {
 	  	$bgVid.get(0).play();
+	  	$(window).trigger('resize');
 	  }
 	  console.log($bgVid.get(0).paused);
 	}).trigger('scroll');
