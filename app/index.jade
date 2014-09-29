@@ -7,34 +7,69 @@ block content
 		source(src="videos/SmokeLoopSlow.ogv" type="video/ogg")
 	//- Intro Section
 	section#intro.intro-section
-		.container
+		.container-fluid
 			.content
 				h1 Macarena Carrizosa
 				h2 Director &amp; Producer
 				a.btn.btn-lg.stroke.sunglo.page-scroll#bgVid-trigger(href="#work") View Work	
-
+	
+	//- About Section
+	section#about.about-section
+		.container-fluid
+			.row
+				.content
+					h1 My moves are better than the dance
+					.row
+						.col-sm-4
+							img.fit(src="images/the-macarena.gif")
+						.col-sm-8
+							p.text-left.
+								I’m a quadrilingual American-born videographer and editor based in the Brooklyn, New York. 
+								I have worked extensively in the field and studio environments. 
+								I am currently a freelance videographer working for various 
+								film/video/TV projects. 
+							p.text-left
+								a.page-scroll(href="contact") Feel free to contact me about freelance or full-time opportunities.
+				
 	//- Work Section
 	section#work.work-section
-		.container
+		.container-fluid
 			.row
 				.content
 					h1 Work
-					video(poster="images/bg_video-reel-placeholder.png")
-						source(src="videos/Reel_MacarenaCarrizosa.webm" type="video/webm")
-						source(src="videos/Reel_MacarenaCarrizosa.mp4" type="video/mp4")
-						source(src="videos/Reel_MacarenaCarrizosa.ogv" type="video/ogg")
-
+					.carousel.slide#work-gallery
+						.carousel-inner
+							.item.active
+								video(poster="images/bg_video-reel-placeholder.jpg")
+									source(src="videos/Reel_MacarenaCarrizosa.webm" type="video/webm")
+									source(src="videos/Reel_MacarenaCarrizosa.mp4" type="video/mp4")
+									source(src="videos/Reel_MacarenaCarrizosa.ogv" type="video/ogg")
+							.item
+								video(poster="images/bg_video-PersonalEstamosCurados-placeholder.jpg")
+									source(src="videos/PersonalEstamosCurados.webm" type="video/webm")
+									source(src="videos/PersonalEstamosCurados.mp4" type="video/mp4")
+									source(src="videos/PersonalEstamosCurados.ogv" type="video/ogg")
+							.item
+								video(poster="images/bg_video-SuenolarEpocas-placeholder.jpg")
+									source(src="videos/Sueñolar-épocas.webm" type="video/webm")
+									source(src="videos/Sueñolar-épocas.mp4" type="video/mp4")
+									source(src="videos/Sueñolar-épocas.ogv" type="video/ogg")
+						a(class="left carousel-control" href="#work-gallery" role="button" data-slide="prev")
+							svg(viewBox="0 0 20 20" class="carousel-arrow left")
+								path(fill="none" d="M14.989,9.491L6.071,0.537C5.78,0.246,5.308,0.244,5.017,0.535c-0.294,0.29-0.294,0.763-0.003,1.054l8.394,8.428L5.014,18.41c-0.291,0.291-0.291,0.763,0,1.054c0.146,0.146,0.335,0.218,0.527,0.218c0.19,0,0.382-0.073,0.527-0.218l8.918-8.919C15.277,10.254,15.277,9.784,14.989,9.491z")
+						a(class="right carousel-control" href="#work-gallery" role="button" data-slide="next")
+							svg(viewBox="0 0 20 20" class="carousel-arrow right")
+								path(fill="none" d="M14.989,9.491L6.071,0.537C5.78,0.246,5.308,0.244,5.017,0.535c-0.294,0.29-0.294,0.763-0.003,1.054l8.394,8.428L5.014,18.41c-0.291,0.291-0.291,0.763,0,1.054c0.146,0.146,0.335,0.218,0.527,0.218c0.19,0,0.382-0.073,0.527-0.218l8.918-8.919C15.277,10.254,15.277,9.784,14.989,9.491z")
 	//- Services Section
 	section#services.services-section
-		.container
+		.container-fluid
 			.row
 				.content
-					h1 I know what it takes to bring a concept to life
-			.row
+					h1 I have what it takes to bring your concepts to reality
 				.col
 					.image-container
 						img(src="http://placehold.it/200x200/ffcc00")
-					h2 Concepting
+					h3 Concepting
 					p.
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 						Aliquam molestie condimentum justo rutrum aliquam. 
@@ -45,7 +80,7 @@ block content
 				.col
 					.image-container
 						img(src="http://placehold.it/200x200/ccff00")
-					h2 Shooting
+					h3 Shooting
 					p.
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 						Aliquam molestie condimentum justo rutrum aliquam. 
@@ -56,34 +91,22 @@ block content
 				.col
 					.image-container
 						img(src="http://placehold.it/200x200/00ccff")
-					h2 Delivery
+					h3 Delivery
 					p.
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 						Aliquam molestie condimentum justo rutrum aliquam. 
 						Nulla convallis imperdiet sollicitudin.
 
-	//- About Section
-	section#about.about-section
-		.container
-			.row
-				.content
-					blockquote.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-						Aliquam molestie condimentum justo rutrum aliquam. 
-						Nulla convallis imperdiet sollicitudin. Donec nibh mauris, 
-						mollis ac sodales eget, faucibus quis lorem. Morbi semper.
-				
-	
 	//- Contact Section
 	section#contact.contact-section
-		.container
+		.container-fluid
 			.row
 				.content
 					h1 Contact Section
 
 	//- Footer
 	//- footer.main
-	//- 	.container-fluid
+	//- 	.container-fluid-fluid
 	//- 		.pull-right
 	//- 			p |Made by 
 	//- 			a(href="http://j0ey.co") 

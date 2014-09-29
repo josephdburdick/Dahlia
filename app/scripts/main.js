@@ -36,22 +36,19 @@ function interfaces(){
 			top: $intro.height() - $nav.height()
 		}
 	});
-
 	// Scroll Spy
 	$('body').scrollspy({ target: '.navbar-ex1-collapse' });
-
+	$('.carousel').carousel('pause');
 	// Video playback toggle
-	$('video').on('click',function(e){
-		toggleVideo($(this), e);
-	});
+	$('video').on('click',function(e){toggleVideo($(this), e);});
 
 	$('.vid').on('click', function(){
 		$(this).fadeOut(200).parent('.vid-container').toggleClass('active');
 		toggleVideo($($(this).closest('video')));
-	})
+	});
 
 	// Window scroll fadeout hero
-	$win.on('scroll', function(){
+	$win.bind('scroll', function(){
 		var ratio = function(){
 			var alg = (($win.scrollTop() - $intro.outerHeight()) / -1200);
 			if (alg > 0){
@@ -70,6 +67,7 @@ function interfaces(){
 	  } else {
 	  	$bgVid.get(0).play();
 	  }
+	  console.log($bgVid.get(0).paused);
 	}).trigger('scroll');
 }
 

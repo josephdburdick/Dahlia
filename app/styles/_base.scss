@@ -9,6 +9,8 @@
 html, body { width: 100%; height: 100%; }
 video 		 { width: 100%;
              height: auto; cursor: pointer; }
+img.fit    { width: 100%; height: auto; }
+
 body {
 	position: relative;
  	font-size: $base__font-size;
@@ -44,11 +46,28 @@ h1 {
     margin-bottom: $size;
   } 
 }
-
 h2 {
+  $size : 24px;
+  font-family: $font-family--secondary;
+  font-weight: $font-weight--light;
+  letter-spacing: 5px;
+  font-size: $size;
+  line-height: $size;
+  margin-bottom: $size;
+  color: #666;
+  @extend %upcase;
+  @media(max-width: $screen-sm){
+    $size : $size/1.5;
+    font-size: $size;
+    line-height: $size;
+    margin-bottom: $size;
+  } 
+}
+h3 {
 	$size : 18px;
   font-family: $font-family--secondary;
   font-weight: $font-weight--light;
+  letter-spacing: 5px;
   font-size: $size;
   line-height: $size;
   margin-bottom: $size;
