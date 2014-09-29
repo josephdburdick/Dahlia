@@ -3,6 +3,12 @@ nav[role="navigation"]{
 	width: 100%;
 	margin-bottom: 0;
 	z-index: 50;
+	a{
+		font-size:16px;
+	}
+	&.navbar{
+		border-radius: 0;
+	}
 	.navbar-brand{
 		color: rgba($grey,0);
 		transition: padding ($base__speed), color ($base__speed * 5), background-color ($base__speed * 5);
@@ -22,7 +28,7 @@ nav[role="navigation"]{
 		position: fixed;
 		top:0;
 		bottom: auto;
-		background-color: rgba(black, .7);
+		background-color: rgba(black, 1);
 		.navbar-brand{
 			color: rgba($grey, 1);
 		}
