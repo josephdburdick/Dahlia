@@ -211,20 +211,19 @@ a.arrow{
     font-family: $font-family--secondary;
     font-weight: bold;
     background: $color-primary;
-    padding: 2.5vw .75vw;
+    padding: 1.4vw .75vw;
     color: darken($color-primary, 20%);
     text-align: center;
     font-size: 2.5vw;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin-top: 2vw;
+    transition: all $base__speed $base__ease;
     &:hover{
         background: darken($color-primary, 5%);
         color: $black;
     }
     &.top{ display: none; 
-        margin-top: 0;
         @media(max-width: $screen-sm){
             display: block;
             margin-bottom: 3vw;
