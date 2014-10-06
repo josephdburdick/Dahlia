@@ -71,7 +71,7 @@ h2 {
   color: #666;
   @extend %upcase;
   @media(min-width: $screen-md){
-    $size : $size / 1.5;
+    $size : $size / 2;
     font-size: $size;
     margin-bottom: $size;
   } 

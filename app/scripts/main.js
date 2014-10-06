@@ -6,7 +6,6 @@ var $doc = $(document),
 	$intro = $('#intro'),
 	$bgVid = $('#bgVid'),
 	$nav 	 = $('nav[role="navigation"]'),
-
 	bgVidMaxOpacity = 0.4; 
 
 function intro(){
@@ -39,9 +38,12 @@ function interfaces(){
 	});
 	// Scroll Spy
 	$('body').scrollspy({ target: '.navbar-ex1-collapse' });
-	$('.carousel').carousel('pause');
-	// Video playback toggle
-	// $('video').on('click',function(e){toggleVideo($(this), e);});
+	$('.carousel').carousel('pause').on('slid.bs.carousel', function (e) {
+		var $activeSlide = $(e.currentTarget).find('.item.active'),
+  		video = $activeSlide.find('video')[0];
+  		// pause if playing.
+	});
+
 	$('#work-gallery video').fitVids();
 	$('.video-play').on('click', function(e){
 		$(this).hide();

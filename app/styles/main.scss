@@ -165,7 +165,10 @@ section {
             }
         }
         .video-play{
+            font-family: $font-family--secondary;
+            font-weight: $font-weight--bold;
             $color: darken($color-primary, 10%);
+            text-transform: uppercase;
             text-align: center;
             color: $color;
             .text{
@@ -175,7 +178,7 @@ section {
                 }
             }
             svg{
-                height: 15vw;
+                height: 20vh;;
                 path{
                     fill: $color;
                 }
