@@ -14,8 +14,11 @@
     height: auto;
     z-index: -100;
 
-    background: url(../images/bg_video-placeholder.png) no-repeat;
-    background-size: cover;
+    background: url(../images/bg_video-placeholder.png) top center no-repeat;
+    background-size: 150% 150%;
+    @media(max-width: $screen-sm){
+    	display:none;
+    }
 	&:after{
 		@extend %pseudos;
 		top: 0;
@@ -36,6 +39,7 @@
 	width: 100%;
 	padding-top: 0;
 	@extend %upcase;
+	-webkit-transform: translateZ(0);
 	.container-fluid{
 		vertical-align: middle;
 		display: table-cell;
@@ -51,7 +55,7 @@
 		transition: opacity ($base__speed) $base__ease;
 		letter-spacing: 1px;
 		h1, h2, a{
-			transition: all ($base__speed * 5) $base__ease 1s, font-size 0s 0s;
+			transition: opacity ($base__speed * 5) $base__ease 1s, transform ($base__speed * 5) $base__ease 1s;
 			transform: translateY(100%);
 			opacity: 0;
 			&.active{

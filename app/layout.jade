@@ -8,6 +8,7 @@ html.no-js
 		//- Place favicon.ico and apple-touch-icon.png in the root directory
 
 		//- build:css styles/vendor.css
+
 		//- bower:css
 		//- endbower
 		//- endbuild
@@ -22,14 +23,14 @@ html.no-js
 
 	body(data-spy='scroll' data-target='.navbar-fixed-top')
 		| <!--[if lt IE 10]>
-		|     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		|	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		| <![endif]-->
 
 		include ./includes/nav
 		
 		block content
 		
-		include ./includes/footer
+		//- include ./includes/footer
 
 		//- Google Analytics: change UA-XXXXX-X to be your site's ID.
 		script.
@@ -39,7 +40,6 @@ html.no-js
 			e.src='//www.google-analytics.com/analytics.js';
 			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
 			ga('create','UA-XXXXX-X');ga('send','pageview');
-
 		//- build:js({app,.tmp}) scripts/vendor.js
 		//- bower:js
 		script(src='bower_components/jquery/dist/jquery.js')
@@ -47,6 +47,7 @@ html.no-js
 		script(src='scripts/vendor/jquery.scrolling-nav.js')
 		script(src='scripts/vendor/jquery.visible.min.js')
 		script(src='scripts/vendor/isMobile.js')
+		script(src='scripts/vendor/jquery.fitvid.js')
 		//- endbower
 		//- endbuild
 

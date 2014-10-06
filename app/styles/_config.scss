@@ -5,9 +5,9 @@ Global config
 */
 
 // Font Stacks
-$font-url--google        : 'http://fonts.googleapis.com/css?family=Montserrat:400,700|Merriweather:400,300)';
+$font-url--google        : 'http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans+Condensed:300)';
 $font-family--primary    : 'Montserrat', 'Helvetica Neue', Helvetica, Arial, Sans-serif;
-$font-family--secondary  : 'Merriweather', 'Helvetica Neue', Helvetica, Arial, Sans-serif;
+$font-family--secondary  : 'Open Sans Condensed', 'Helvetica Neue', Helvetica, Arial, Sans-serif;
 
 
 // Font Weights
@@ -34,7 +34,7 @@ $color-shadow    : rgba($black, .2);
 $brand-primary : $color-primary;
 // Text
 $base__font-size : 18px;
-$base__line      : 30px;
+$base__line      : 28px;
 
 // Common variables
 $base__speed   	 : .2s;

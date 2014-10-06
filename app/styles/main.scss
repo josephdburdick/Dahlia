@@ -15,18 +15,31 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 .container-fluid{
     max-width: 1200px;
 }
-section {
+$columns: 1, 2, 3, 4, 5, 6;
 
+@each $column in $columns{
+    .column-count--#{$column}{
+        column-count: #{$column};
+        column-gap: 12px;
+    }
+}
+
+section {
 	position: relative;
     height: auto;
     min-height: 100%;
     padding: 8% 0;
     text-align: center;
-    background: #fff;
-	
+    
+	h1{
+        text-align: center;
+    }
     &:nth-child(even){
-    	background: #fcfcfb;
-    	color: #222;
+        color: $black;;
+    	background: #fff url(../images/photography.png);
+        @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi){ 
+            background-image: url(../images/photography_@2X.png);
+        }
     	h1{
     		color: #666;
     	}
@@ -53,17 +66,22 @@ section {
 
 @import "intro";
 .about-section{
-
+    .content{
+        margin-bottom: 5%;
+    }
 }
 .services-section{
     .col{
-        @extend .col-sm-4;
+        @extend .col-md-4;
         position: relative;
         @media(max-width: $screen-md){
             margin-bottom: 15%;
             &:last-child{
                 margin-bottom: 0;
             }
+        }
+        ul{
+            text-align: left;
         }
     }
     .image-container{
@@ -89,41 +107,175 @@ section {
         @extend %circle;
     }
 }
-.work-section{
-	video{
-        position: relative;
-		border-radius: 8px;
-		background-size: cover;
-		box-shadow: 0 0 0px 2px darken($color-primary, 60%);
-		transition: box-shadow $base__speed $base__ease;
-        &:after{
-            @extend %pseudos;
-            top: 0; right: 0; left:0; bottom: 0;
-            content: "Play Video";
-            background: darken(rgba($color-primary, .85), 20%);
+.tags{
+    padding: 0;
+    margin-left: 0;
+    list-style: none;
+
+    .tag, li{
+        display: inline-block;
+        padding: 0.6vw 1.2vw;
+        margin: 0 0.1vw 0.5vw 0;
+        border: .25vw solid $purple-majesty;
+        color: #ccc;
+        border-radius: 999rem;
+        @media(max-width: $screen-md){
+            font-size: 80%;
+            padding: 0.6vw 4vw;
+            border-width: 2px;
         }
-		&.active{
-			box-shadow: 0 0 0px 2px #000;
-		}
-	}
+    }
 }
-.carousel{
-    line-height: 0;
-    .carousel-control{
-        .carousel-arrow{
-            position: absolute;
-            top: 50%;
-            margin-top: -20px;
-            height: 40px;
-            &.left{
-                transform: rotate(180deg);
-                left: 50%;
-                margin-left: -20px;
+.work-section{
+    text-align: left;
+    padding-bottom: 0;
+    @media(max-width: $screen-sm){
+        min-height: 0;
+        padding: 0;
+    }
+    .content{
+        h2{
+            font-size: 1.4vw;
+            margin-top: 25px;
+            margin-bottom: 5px;
+            &:first-child{
+                margin-top: 0;
             }
-            &.right{
-                right: 50%;
-                margin-right: -20px;
+            @media(max-width:$screen-md){
+                font-size: 4vw;
+            }
+        }
+        p{
+            margin: 0 0 1rem 0;
+        }
+        video{
+            position: relative;
+            background-size: cover;
+            width: 100%;
+            height: auto;
+
+            &:after{
+                @extend %pseudos;
+                top: 0; right: 0; left: 0; bottom: 0;
+                content: "Play Video";
+                background: darken(rgba($color-primary, .85), 20%);
+            }
+            &.active{
+                box-shadow: 0 0 0px 2px #000;
+            }
+        }
+        .video-play{
+            $color: darken($color-primary, 10%);
+            text-align: center;
+            color: $color;
+            .text{
+                font-size: 2vw;
+                @media(max-width: $screen-sm){
+                    font-size: 4vw;
+                }
+            }
+            svg{
+                height: 15vw;
+                path{
+                    fill: $color;
+                }
+            }
+        }
+        .content-title--gear, 
+        .content-title--gear-copy, 
+        .content-title--date, 
+        .content-title--company,
+        .content-title--company-copy,
+        {
+            @media(max-width: $screen-xs){
+                display: none;
             }
         }
     }
 }
+.carousel{
+    .content{
+        @extend .row;
+        padding: 0;
+        margin: 1vw 0 5vw; 
+        &.copy{
+            @extend .col-md-4;
+        }
+        &.video{
+            @extend .col-md-8;
+        }
+    }
+}
+a.arrow{
+    @extend .col-xs-6;
+    font-family: $font-family--secondary;
+    font-weight: bold;
+    background: $color-primary;
+    padding: 2.5vw .75vw;
+    color: darken($color-primary, 20%);
+    text-align: center;
+    font-size: 2.5vw;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 2vw;
+    &:hover{
+        background: darken($color-primary, 5%);
+        color: $black;
+    }
+    &.top{ display: none; 
+        margin-top: 0;
+        @media(max-width: $screen-sm){
+            display: block;
+            margin-bottom: 3vw;
+        }
+    }
+
+    @media(max-width: $screen-sm){
+        font-size: 4vw;
+    }
+    svg {
+        display: inline-block;
+        height: 5vw;
+        top: -4px;
+        margin: 0 20px;
+        path{
+            fill: currentColor;
+        }
+        @media(max-width: $screen-sm){
+            display: none;
+        }
+    }
+    .hidden-text{
+        @extend .visible-sm-inline-block;
+        @extend .visible-md-inline-block;
+        @extend .visible-lg-inline-block;
+    }
+    &.left{
+        svg{
+            transform: rotate(180deg);
+        }
+        @media(max-width: $screen-md){
+            text-align: left;
+            padding-left: 1vw;
+        }
+        @media(min-width: $screen-md){
+            svg{
+                margin-left: -10vw;
+            }
+        }
+    }
+    &.right{
+        @media(max-width: $screen-md){
+            text-align: right;
+            padding-left: 1vw;
+        }
+        @media(min-width: $screen-md){
+            svg{
+                margin-right: -10vw;
+            }
+        }
+    }
+}
+// }
+

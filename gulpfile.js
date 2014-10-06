@@ -12,7 +12,8 @@ gulp.task('styles', function () {
         .pipe($.rubySass({
             sourcemap: true,
             style: 'expanded',
-            precision: 10
+            precision: 10,
+            lineNumbers: true
         }))
         .pipe($.autoprefixer('last 1 version'))
         .pipe(gulp.dest('.tmp/styles'))

@@ -2,12 +2,12 @@
 // isMobile()
 
 var $doc = $(document),
-		$win = $(window),
-		$intro = $('#intro'),
-		$bgVid = $('#bgVid'),
-		$nav 	 = $('nav[role="navigation"]'),
+	$win = $(window),
+	$intro = $('#intro'),
+	$bgVid = $('#bgVid'),
+	$nav 	 = $('nav[role="navigation"]'),
 
-		bgVidMaxOpacity = 0.4; 
+	bgVidMaxOpacity = 0.4; 
 
 function intro(){
 	$bgVid.addClass('active');
@@ -17,6 +17,7 @@ function intro(){
 }
 
 function toggleVideo(el){
+	
 	var video = el.get(0);
 	if (el.visible(true)){
 		if (video.paused) {
@@ -40,11 +41,11 @@ function interfaces(){
 	$('body').scrollspy({ target: '.navbar-ex1-collapse' });
 	$('.carousel').carousel('pause');
 	// Video playback toggle
-	$('video').on('click',function(e){toggleVideo($(this), e);});
-
-	$('.vid').on('click', function(){
-		$(this).fadeOut(200).parent('.vid-container').toggleClass('active');
-		toggleVideo($($(this).closest('video')));
+	// $('video').on('click',function(e){toggleVideo($(this), e);});
+	$('#work-gallery video').fitVids();
+	$('.video-play').on('click', function(e){
+		$(this).hide();
+		toggleVideo($(this).siblings('video'));
 	});
 
 	// Window scroll fadeout hero
@@ -69,7 +70,6 @@ function interfaces(){
 	  	$bgVid.get(0).play();
 	  	$(window).trigger('resize');
 	  }
-	  console.log($bgVid.get(0).paused);
 	}).trigger('scroll');
 }
 

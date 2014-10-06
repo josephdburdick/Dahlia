@@ -7,14 +7,19 @@
 
 *          { -moz-box-sizing: border-box; box-sizing: border-box; outline: none; }
 html, body { width: 100%; height: 100%; }
-video 		 { width: 100%;
-             height: auto; cursor: pointer; }
+section video{ 
+  width: 100% !important;
+  height: auto !important; cursor: pointer; 
+  min-height: 40%; 
+  min-width: 100%; 
+}
 img.fit    { width: 100%; height: auto; }
+svg        { vertical-align: middle; }
 
 body {
 	position: relative;
  	font-size: $base__font-size;
- 	line-height: $base__line;
+ 	line-height: 24px; //$base__line;
  	font-family: $font-family--primary;
  	background: black;
  	-webkit-font-smoothing: antialiased;
@@ -22,59 +27,79 @@ body {
 }
 
 header {
-  text-align:center;
-  @include rem(padding, 4.8, 0);
-  font-size: 18px;
+  text-align: center;
+  padding: 0 4%;
+  @media(min-width: $screen-md){
+    max-width: 1200px;
+  }
 }
 nav.main a{
 	font-size: 18px;
 }
 
 h1 {
-	$size : 42px;
+	// $size : 42px
+  $size: 6vw;
 	font-family: $font-family--primary;
   font-weight: $font-weight--light;
   font-size: $size;
-  line-height: $size + 10;
+  // line-height: $size + 10;
   margin-bottom: $size;
 	color: #ccc;
 	@extend %upcase;
-  @media(max-width: $screen-sm){
-    $size : $size/1.5;
+  @media(min-width: $screen-md){
+    $size : $size / 1.5;
     font-size: $size;
-    line-height: $size;
+    // line-height: $size;
+    margin-bottom: $size;
+  }
+  @media(max-width: $screen-sm){
+    $size : $size * 1.5;
+    font-size: $size;
+    // line-height: $size;
     margin-bottom: $size;
   } 
 }
 h2 {
-  $size : 24px;
+  // $size : 24px;
+  $size : 5vw;
   font-family: $font-family--secondary;
-  font-weight: $font-weight--light;
-  letter-spacing: 5px;
+  font-weight: normal;
+  letter-spacing: 0.2vw;
   font-size: $size;
-  line-height: $size;
   margin-bottom: $size;
   color: #666;
   @extend %upcase;
-  @media(max-width: $screen-sm){
-    $size : $size/1.5;
+  @media(min-width: $screen-md){
+    $size : $size / 1.5;
     font-size: $size;
-    line-height: $size;
+    margin-bottom: $size;
+  } 
+  @media(max-width: $screen-sm){
+    $size : $size * 1.5;
+    font-size: $size;
     margin-bottom: $size;
   } 
 }
 h3 {
-	$size : 18px;
+	// $size : 18px;
+  $size: 2vw;
   font-family: $font-family--secondary;
   font-weight: $font-weight--light;
-  letter-spacing: 5px;
+  letter-spacing: .3vw;
   font-size: $size;
-  line-height: $size;
   margin-bottom: $size;
 	color: #666;
 	@extend %upcase;
+  @media(min-width: $screen-md){
+    $size : 3vw;
+    font-size: $size;
+    line-height: $size;
+    margin-bottom: $size;
+  } 
   @media(max-width: $screen-sm){
-    $size : $size/1.5;
+    $size : 5vw;
+    letter-spacing: .5vw;
     font-size: $size;
     line-height: $size;
     margin-bottom: $size;
