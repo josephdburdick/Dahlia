@@ -1,0 +1,24 @@
+/*
+
+Module: Tags
+
+*/
+.tags{
+    padding: 0;
+    margin-left: 0;
+    list-style: none;
+
+    .tag, li{
+        display: inline-block;
+        padding: 0.6vw 1.2vw;
+        margin: 0 0.1vw 0.5vw 0;
+        border: .25vw solid $purple-majesty;
+        color: #ccc;
+        border-radius: 999rem;
+        @media(max-width: $screen-md){
+            font-size: 80%;
+            padding: 0.6vw 4vw;
+            border-width: 2px;
+        }
+    }
+}

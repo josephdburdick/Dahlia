@@ -36,19 +36,25 @@ function interfaces(){
 			top: $intro.height() - $nav.height()
 		}
 	});
+
 	// Scroll Spy
 	$('body').scrollspy({ target: '.navbar-ex1-collapse' });
+
+	// Pause videos on carousel slide
 	$('.carousel').carousel('pause').on('slid.bs.carousel', function (e) {
 		var $activeSlide = $(e.currentTarget).find('.item.active'),
-  		video = $activeSlide.find('video')[0];
-  		// pause if playing.
+			videos = $('.carousel').find('video');
+		$(videos).each(function(i, el){
+			el.pause();
+		});
 	});
 
-	$('#work-gallery video').fitVids();
-	$('.video-play').on('click', function(e){
-		$(this).hide();
+	// Activate video play posters
+	$('.video-play').on('click touchstart mousedown', function(e){
+		$(e.currentTarget).hide(100);
 		toggleVideo($(this).siblings('video'));
 	});
+
 
 	// Window scroll fadeout hero
 	$(window).bind('scroll', function(){

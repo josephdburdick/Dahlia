@@ -12,17 +12,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "svgicons";
 @import "nav";
 @import "buttons";
-.container-fluid{
-    max-width: 1200px;
-}
-$columns: 1, 2, 3, 4, 5, 6;
+@import "tags";
 
-@each $column in $columns{
-    .column-count--#{$column}{
-        column-count: #{$column};
-        column-gap: 12px;
-    }
-}
+
+
 
 section {
 	position: relative;
@@ -107,25 +100,7 @@ section {
         @extend %circle;
     }
 }
-.tags{
-    padding: 0;
-    margin-left: 0;
-    list-style: none;
 
-    .tag, li{
-        display: inline-block;
-        padding: 0.6vw 1.2vw;
-        margin: 0 0.1vw 0.5vw 0;
-        border: .25vw solid $purple-majesty;
-        color: #ccc;
-        border-radius: 999rem;
-        @media(max-width: $screen-md){
-            font-size: 80%;
-            padding: 0.6vw 4vw;
-            border-width: 2px;
-        }
-    }
-}
 .work-section{
     text-align: left;
     padding-bottom: 0;
@@ -166,7 +141,6 @@ section {
         }
         .video-play{
             font-family: $font-family--secondary;
-            font-weight: $font-weight--bold;
             $color: darken($color-primary, 10%);
             text-transform: uppercase;
             text-align: center;
@@ -178,9 +152,15 @@ section {
                 }
             }
             svg{
-                height: 20vh;;
+                height: 20vh;
+                max-height: 190px;
                 path{
                     fill: $color;
+                }
+            }
+            .touch &{
+                @media(max-width: $screen-sm){
+                    display: none;
                 }
             }
         }
@@ -212,7 +192,6 @@ section {
 a.arrow{
     @extend .col-xs-6;
     font-family: $font-family--secondary;
-    font-weight: bold;
     background: $color-primary;
     padding: 1.4vw .75vw;
     color: darken($color-primary, 20%);
@@ -239,6 +218,7 @@ a.arrow{
     svg {
         display: inline-block;
         height: 5vw;
+        width: 3vw;
         top: -4px;
         margin: 0 20px;
         path{
