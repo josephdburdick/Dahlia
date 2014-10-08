@@ -17,14 +17,16 @@ gulp.task('styles', function () {
         }))
         .pipe($.autoprefixer('last 1 version'))
         .pipe(gulp.dest('.tmp/styles'))
+        .pipe(gulp.dest('dist/styles'))
         .pipe($.size());
 });
 
 gulp.task('scripts', function () {
-    return gulp.src('app/scripts/*.js')
+    return gulp.src('app/scripts/**/*.js')
         .pipe($.plumber())
         .pipe($.jshint())
         .pipe($.jshint.reporter(require('jshint-stylish')))
+        .pipe(gulp.dest('dist/scripts'))
         .pipe($.size());
 });
 
@@ -39,7 +41,7 @@ gulp.task('html', ['views', 'styles', 'scripts'], function () {
     var jsFilter = $.filter('**/*.js');
     var cssFilter = $.filter('**/*.css');
     var assets = $.useref.assets({searchPath: '{.tmp,app}'});
-    return gulp.src(['app/*.html', '.tmp/*.html'])
+    return gulp.src(['.tmp/*.html'])
         // .pipe($.plumber())
         .pipe(assets)
         .pipe(jsFilter)
@@ -88,7 +90,7 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('extras', function () {
-    return gulp.src(['app/*.*', '!app/*.jade'], { dot: true })
+    return gulp.src(['app/**/*.*', '!app/*.jade'], { dot: true })
         .pipe(gulp.dest('dist'));
 });
 
@@ -129,6 +131,7 @@ gulp.task('wiredep', function () {
         .pipe(wiredep({
             directory: 'app/bower_components'
         }))
+        .pipe(gulp.dest('dist/styles'))
         .pipe(gulp.dest('app/styles'));
 
     gulp.src('app/*.jade')
@@ -136,6 +139,7 @@ gulp.task('wiredep', function () {
             directory: 'app/bower_components',
             exclude: ['bootstrap-sass-official']
         }))
+        .pipe(gulp.dest('dist'))
         .pipe(gulp.dest('app'));
 });
 
