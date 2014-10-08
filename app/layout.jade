@@ -4,7 +4,7 @@ html.no-js
 		meta(charset='utf-8')
 		title Macarena Carrizosa - Director + Producer
 		meta(name='description' content='')
-		meta(name='viewport' content='width=device-width, initial-scale=1')
+		meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
 		//- Place favicon.ico and apple-touch-icon.png in the root directory
 
 		//- build:css styles/vendor.css
@@ -40,7 +40,7 @@ html.no-js
 			e.src='//www.google-analytics.com/analytics.js';
 			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
 			ga('create','UA-XXXXX-X');ga('send','pageview');
-		//- build:js({app,.tmp}) scripts/vendor.js
+		//- build:js scripts/vendor.js
 		//- bower:js
 		script(src='bower_components/jquery/dist/jquery.js')
 		script(src='scripts/vendor/jquery.easing.min.js')
@@ -50,7 +50,7 @@ html.no-js
 		//- endbower
 		//- endbuild
 
-		//- build:js({app,.tmp}) scripts/plugins.js
+		//- build:js scripts/plugins.js
 		script(src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js')		
 		script(src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js')
 		script(src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js')
@@ -59,7 +59,6 @@ html.no-js
 		script(src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js')
 		//- endbuild
 
-		//- build:js({app,.tmp}) scripts/main.js
-
+		//- build:js scripts/main.js
 		script(src='scripts/main.js')
 		//- endbuild

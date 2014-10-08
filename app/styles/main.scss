@@ -109,7 +109,12 @@ section {
         padding: 0;
     }
     .content{
+        %content-padding{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
         h2{
+            @extend %content-padding;
             font-size: 1.4vw;
             margin-top: 25px;
             margin-bottom: 5px;
@@ -121,7 +126,8 @@ section {
             }
         }
         p{
-            margin: 0 0 1rem 0;
+            @extend %content-padding;
+            // margin: 0 0 1rem 0;
         }
         video{
             position: relative;
@@ -145,6 +151,7 @@ section {
             text-transform: uppercase;
             text-align: center;
             color: $color;
+            display: none;
             .text{
                 font-size: 2vw;
                 @media(max-width: $screen-sm){
@@ -158,12 +165,11 @@ section {
                     fill: $color;
                 }
             }
-            .touch &{
-                @media(max-width: $screen-sm){
-                    display: none;
-                }
+            @media(min-width: $screen-lg){
+                display: block;
             }
         }
+
         .content-title--gear, 
         .content-title--gear-copy, 
         .content-title--date, 
@@ -192,9 +198,9 @@ section {
 a.arrow{
     @extend .col-xs-6;
     font-family: $font-family--secondary;
-    background: $color-primary;
+    background: $coral;
     padding: 1.4vw .75vw;
-    color: darken($color-primary, 20%);
+    color: darken($coral, 20%);
     text-align: center;
     font-size: 2.5vw;
     text-decoration: none;
@@ -202,7 +208,7 @@ a.arrow{
     letter-spacing: 3px;
     transition: all $base__speed $base__ease;
     &:hover{
-        background: darken($color-primary, 5%);
+        background: darken($coral, 5%);
         color: $black;
     }
     &.top{ display: none; 
@@ -259,5 +265,61 @@ a.arrow{
         }
     }
 }
-// }
+
+.contact-section{
+    .list-group{
+        margin: 10% 0 0 0;
+        .list-group-item{ 
+            background: none; 
+            padding: 0;
+        }
+        a{
+            transition: all $base__speed $base__ease;
+            font-family: $font-family--secondary;
+            display: block;
+            font-size: 4vw;
+            line-height: 1.4;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+    }
+    #contact-section--phone{
+        .mobile &{
+            opacity: 1; 
+        }
+        .no-mobile &{
+            opacity: .15;
+            cursor: not-allowed;
+            &:active, &:hover, &:focus{
+                background: $emerald !important;
+                color: darken($emerald, 5%);
+                cursor: not-allowed;
+                a{
+                    background: $emerald !important;
+                    color: $black !important;
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.dock-bottom{
+    position: absolute;
+    width: 100%;
+    left:0;
+    right: 0;
+    bottom:0;
+    padding: 50px 0;
+}
+.logo-joey{
+    position: relative;
+    padding: 0 10px;
+    max-width: 100px;
+}
+
+
 

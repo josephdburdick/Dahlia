@@ -1,18 +1,22 @@
 'use strict';
-// isMobile()
 
-var $doc = $(document),
-	$win = $(window),
+var $doc   = $(document),
+	$win   = $(window),
 	$intro = $('#intro'),
 	$bgVid = $('#bgVid'),
-	$nav 	 = $('nav[role="navigation"]'),
-	bgVidMaxOpacity = 0.4; 
+	$nav   = $('nav[role="navigation"]'),
+	bgVidMaxOpacity = 0.4,
+	isMobile = isMobile.any,
+	ww = function() {return $win.width()};
+
 
 function intro(){
 	$bgVid.addClass('active');
 	$intro.find('.content').children().each(function(){
 		$(this).addClass('active');
 	});
+	var ipad = navigator.userAgent.match(/iPad/i) != null;
+	if (ipad) $('html').addClass('ipad');
 }
 
 function toggleVideo(el){
@@ -39,6 +43,19 @@ function interfaces(){
 
 	// Scroll Spy
 	$('body').scrollspy({ target: '.navbar-ex1-collapse' });
+
+	// Trigger mobile menu to close once a link is touched.
+	if (Modernizr.touch && isMobile.any == true){
+		$('.navbar-ex1-collapse a').on('click', function(){
+			$('button.navbar-toggle').trigger('click');
+		});
+	}
+	
+	// Detect mobile; Activate appropriate class.
+	if (isMobile.any == true)
+		$('html').addClass('mobile');
+	else
+		$('html').addClass('no-mobile');
 
 	// Pause videos on carousel slide
 	$('.carousel').carousel('pause').on('slid.bs.carousel', function (e) {
@@ -73,9 +90,9 @@ function interfaces(){
 		};
 		$bgVid.css('opacity', ratio());
 		if ($win.scrollTop() > $intro.height()) {
-			$bgVid.get(0).pause();
+			$bgVid.find('video').get(0).pause();
 	  } else {
-	  	$bgVid.get(0).play();
+	  	$bgVid.find('video').get(0).play();
 	  	$(window).trigger('resize');
 	  }
 	}).trigger('scroll');

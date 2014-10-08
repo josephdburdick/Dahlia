@@ -19,9 +19,8 @@ nav[role="navigation"]{
 		bottom: 0;
 		top: auto;
 		padding: 20px 0;
-		@media (max-width: $screen-sm){
-			padding: 0;
-			display: none;
+		& ~ .navbar-brand{
+			padding: 20px 0;
 		}
 	}
 	&.affix{
@@ -62,9 +61,9 @@ Collapsing Mobile Menu
 	@media(max-width:$screen-sm){
 		padding: 0;
 		.navbar-nav{
-			margin: 8px 0;
-			float: none !important;
-			width: 100%;
+			// margin: 8px 0;
+			// float: none !important;
+			// width: 100%;
 			background: black;
 			li{
 				text-align: center;
