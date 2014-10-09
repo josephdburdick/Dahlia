@@ -10,7 +10,7 @@ block content
 	section#intro.intro-section
 		.container-fluid
 			.content
-				h1 Macarena Carrizosa
+				h1 Macarena<br>Carrizosa
 				h2 Director &amp; Producer
 				a.btn.btn-lg.stroke.sunglo.page-scroll#bgVid-trigger(href="#work") View Work	
 	
@@ -19,41 +19,29 @@ block content
 		.container-fluid
 			.row
 				header
-					h1 My moves are better <br> than the dance
+					h2 My moves are better <br> than the dance
 			.row
-				.col-sm-8.col-sm-offset-2
-					.row
-						.text-center
-							img.fit(src="images/the-macarena.gif" style="max-width: 500px;")
-					.row
-						.content
-							p.text-left Hi, I'm Macarena.
-							p.text-left.
-								I'm a freelance Director/Producer living in Brooklyn 
-								working on various film/video/TV projects. 
+				.content
+					img.fit(src="images/the-macarena.gif" style="max-width: 500px;margin-bottom:30px")
+				
+					p Hi, I'm Macarena.
+					p.
+						I'm a freelance Director/Producer living in Brooklyn 
+						working on various film/video/TV projects. 
 
-								I’ve worked extensively in the field, in studio environments 
-								for both camera and lighting departments. I'm passionate about communication 
-								and I found the way to do it through the camera’s lens.   
-							p.text-left
-								a.page-scroll(href="#contact") Feel free to contact me
-								|	about freelance or full-time opportunities.
+						I’ve worked extensively in the field, in studio environments 
+						for both camera and lighting departments. I'm passionate about communication 
+						and I found the way to do it through the camera’s lens.   
+					p
+						a.page-scroll(href="#contact") Feel free to contact me
+						|	about freelance or full-time opportunities.
 				
 	//- Work Section
-	section#work.work-section
-		a.arrow.top(class="left" href="#work-gallery" role="button" data-slide="prev")
-			svg(viewBox="0 0 20 20" class="carousel-arrow left")
-				path(fill="none" d="M14.989,9.491L6.071,0.537C5.78,0.246,5.308,0.244,5.017,0.535c-0.294,0.29-0.294,0.763-0.003,1.054l8.394,8.428L5.014,18.41c-0.291,0.291-0.291,0.763,0,1.054c0.146,0.146,0.335,0.218,0.527,0.218c0.19,0,0.382-0.073,0.527-0.218l8.918-8.919C15.277,10.254,15.277,9.784,14.989,9.491z")
-			|	Previous 
-			span.hidden-text Video
-		a.arrow.top(class="right" href="#work-gallery" role="button" data-slide="next") Next <span class="hidden-text">Video</span>
-			svg(viewBox="0 0 20 20" class="carousel-arrow right")
-				path(fill="none" d="M14.989,9.491L6.071,0.537C5.78,0.246,5.308,0.244,5.017,0.535c-0.294,0.29-0.294,0.763-0.003,1.054l8.394,8.428L5.014,18.41c-0.291,0.291-0.291,0.763,0,1.054c0.146,0.146,0.335,0.218,0.527,0.218c0.19,0,0.382-0.073,0.527-0.218l8.918-8.919C15.277,10.254,15.277,9.784,14.989,9.491z")
-		.clearfix					
+	section#work.work-section				
 		.container-fluid
 			.row
-				.col-sm-6.col-sm-offset-3
-					h1 Work
+				header
+					h2 Work
 			.row
 				.carousel.slide#work-gallery
 					.carousel-inner
@@ -70,13 +58,13 @@ block content
 												path(d="M243.391,166.834l215.748-42.766l-0.145-0.727L444.558,50.5l-363.4,72.035C63.07,126.12,50,141.985,50,160.424c0,16.312,0,242.407,0,242.407c0,32.351,26.318,58.669,58.668,58.669h294.664c32.35,0,58.668-26.318,58.668-58.669V167.575v-0.741H243.391z M422,402.831c0,10.294-8.374,18.669-18.668,18.669H108.668C98.374,421.5,90,413.125,90,402.831V261.765h332V402.831z M339.528,186.834l-34.931,34.931h-52.426l34.931-34.931H339.528zM395.225,80.668l41.139,27.529l-51.396,10.214l-41.17-27.55L395.225,80.668z M293.981,100.736l41.199,27.568l-51.394,10.213l-41.229-27.588L293.981,100.736z M192.625,120.827l41.257,27.608l-51.395,10.213L141.2,131.021L192.625,120.827z M183.77,186.834h52.426l-34.931,34.931h-52.426L183.77,186.834z M355.385,221.765l34.931-34.931h52.426l-34.931,34.931H355.385z M232.923,393.31V284.553l88.693,54.38L232.923,393.31z")
 											.text Play Video
 								.content.copy
-									h2.content-title--project PROJECT
+									h4.content-title--project PROJECT
 									p.content-title--project-copy Director & Producer Reel
 
-									h2.content-title--date DATE
+									h4.content-title--date DATE
 									p.content-title--date-copy 2014
 
-									h2.content-title--description DESCRIPTION
+									h4.content-title--description DESCRIPTION
 									p.content-copy--description These are projects that I directed and produced. Depending on the project’s need I would shoot and edit them myself as well or gather and organize a crew.
 						.item
 							.row
@@ -91,25 +79,25 @@ block content
 												path(d="M243.391,166.834l215.748-42.766l-0.145-0.727L444.558,50.5l-363.4,72.035C63.07,126.12,50,141.985,50,160.424c0,16.312,0,242.407,0,242.407c0,32.351,26.318,58.669,58.668,58.669h294.664c32.35,0,58.668-26.318,58.668-58.669V167.575v-0.741H243.391z M422,402.831c0,10.294-8.374,18.669-18.668,18.669H108.668C98.374,421.5,90,413.125,90,402.831V261.765h332V402.831z M339.528,186.834l-34.931,34.931h-52.426l34.931-34.931H339.528zM395.225,80.668l41.139,27.529l-51.396,10.214l-41.17-27.55L395.225,80.668z M293.981,100.736l41.199,27.568l-51.394,10.213l-41.229-27.588L293.981,100.736z M192.625,120.827l41.257,27.608l-51.395,10.213L141.2,131.021L192.625,120.827z M183.77,186.834h52.426l-34.931,34.931h-52.426L183.77,186.834z M355.385,221.765l34.931-34.931h52.426l-34.931,34.931H355.385z M232.923,393.31V284.553l88.693,54.38L232.923,393.31z")
 											.text Play Video
 								.content.copy
-									h2.content-title--project PROJECT
+									h4.content-title--project PROJECT
 									p.content-title--project-copy Curados
 
-									h2.content-title--project Client
+									h4.content-title--project Client
 									p.content-title--project-copy N&uacute;cleo S.A.
 
-									h2.content-title--date DATE
+									h4.content-title--date DATE
 									p.content-title--date-copy 2013
 
-									h2.content-title--company Production Company
+									h4.content-title--company Production Company
 									p.content-title--company-copy Syncro Image
 
-									h2.content-title--gear GEAR
+									h4.content-title--gear GEAR
 									p.content-title--gear-copy Sony PWF-55
 
-									h2.content-title--description DESCRIPTION
+									h4.content-title--description DESCRIPTION
 									p.content-copy--description I worked as 2AC in this project directed by award winning cinematographer Richard Careaga and produced by his company. 
 
-									h2.content-title--tags TAGS
+									h4.content-title--tags TAGS
 									ul.tags
 										li Camera Assistant
 										li Advertising
@@ -127,26 +115,26 @@ block content
 													path(d="M243.391,166.834l215.748-42.766l-0.145-0.727L444.558,50.5l-363.4,72.035C63.07,126.12,50,141.985,50,160.424c0,16.312,0,242.407,0,242.407c0,32.351,26.318,58.669,58.668,58.669h294.664c32.35,0,58.668-26.318,58.668-58.669V167.575v-0.741H243.391z M422,402.831c0,10.294-8.374,18.669-18.668,18.669H108.668C98.374,421.5,90,413.125,90,402.831V261.765h332V402.831z M339.528,186.834l-34.931,34.931h-52.426l34.931-34.931H339.528zM395.225,80.668l41.139,27.529l-51.396,10.214l-41.17-27.55L395.225,80.668z M293.981,100.736l41.199,27.568l-51.394,10.213l-41.229-27.588L293.981,100.736z M192.625,120.827l41.257,27.608l-51.395,10.213L141.2,131.021L192.625,120.827z M183.77,186.834h52.426l-34.931,34.931h-52.426L183.77,186.834z M355.385,221.765l34.931-34.931h52.426l-34.931,34.931H355.385z M232.923,393.31V284.553l88.693,54.38L232.923,393.31z")
 												.text Play Video
 								.content.copy
-									h2.content-title--project PROJECT
+									h4.content-title--project PROJECT
 									p.content-title--project-copy La Evolución del Sueño
 
-									h2.content-title--project Client
+									h4.content-title--project Client
 									p.content-title--project-copy Sueñolar
 
-									h2.content-title--date DATE
+									h4.content-title--date DATE
 									p.content-title--date-copy 2013
 
-									h2.content-title--company Production Company
+									h4.content-title--company Production Company
 									p.content-title--company-copy El Bagre Productora
 
-									h2.content-title--gear GEAR
+									h4.content-title--gear GEAR
 									p.content-title--gear-copy Red Scarlett
 
 
-									h2.content-title--description DESCRIPTION
+									h4.content-title--description DESCRIPTION
 									p.content-copy--description I worked as AC in this project produced by one of the top production companies in Paraguay.
 
-									h2.content-title--tags TAGS
+									h4.content-title--tags TAGS
 									ul.tags
 										li Camera Assistant
 										li Advertising
@@ -163,26 +151,26 @@ block content
 													path(d="M243.391,166.834l215.748-42.766l-0.145-0.727L444.558,50.5l-363.4,72.035C63.07,126.12,50,141.985,50,160.424c0,16.312,0,242.407,0,242.407c0,32.351,26.318,58.669,58.668,58.669h294.664c32.35,0,58.668-26.318,58.668-58.669V167.575v-0.741H243.391z M422,402.831c0,10.294-8.374,18.669-18.668,18.669H108.668C98.374,421.5,90,413.125,90,402.831V261.765h332V402.831z M339.528,186.834l-34.931,34.931h-52.426l34.931-34.931H339.528zM395.225,80.668l41.139,27.529l-51.396,10.214l-41.17-27.55L395.225,80.668z M293.981,100.736l41.199,27.568l-51.394,10.213l-41.229-27.588L293.981,100.736z M192.625,120.827l41.257,27.608l-51.395,10.213L141.2,131.021L192.625,120.827z M183.77,186.834h52.426l-34.931,34.931h-52.426L183.77,186.834z M355.385,221.765l34.931-34.931h52.426l-34.931,34.931H355.385z M232.923,393.31V284.553l88.693,54.38L232.923,393.31z")
 												.text Play Video
 								.content.copy
-									h2.content-title--project PROJECT
+									h4.content-title--project PROJECT
 									p.content-title--project-copy Brooklyn Mitsubishi Spot
 
-									h2.content-title--project Client
+									h4.content-title--project Client
 									p.content-title--project-copy Brooklyn Mitsubishi
 
-									h2.content-title--date DATE
+									h4.content-title--date DATE
 									p.content-title--date-copy 2013
 
-									h2.content-title--company Production Company
+									h4.content-title--company Production Company
 									p.content-title--company-copy Triple Eight Productions
 
-									h2.content-title--gear GEAR
+									h4.content-title--gear GEAR
 									p.content-title--gear-copy Red Epic
 
 
-									h2.content-title--description DESCRIPTION
+									h4.content-title--description DESCRIPTION
 									p.content-copy--description I worked as Gaffer in this project with Arri and Kino lights.
 
-									h2.content-title--tags TAGS
+									h4.content-title--tags TAGS
 									ul.tags
 										li Gaffer
 										li Advertising
@@ -200,27 +188,27 @@ block content
 	section#services.services-section
 		.container-fluid
 			.row
-				.content
-					h1 Services
-					h2 Have a project in mind? <br> Tell me about it and let’s make it happen.
+				header
+					h2 Services
+					h3 Have a project in mind? <br> Tell me about it and let’s make it happen.
 			.row
 				.col
 					.image-container
-						img(alt="placeholder image" src="http://placehold.it/200x200/ffcc00")
-					h3 Production
+						img(alt="placeholder image" src="http://placehold.it/200x200/ffcc00/")
+					h4 Production
 					p.
 						I can handle budget, gathering crew, casting, rehearsing, and directing 
 						according to the needs of the project.
 				.col
 					.image-container
 						img(alt="placeholder image" src="http://placehold.it/200x200/ccff00")
-					h3 Event Coverage
+					h4 Event Coverage
 					p.
 						I can cover your event from pre to post production including the equipment, shooting and editing.
 				.col
 					.image-container
 						img(alt="placeholder image" src="http://placehold.it/200x200/00ccff")
-					h3 Crew
+					h4 Crew
 					p.
 						I have extensive experience as Camera Assistant 
 						and Gaffer for every type of audiovisual production.
@@ -228,12 +216,12 @@ block content
 	section#contact.contact-section
 		.container-fluid
 			.row
-				.col-md-6.col-md-offset-3
-					h1 Want to work together or just say hola?
+				header
+					h2 Want to work together<br>or just say hola?
 			.row
 				.col-md-6.col-md-offset-3
 					ul.list-group
-						li.list-group-item.stroke.emerald: a(href="https://www.linkedin.com/in/macarenacarrizosa") Endorse Me
+						li.list-group-item.stroke.emerald: a(href="https://www.linkedin.com/in/macarenacarrizosa") <i class="fa fa-flag"></i> Endorse Me
 						li.list-group-item.stroke.emerald: a(href="mailto:macacarrizosa@gmail.com?subject=Found you from your website!") Send Email
 						li.list-group-item.stroke.emerald#contact-section--phone: a(href="tel:3476748286") Call Me	
 				.dock-bottom.
