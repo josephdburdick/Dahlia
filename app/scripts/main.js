@@ -6,7 +6,7 @@ var $doc   = $(document),
 	$bgVid = $('#bgVid'),
 	$nav   = $('nav[role="navigation"]'),
 	bgVidMaxOpacity = 0.4,
-	isMobile = isMobile.any,
+	isMobile = isMobile,
 	ww = function() {return $win.width()};
 
 
@@ -52,7 +52,7 @@ function interfaces(){
 	}
 	
 	// Detect mobile; Activate appropriate class.
-	if (isMobile.any == true)
+	if ((isMobile.android.phone || isMobile.apple.phone || isMobile.other.device ) == true)
 		$('html').addClass('mobile');
 	else
 		$('html').addClass('no-mobile');
@@ -78,15 +78,11 @@ function interfaces(){
 
 		var ratio = function(){
 			var alg = (($win.scrollTop() - $intro.outerHeight()) / -1200);
-			if (alg > 0){
-				return alg;
-			}
+			if (alg > 0){ return alg; }
 			else if (alg > bgVidMaxOpacity){
 				return bgVidMaxOpacity;
 			}
-			else{
-				return 0;
-			}
+			else{ return 0; }
 		};
 		$bgVid.css('opacity', ratio());
 		if ($win.scrollTop() > $intro.height()) {

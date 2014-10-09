@@ -90,7 +90,7 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('extras', function () {
-    return gulp.src(['app/**/*.*', '!app/*.jade'], { dot: true })
+    return gulp.src(['app/**/*.*', '!app/**/*.{jade,scss}'], { dot: true })
         .pipe(gulp.dest('dist'));
 });
 
