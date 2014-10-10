@@ -105,10 +105,10 @@ section {
         @extend %circle;
         img{
             width: 100%;
-            max-width: 300px;
+            max-width: 340px;
 
             @media(max-width: $screen-sm){
-              max-width: 500px;
+              max-width: 280px;
             }
         }
     }
