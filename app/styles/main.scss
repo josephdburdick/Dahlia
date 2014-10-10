@@ -40,7 +40,9 @@ section {
         background: #111;
         color: #ccc;
     }
-  
+    header{
+        margin: 0 auto;
+    }
     h2{
         @extend %content-padding;
         font-family: $font-family--primary;        
@@ -211,7 +213,6 @@ a.arrow{
     font-size: 175%;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 3px;
     line-height: 2.4;
     text-shadow: 0 2px 1px darken($purple-majesty, 35%), 0 1px 0px darken($purple-majesty, 35%);
     transition: all $base__speed $base__ease;
