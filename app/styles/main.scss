@@ -96,6 +96,11 @@ section {
             }
         }
     }
+    h4{
+      @media(min-width: $screen-md){
+        margin-bottom: 20px;
+      }
+    }
     .image-container{
         @extend %circle;
         img{
@@ -117,14 +122,10 @@ section {
     h4{
         font-size: 120%;
         margin-top: 20px;
-        margin-bottom: 20px;
         letter-spacing: 2px;
         color: rgba(174, 173, 173, 1);
         &:first-child{
             margin-top: -3px;
-        }
-        @media(min-width: $screen-md){
-          margin-bottom: 20px;
         }
     }
     video{
