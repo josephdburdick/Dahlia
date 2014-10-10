@@ -17,7 +17,7 @@ html.no-js
 		link(rel='stylesheet' href='styles/main.css')
 		//- endbuild
 
-		//- build:js({app,.tmp}) scripts/vendor/modernizr.js
+		//- build:js scripts/vendor/modernizr.js
 		script(src='../bower_components/modernizr/modernizr.js')
 		//- endbuild
 
@@ -39,26 +39,26 @@ html.no-js
 			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
 			ga('create','UA-XXXXX-X');ga('send','pageview');
 		
-
 		//- build:js scripts/vendor.js
 		//- bower:js
 		script(src='../bower_components/jquery/dist/jquery.js')
-		script(src='scripts/vendor/jquery.easing.min.js')
 		script(src='scripts/vendor/jquery.scrolling-nav.js')
-		script(src='scripts/vendor/jquery.visible.min.js')
-		script(src='scripts/vendor/isMobile.js')
 		//- endbower
 		//- endbuild
 
 		//- build:js scripts/plugins.js
-		script(src='../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js')		
-		script(src='../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js')
-		script(src='../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js')
-		script(src='../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js')
-		script(src='../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js')
-		script(src='../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js')
+		script(src='../bower_components/jquery.easing/js/jquery.easing.min.js')
+		script(src='../bower_components/isMobile/isMobile.min.js')
+		script(src='../bower_components/jquery-visible/jquery.visible.js')
+		script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js')		
+		script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js')
+		script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js')
+		script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js')
+		script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js')
+		script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js')
 		//- endbuild
 
 		//- build:js scripts/main.js
 		script(src='scripts/main.js')
 		//- endbuild
+

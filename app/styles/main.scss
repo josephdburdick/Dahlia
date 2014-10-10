@@ -1,8 +1,7 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$icon-font-path: '../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/';
 
 // bower:scss
-@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
-@import "../bower_components/font-awesome/scss/font-awesome";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
 @import "config";
@@ -21,7 +20,7 @@ h1, h2, h3, h4{
 
 
 section {
-	position: relative;
+    position: relative;
     height: auto;
     min-height: 100%;
     padding: 65px 0;
@@ -31,6 +30,7 @@ section {
         background: #fff url(../images/photography.png);
         @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi){ 
             background-image: url(../images/photography_@2X.png);
+            background-size: 50% 50%;
         }
         h1{
             color: #666;
@@ -40,7 +40,7 @@ section {
         background: #111;
         color: #ccc;
     }
-	
+  
     h2{
         @extend %content-padding;
         font-family: $font-family--primary;        
@@ -49,23 +49,15 @@ section {
         &:first-child{
             margin-top: 0;
         }
-        @media(max-width:$screen-md){
-            
-        }
-        @media(max-width:$screen-xs){
-            
-        }
     }
     h3 {
         font-family: $font-family--secondary;
         @extend %content-padding;
-        
-        letter-spacing: .55vw;
+        letter-spacing: 3px;
     }
     .col{ position: relative; }
     .content{
-    	@extend .col-lg-12;
-    	@extend %clearfix;
+      @extend %clearfix;
         text-align: left;
         p, blockquote{
             &:last-child{
@@ -125,11 +117,14 @@ section {
     h4{
         font-size: 120%;
         margin-top: 20px;
-        margin-bottom: 5px;
+        margin-bottom: 20px;
         letter-spacing: 2px;
         color: rgba(174, 173, 173, 1);
         &:first-child{
             margin-top: -3px;
+        }
+        @media(min-width: $screen-md){
+          margin-bottom: 20px;
         }
     }
     video{
@@ -207,7 +202,7 @@ a.arrow{
     padding: 1% 2%;
     color: $purple-majesty;
     text-align: center;
-    font-size: 200%;
+    font-size: 175%;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -316,9 +311,6 @@ a.arrow{
     }
 }
 
-
-
-
 .dock-bottom{
     position: absolute;
     width: 100%;
@@ -336,6 +328,3 @@ a.arrow{
     max-width: 100px;
 
 }
-
-
-

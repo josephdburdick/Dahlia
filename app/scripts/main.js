@@ -1,4 +1,8 @@
-'use strict';
+/*global Modernizr */
+
+(function () {
+   'use strict';
+}());
 
 var $doc   = $(document),
 	$win   = $(window),
@@ -6,21 +10,20 @@ var $doc   = $(document),
 	$bgVid = $('#bgVid'),
 	$nav   = $('nav[role="navigation"]'),
 	bgVidMaxOpacity = 0.4,
-	isMobile = isMobile,
-	ww = function() {return $win.width()};
-
+	isMobile = isMobile;
 
 function intro(){
+	'use strict';
 	$bgVid.addClass('active');
 	$intro.find('.content').children().each(function(){
 		$(this).addClass('active');
 	});
-	var ipad = navigator.userAgent.match(/iPad/i) != null;
-	if (ipad) $('html').addClass('ipad');
+	var ipad = navigator.userAgent.match(/iPad/i) !== null;
+	if (ipad) {$('html').addClass('ipad');}
 }
 
 function toggleVideo(el){
-	
+	'use strict';
 	var video = el.get(0);
 	if (el.visible(true)){
 		if (video.paused) {
@@ -33,34 +36,41 @@ function toggleVideo(el){
 	}
 }
 
+function updateScrollSpy() {
+	'use strict';
+    jQuery('[data-spy="scroll"]').each(function () {
+      jQuery(this).scrollspy('refresh');
+    });
+}
+
 function interfaces(){
+	'use strict';
 	// Affix
 	$nav.affix({
-		offset: {
-			top: $intro.height() - $nav.height()
-		}
+		offset: { top: $intro.height() - $nav.height() }
 	});
 
 	// Scroll Spy
 	$('body').scrollspy({ target: '.navbar-ex1-collapse' });
 
 	// Trigger mobile menu to close once a link is touched.
-	if (Modernizr.touch && isMobile.any == true){
+	if (Modernizr.touch && isMobile.any === true){
 		$('.navbar-ex1-collapse a').on('click', function(){
 			$('button.navbar-toggle').trigger('click');
 		});
 	}
 	
 	// Detect mobile; Activate appropriate class.
-	if ((isMobile.android.phone || isMobile.apple.phone || isMobile.other.device ) == true)
+	if ((isMobile.android.phone || isMobile.apple.phone || isMobile.other.device ) === true){
 		$('html').addClass('mobile');
-	else
+	}
+	else{
 		$('html').addClass('no-mobile');
+	}
 
 	// Pause videos on carousel slide
-	$('.carousel').carousel('pause').on('slid.bs.carousel', function (e) {
-		var $activeSlide = $(e.currentTarget).find('.item.active'),
-			videos = $('.carousel').find('video');
+	$('.carousel').carousel('pause').on('slid.bs.carousel', function () {
+		var videos = $('.carousel').find('video');
 		$(videos).each(function(i, el){
 			el.pause();
 		});
@@ -94,11 +104,11 @@ function interfaces(){
 	}).trigger('scroll');
 }
 
-
-
 $doc.ready(function(){
+	'use strict';
 	intro();
 	interfaces();
+	setTimeout(updateScrollSpy, 1000);
 });
 
 

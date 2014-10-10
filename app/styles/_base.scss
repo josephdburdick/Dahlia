@@ -5,7 +5,7 @@
     color: #000;
 }
 
-*          { -moz-box-sizing: border-box; box-sizing: border-box; outline: none; }
+* { -moz-box-sizing: border-box; box-sizing: border-box; outline: none; }
 html, body { width: 100%; height: 100%; }
 section video{ 
   width: 100% !important;
@@ -16,7 +16,7 @@ section video{
     min-height: 52%; 
   }
 }
-img.fit    { width: 100%; height: auto; }
+img.fit    { position: relative; margin: 0 auto; display: block; width: 100%; }
 svg        { vertical-align: middle; }
 
 body {
