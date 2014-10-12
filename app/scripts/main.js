@@ -82,7 +82,6 @@ function interfaces(){
 		toggleVideo($(this).siblings('video'));
 	});
 
-
 	// Window scroll fadeout hero
 	$(window).bind('scroll', function(){
 
