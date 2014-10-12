@@ -123,7 +123,6 @@ section {
     padding-bottom: 0;
     h3, h4, p{
         text-align: left;
-        @extend %content-padding;
     }
     h4{
         font-size: 120%;
@@ -177,13 +176,13 @@ section {
             display: block;
         }
     }
-
+    
     .content-title--gear, 
     .content-title--gear-copy, 
     .content-title--date, 
     .content-title--company,
     .content-title--company-copy,
-    {
+    {   
         @media(max-width: $screen-xs){
             display: none;
         }
@@ -209,7 +208,7 @@ a.arrow{
     padding: 1% 2%;
     color: $purple-majesty;
     text-align: center;
-    font-size: 175%;
+    font-size: 125%;
     text-decoration: none;
     text-transform: uppercase;
     line-height: 2.4;
@@ -248,7 +247,7 @@ a.arrow{
         }
         @media(max-width: $screen-md){
             text-align: left;
-            padding-left: 1vw;
+            padding-left: 10px;
         }
         @media(min-width: $screen-md){
             svg{
@@ -259,7 +258,7 @@ a.arrow{
     &.right{
         @media(max-width: $screen-md){
             text-align: right;
-            padding-left: 1vw;
+            padding-left: 10px;
         }
         @media(min-width: $screen-md){
             svg{

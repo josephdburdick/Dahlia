@@ -123,7 +123,7 @@ gulp.task('watch', ['connect', 'views', 'serve'], function () {
 
   // watch for changes
   gulp.watch([
-    'app/*.jade',
+    '.tmp/*.html',
     '.tmp/styles/**/*.css',
     'app/scripts/**/*.js',
     'app/images/**/*'
