@@ -70,30 +70,31 @@ Collapsing Mobile Menu
 		float: right;
 	}
 	@media(max-width:$screen-sm){
+
 		padding: 0;
 		.navbar-nav{
 			margin: 0;
 			padding: 0;
 			float: none;
-			.affix &{
-				float: right;
-			}
+			
 			li{
 				text-align: center;
 			}
 		}
-		
-		@media (max-width: 480px){
-			.navbar-nav{
-				margin: 0;
-				padding: 0;
-				width: 100%;
-				a{
-					padding: 5% 0;
-					font-size: 120%;
-					letter-spacing: 0.4rem;					
-				}			
-			}	
+	}
+	@media(max-width:$screen-xs){
+		background:black;
+	}
+	@media (max-width: 480px){
+		.navbar-nav{
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			a{
+				padding: 5% 0;
+				font-size: 120%;
+				letter-spacing: 0.4rem;					
+			}			
 		}
 	}
 }
@@ -105,7 +106,7 @@ Collapsing Mobile Menu
     	border-bottom: none;
 	}
 	.top-nav-collapse {
-		background: rgba(#000, .85);
+		background: rgba(black, .95);
 	    padding: 0;
 	}	
 }
