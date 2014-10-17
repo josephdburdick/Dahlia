@@ -17,15 +17,20 @@ $icon-font-path: '../../bower_components/bootstrap-sass-official/assets/fonts/bo
 h1, h2, h3, h4{
     text-align: center;
 }
-
+.center-block{ float: none; }
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
 section {
+    // overflow-x: hidden;
     position: relative;
     height: auto;
     min-height: 100%;
     padding: 65px 0;
     transition: padding-top .5s ease-in;
     &:nth-child(even){
-        color: $black;;
+        color: $black;
         background: #fff url(../images/photography.png);
         @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi){ 
             background-image: url(../images/photography_@2X.png);
@@ -36,12 +41,16 @@ section {
         }
     }
     &:nth-child(odd){
-        background: #111;
+        background: #000;
         color: #ccc;
     }
-    header{
-        margin: 0 auto;
+    .col-xxs-12{ 
+        @media(max-width: 420px){
+            width: 100%;
+            float: none;
+        }
     }
+    header{ margin: 0 auto; }
     h2{
         @extend %content-padding;
         font-family: $font-family--primary;        
@@ -58,7 +67,11 @@ section {
     }
     .col{ position: relative; }
     .content{
-      @extend %clearfix;
+        @extend %clearfix;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 12px;
         text-align: left;
         p, blockquote{
             &:last-child{
@@ -116,9 +129,13 @@ section {
 }
 
 .work-section{
+    min-height: 0;
     %content-padding{
         margin-left: 15px;
         margin-right: 15px;
+    }
+    .container-fluid{
+        max-width: 1000px;
     }
     padding-bottom: 0;
     h3, h4, p{
@@ -126,12 +143,8 @@ section {
     }
     h4{
         font-size: 120%;
-        margin-top: 20px;
         letter-spacing: 2px;
         color: rgba(174, 173, 173, 1);
-        &:first-child{
-            margin-top: -3px;
-        }
     }
     video{
         position: relative;
@@ -176,97 +189,79 @@ section {
             display: block;
         }
     }
-    
-    .content-title--gear, 
-    .content-title--gear-copy, 
-    .content-title--date, 
-    .content-title--company,
-    .content-title--company-copy,
-    {   
-        @media(max-width: $screen-xs){
-            display: none;
-        }
-    }
 }
-.carousel{
-    .content{
-        @extend .row;
-        padding: 0;
-        margin: 1vw 0 5vw; 
-        &.copy{
-            @extend .col-md-4;
-        }
-        &.video{
-            @extend .col-md-8;
-        }
-    }
-}
-a.arrow{
-    @extend .col-xs-6;
-    font-family: $font-family--primary;
-    background: darken($purple-majesty, 20%);
-    padding: 1% 2%;
-    color: $purple-majesty;
-    text-align: center;
-    font-size: 125%;
-    text-decoration: none;
-    text-transform: uppercase;
-    line-height: 2.4;
-    text-shadow: 0 2px 1px darken($purple-majesty, 35%), 0 1px 0px darken($purple-majesty, 35%);
-    transition: all $base__speed $base__ease;
-    &:hover, &:active{
-        background: darken($purple-majesty, 40%);
-    }
-    &.top{ display: none; 
-        @media(max-width: $screen-sm){
-            display: block;
-            margin-bottom: 3vw;
-        }
-    }
 
-    svg {
+.arrows{
+    margin-top: 20px;
+    .arrow{
         display: inline-block;
-        height: 5vw;
-        width: 3vw;
-        top: -4px;
-        margin: 0 20px;
-        path{
-            fill: currentColor;
+        width: 50%;
+        font-family: $font-family--primary;
+        background: darken($purple-majesty, 20%);
+        padding: 1% 2%;
+        color: $purple-majesty;
+        text-align: center;
+        font-size: 125%;
+        text-decoration: none;
+        text-transform: uppercase;
+        line-height: 2.4;
+        text-shadow: 0 2px 1px darken($purple-majesty, 35%), 0 1px 0px darken($purple-majesty, 35%);
+        transition: all $base__speed $base__ease;
+        &:hover, &:active{
+            background: darken($purple-majesty, 40%);
         }
-        @media(max-width: $screen-sm){
-            display: none;
-        }
-    }
-    .hidden-text{
-        @extend .visible-md-inline-block;
-        @extend .visible-lg-inline-block;
-    }
-    &.left{
-        svg{
-            transform: rotate(180deg);
-        }
-        @media(max-width: $screen-md){
-            text-align: left;
-            padding-left: 10px;
-        }
-        @media(min-width: $screen-md){
-            svg{
-                margin-left: -10vw;
+        &.top{ display: none; 
+            @media(max-width: $screen-sm){
+                display: block;
+                margin-bottom: 3vw;
             }
         }
-    }
-    &.right{
-        @media(max-width: $screen-md){
-            text-align: right;
-            padding-left: 10px;
+
+        svg {
+            display: inline-block;
+            height: 5vw;
+            width: 3vw;
+            top: -4px;
+            margin: 0 20px;
+            path{
+                fill: currentColor;
+            }
+            @media(max-width: $screen-sm){
+                display: none;
+            }
         }
-        @media(min-width: $screen-md){
+        .hidden-text{
+            @extend .visible-md-inline-block;
+            @extend .visible-lg-inline-block;
+        }
+        &.left{
             svg{
-                margin-right: -10vw;
+                transform: rotate(180deg);
+            }
+            @media(max-width: $screen-md){
+                text-align: left;
+                padding-left: 10px;
+            }
+            @media(min-width: $screen-md){
+                svg{
+                    margin-left: -10vw;
+                }
+            }
+        }
+        &.right{
+            @media(max-width: $screen-md){
+                text-align: right;
+                padding-left: 10px;
+            }
+            @media(min-width: $screen-md){
+                svg{
+                    margin-right: -10vw;
+                }
             }
         }
     }
 }
+
 
 .contact-section{
     text-align: center;
@@ -314,14 +309,12 @@ a.arrow{
 @import "flip";
 
 .dock-bottom{
-    position: absolute;
+    position: relative;
     width: 100%;
-    left:0;
-    right: 0;
-    bottom:0;
-    padding: 50px 0;
+    padding: 100px 0;
+    clear: both;
     @media(max-width:$screen-xs){
-        padding: 25px 0;
+        padding: 65px 0;
     }
 }
 .logo-joey{
