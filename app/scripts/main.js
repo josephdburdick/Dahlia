@@ -2,6 +2,7 @@
 
 (function () {
    'use strict';
+
 }());
 
 var $doc   = $(document),
@@ -38,8 +39,8 @@ function toggleVideo(el){
 
 function updateScrollSpy() {
 	'use strict';
-    jQuery('[data-spy="scroll"]').each(function () {
-      jQuery(this).scrollspy('refresh');
+    $('[data-spy="scroll"]').each(function () {
+    	$(this).scrollspy('refresh');
     });
 }
 

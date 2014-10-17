@@ -30,7 +30,7 @@ nav[role="navigation"]{
 		position: fixed;
 		top:0;
 		bottom: auto;
-		background-color: rgba(black, 1);
+		background-color: rgba(black, .95);
 		.navbar-brand{
 			visibility:visible;
 			opacity:1;
@@ -72,10 +72,12 @@ Collapsing Mobile Menu
 	@media(max-width:$screen-sm){
 		padding: 0;
 		.navbar-nav{
-			background: black;
 			margin: 0;
 			padding: 0;
 			float: none;
+			.affix &{
+				float: right;
+			}
 			li{
 				text-align: center;
 			}
