@@ -14,8 +14,9 @@ $icon-font-path: '../../bower_components/bootstrap-sass-official/assets/fonts/bo
 @import "buttons";
 @import "tags";
 .fb-like{
+    z-index: 99999;
     position: absolute !important;
-    bottom: 20px;
+    bottom: 25px;
     left: 30px;
     opacity: 0;
     transition: opacity 1s $base__ease 2s;
