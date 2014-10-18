@@ -78,6 +78,7 @@
 	h1{
 		letter-spacing: 8px;
 		transform: scale(.85);
+		color: #ccc;
 	}
 	h2{
 		letter-spacing: 7px;
@@ -103,7 +104,8 @@
 			font-size: 150%;
 			padding: 15px 30px;
 			letter-spacing: 2px;
-			&:hover{
+			&:link, &:hover, &:active{
+				transition-delay: 0s;
 				border: 2px solid rgba($color-primary, 1);
 			}
 		}

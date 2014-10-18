@@ -3,30 +3,33 @@ html.no-js
 	head
 		title Macarena Carrizosa - Filmmaker
 		meta(charset='utf-8')
+
+		//- Viewport
+		meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
+		meta(name="apple-mobile-web-app-status-bar-style" content="black")
+		meta(name="apple-mobile-web-app-capable" content="yes")
+
 		//- For Google
-		meta(name="description" content="The work and services of filmmaker Macarena Carrizosa.")
-		meta(name="keywords" content="Filmmaker, portfolio, photographer, producer, director, gaffer, videos, fawesome, New York, Brooklyn, NYC")
-		meta(name="author" content="J0EY.co")
+		meta(name="description" content="Freelance New York City filmmaker for hire on film, video, and TV projects.")
+		meta(name="keywords" content="macarena, carrizosa, macarena carrizosa, macarena productions, movies, documentaries, filmmaker, portfolio, photographer, producer, director, gaffer, videos, red scarlett, , New York, Brooklyn, NYC")
+		meta(name="author" content="JOEY LABS")
 		meta(name="copyright" content="2014")
 		meta(name="application-name" content="Macarena Carrizosa - Filmmaker")
 
 		//- For Facebook
-		meta(property="article:author" content="J0EY")
+		meta(property="article:author" content="JOEY LABS")
 		meta(property="article:publisher" content="http://j0ey.co")
 		meta(property="og:title" content="Macarena Carrizosa - Filmmaker")
 		meta(property="og:type" content="article")
 		meta(property="og:image" content="images/me_with-red-camera.png")
 		meta(property="og:url" content="http://macarena.productions")
-		meta(property="og:description" content="The work and services of filmmaker Macarena Carrizosa.")
+		meta(property="og:description" content="Freelance New York City filmmaker for hire on film, video, and TV projects.")
 
 		//- For Twitter
 		meta(name="twitter:card" content="summary")
 		meta(name="twitter:title" content="Macarena Carrizosa - Filmmaker")
-		meta(name="twitter:description" content="The work and services of filmmaker Macarena Carrizosa.")
+		meta(name="twitter:description" content="Freelance New York City filmmaker for hire on film, video, and TV projects.")
 		meta(name="twitter:image" content="images/me_with-red-camera.png")
-
-		meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
-		meta(name="apple-mobile-web-app-status-bar-style" content="black")
 		
 		link(rel="image_src" href="images/me_with-red-camera.png")
 		link(rel="apple-touch-icon" href="apple-touch-icon-precomposed.png")
@@ -43,9 +46,7 @@ html.no-js
 		// endbuild
 
 	body(data-spy='scroll' data-target='.navbar-fixed-top')
-		//- Insert Facebook recomment script:
 		div#fb-root <script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&appId=242451495933588&version=v2.0"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
-
 		| <!--[if lt IE 10]>
 		|	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		| <![endif]-->
@@ -53,7 +54,11 @@ html.no-js
 		include ./includes/nav
 		
 		block content
-		// Google Analytics: change UA-XXXXX-X to be your site's ID.
+
+		//- Insert Facebook recomment script:
+		div(class="fb-like" data-href="http://macarena.productions" data-layout="standard" data-action="recommend" data-show-faces="false" data-share="true" data-colorscheme="dark")
+		
+		//- Google Analytics:
 		script.
 			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
 			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;

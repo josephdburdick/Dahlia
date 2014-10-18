@@ -16,12 +16,15 @@ $icon-font-path: '../../bower_components/bootstrap-sass-official/assets/fonts/bo
 .fb-like{
     z-index: 99999;
     position: absolute !important;
-    bottom: 25px;
+    bottom: 3.5%;
     left: 30px;
     opacity: 0;
     transition: opacity 1s $base__ease 2s;
     &.fb_iframe_widget{
         opacity: 1;
+    }
+    @media(max-width: $screen-sm){
+        display: none !important;
     }
 }
 h1, h2, h3, h4{
@@ -33,13 +36,12 @@ h1, h2, h3, h4{
    margin: 0 !important;
 }
 section {
-    // overflow-x: hidden;
     position: relative;
     height: auto;
     min-height: 100%;
     padding: 65px 0;
     transition: padding-top .5s ease-in;
-    &:nth-child(even){
+    &.about-section, &.services-section{
         color: $black;
         background: #fff url(../images/photography.png);
         @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi){ 
@@ -50,7 +52,7 @@ section {
             color: #666;
         }
     }
-    &:nth-child(odd){
+    &.work-section, &.contact-section{
         background: #000;
         color: #ccc;
     }
