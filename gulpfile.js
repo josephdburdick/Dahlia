@@ -28,8 +28,7 @@ gulp.task('views', function () {
     return gulp.src(['app/*.jade', '!app/layout.jade'])
         .pipe($.plumber())
         .pipe($.jade({pretty: true}))
-        .pipe(gulp.dest('.tmp'))
-        .pipe(gulp.dest('app'));
+        .pipe(gulp.dest('.tmp'));
 });
  
 gulp.task('html', ['views', 'styles'], function () {
@@ -39,13 +38,14 @@ gulp.task('html', ['views', 'styles'], function () {
     .pipe($.replace, 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap','fonts');
   var assets = $.useref.assets({searchPath: '{.tmp,app}'});
 
-  return gulp.src('app/*.html')
+  return gulp.src('.tmp/*.html')
+    .pipe($.plumber())
     .pipe(assets)
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', cssChannel()))
     .pipe(assets.restore())
     .pipe($.useref())
-    .pipe(gulp.dest('.tmp'))
+    // .pipe(gulp.dest('.tmp'))
     .pipe(gulp.dest('dist'));
 });
 
@@ -128,7 +128,7 @@ gulp.task('watch', ['connect', 'views', 'serve'], function () {
     'app/scripts/**/*.js',
     'app/images/**/*'
   ]).on('change', $.livereload.changed);
-  gulp.watch('app/*.jade', ['views']);
+  gulp.watch('app/**/*.jade', ['views']);
   gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/scripts/**/*.js', ['jshint']);
   gulp.watch('bower.json', ['wiredep']);
