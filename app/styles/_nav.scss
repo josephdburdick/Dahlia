@@ -13,6 +13,7 @@ nav[role="navigation"]{
 	.navbar-brand{
 		visibility: hidden;
 		opacity: 0;
+
 	}
 	&.affix-top{
 		position: absolute;
@@ -50,7 +51,7 @@ nav[role="navigation"]{
 	@media(max-width: $screen-sm){
 		background: none;
 	}
-	.navbar-nav > li > a{
+	.navbar-brand, .navbar-nav > li > a{
 		transition: color $base__speed $base__ease;
 		outline: none;
 	}

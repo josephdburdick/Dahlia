@@ -108,7 +108,7 @@ $doc.ready(function(){
 	'use strict';
 	intro();
 	interfaces();
-	setTimeout(updateScrollSpy, 1000);
+	setTimeout(updateScrollSpy, 1200);
 });
 
 
