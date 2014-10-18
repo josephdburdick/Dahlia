@@ -13,7 +13,16 @@ $icon-font-path: '../../bower_components/bootstrap-sass-official/assets/fonts/bo
 @import "nav";
 @import "buttons";
 @import "tags";
-
+.fb-like{
+    position: absolute !important;
+    bottom: 20px;
+    left: 30px;
+    opacity: 0;
+    transition: opacity 1s $base__ease 2s;
+    &.fb_iframe_widget{
+        opacity: 1;
+    }
+}
 h1, h2, h3, h4{
     text-align: center;
 }
