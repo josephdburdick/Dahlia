@@ -70,12 +70,13 @@ function interfaces(){
 	}
 
 	// Pause videos on carousel slide
-	$('.carousel').carousel('pause').on('slid.bs.carousel', function () {
-		var videos = $('.carousel').find('video');
-		$(videos).each(function(i, el){
-			el.pause();
+	$('.carousel').carousel('pause')
+		.on('slid.bs.carousel', function (e) {
+			var video = $(e.currentTarget).find('.item video');
+			$(video).each(function(i, el){
+				el.pause();
+			});
 		});
-	});
 
 	// Activate video play posters
 	$('.video-play').on('click touchstart mousedown', function(e){
@@ -85,7 +86,6 @@ function interfaces(){
 
 	// Window scroll fadeout hero
 	$(window).bind('scroll', function(){
-
 		var ratio = function(){
 			var alg = (($win.scrollTop() - $intro.outerHeight()) / -1200);
 			if (alg > 0){ return alg; }
