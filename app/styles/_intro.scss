@@ -55,11 +55,6 @@
 	@extend %upcase;
 	-webkit-transform: translateZ(0);
 	
-	.container-fluid{
-		vertical-align: middle;
-		display: table-cell;
-		text-align: center;
-	}
 	h1, h2{
 		font-family: $font-family--primary;
 		text-shadow: 0 0 8px rgba(#000, .85);

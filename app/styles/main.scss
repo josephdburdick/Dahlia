@@ -35,7 +35,16 @@ h1, h2, h3, h4{
    padding: 0 !important;
    margin: 0 !important;
 }
+.vert-center{
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+    width: 100%;
+}
 section {
+    display:table;
+    table-layout: fixed;
+    width:100%;
     position: relative;
     height: auto;
     min-height: 100%;
@@ -141,7 +150,6 @@ section {
 }
 
 .work-section{
-    min-height: 0;
     %content-padding{
         margin-left: 15px;
         margin-right: 15px;
@@ -204,7 +212,6 @@ section {
 }
 
 .arrows{
-    margin-top: 20px;
     .arrow{
         display: inline-block;
         width: 50%;
