@@ -34,4 +34,7 @@ $height: 100px;
 .flip .card .back {
   transform: rotatex(-180deg);
   cursor: pointer;
+  .no-csstransforms3d &{
+    display: none;
+  }
 }
