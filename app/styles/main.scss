@@ -150,6 +150,7 @@ section {
 }
 
 .work-section{
+    padding-bottom: 0;
     %content-padding{
         margin-left: 15px;
         margin-right: 15px;
@@ -157,7 +158,9 @@ section {
     .container-fluid{
         max-width: 1000px;
     }
-    padding-bottom: 0;
+    .carousel{
+        margin-bottom: 4%;
+    }
     h3, h4, p{
         text-align: left;
     }
