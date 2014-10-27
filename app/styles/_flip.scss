@@ -15,6 +15,9 @@ $height: 100px;
 .flip:hover .card {
   text-align: center; 
   transform: rotatex(-180deg);
+  .front{
+    opacity: 0;
+  }
 }
 .flip .card .face {
   width: 100%;
@@ -30,6 +33,7 @@ $height: 100px;
   z-index: 1;
   color: white;
   cursor: pointer;
+  opacity: 1;
 }
 .flip .card .back {
   transform: rotatex(-180deg);
