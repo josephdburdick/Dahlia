@@ -214,7 +214,7 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
-
+.tmp
 
 ### Bower ###
 bower_components
