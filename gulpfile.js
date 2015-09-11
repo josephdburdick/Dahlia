@@ -30,7 +30,7 @@ gulp.task('views', function () {
         .pipe($.jade({pretty: true}))
         .pipe(gulp.dest('.tmp'));
 });
- 
+
 gulp.task('html', ['views', 'styles'], function () {
   var lazypipe = require('lazypipe');
   var cssChannel = lazypipe()
@@ -132,6 +132,11 @@ gulp.task('watch', ['connect', 'views', 'serve'], function () {
   gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/scripts/**/*.js', ['jshint']);
   gulp.watch('bower.json', ['wiredep']);
+});
+
+gulp.task('deploy', ['build'], function() {
+  return gulp.src('./dist/**/*')
+    .pipe($.ghPages());
 });
 
 gulp.task('build', ['jshint', 'views', 'html', 'images', 'videos', 'fonts', 'extras'], function () {
