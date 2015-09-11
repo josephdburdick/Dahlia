@@ -1,0 +1,120 @@
+nav[role="navigation"]{
+	@extend %upcase;
+	width: 100%;
+	margin-bottom: 0;
+	z-index: 50;
+	a{
+		font-size:16px;
+	}
+
+	&.navbar{
+		border-radius: 0;
+	}
+	.navbar-brand{
+		visibility: hidden;
+		opacity: 0;
+
+	}
+	&.affix-top{
+		position: absolute;
+		bottom: 0;
+		top: auto;
+		padding: 8px 0;
+		.navbar-brand{
+			padding: 20px 0;
+			visibility:hidden;
+			opacity:0;
+ 		}
+	}
+
+	&.affix{
+		position: fixed;
+		top:0;
+		bottom: auto;
+		background-color: rgba(black, .95);
+		.navbar-brand{
+			visibility:visible;
+			opacity:1;
+			transition-delay:0s;
+		}
+		& ~ section{
+			// padding-top: 100px;
+			@media(max-width: $screen-xs){
+				padding-top: 85px;
+			}
+		}
+	}
+}
+
+.navbar-inverse {
+	border: none;
+	@media(max-width: $screen-sm){
+		background: none;
+	}
+	.navbar-brand, .navbar-nav > li > a{
+		transition: color $base__speed $base__ease;
+		outline: none;
+	}
+}
+
+/*
+
+Collapsing Mobile Menu
+
+*/
+.navbar-collapse{
+	overflow-y: hidden;
+	&.in{
+		overflow-y: visible;
+	}
+	.navbar-nav{
+		float: right;
+	}
+	@media(max-width:$screen-sm){
+
+		padding: 0;
+		.navbar-nav{
+			margin: 0;
+			padding: 0;
+			float: none;
+			
+			li{
+				text-align: center;
+			}
+		}
+	}
+	@media(max-width:$screen-xs){
+		background:black;
+	}
+	@media (max-width: 480px){
+		.navbar-nav{
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			a{
+				padding: 5% 0;
+				font-size: 120%;
+				letter-spacing: 0.4rem;					
+			}			
+		}
+	}
+}
+
+@media(min-width: $screen-sm){
+	.navbar {
+		background: transparent;
+    	transition: background $base__speed $base__ease, padding $base__speed $base__ease;
+    	border-bottom: none;
+	}
+	.top-nav-collapse {
+		background: rgba(black, .95);
+	    padding: 0;
+	}	
+}
+
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus{
+	color: $color-primary;
+	background-color: rgba(darken($color-primary, 20%), .15)
+}
