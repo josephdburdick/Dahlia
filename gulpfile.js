@@ -134,7 +134,7 @@ gulp.task('watch', ['connect', 'views', 'serve'], function () {
   gulp.watch('bower.json', ['wiredep']);
 });
 
-gulp.task('deploy', ['build'], function() {
+gulp.task('deploy', function() {
   return gulp.src('./dist/**/*')
     .pipe($.ghPages());
 });
