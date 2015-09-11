@@ -1,0 +1,113 @@
+// ==========================================================================
+// Helpers
+// ==========================================================================
+
+// Clearfix
+
+%upcase{ text-transform: uppercase; }
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+%break {
+  &:before {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+%circle{
+  display: inline-block;
+  border-radius: 9999rem;
+  overflow: hidden;
+}
+
+.margin-bottom-40{
+  margin-bottom: 40px;
+}
+.margin-bottom-60{
+  margin-bottom: 60px;
+}
+
+// Screen reader text
+
+.srt {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+// For pseudo-elements
+
+%pseudos {
+  display: block;
+  content: ''; 
+  position: absolute;
+}
+
+.text-left{ text-align: left; }
+.text-center{ text-align: center; }
+.text-right{ text-align: right; }
+
+.form-group{ @extend .text-left;
+  input[type="text"], 
+  input[type="email"],
+  textarea{
+    background: transparent;
+    border: 0;
+    box-shadow: none !important;
+    height: auto;
+    font-size: 3vw;
+    padding: 2vw 4vw 0 .5vw;
+    border-bottom: 1px dotted $grey;
+    color: white;
+  }
+  textarea{
+    font-size: 1.5vw;
+    height: 20vh;
+    border-bottom: 0;
+    color: white;
+    @media(max-width: $screen-md){
+      font-size: 3vw;
+    }
+  }
+}
+.display-table{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  .cell{
+    display: table-cell;
+  }
+}
+@mixin coverer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.coverer{
+  @include coverer;
+  background: $brand-primary;
+}
+.centerer{
+  @include centerer;
+}
