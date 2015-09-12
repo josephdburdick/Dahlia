@@ -6,22 +6,11 @@
 }());
 
 var $doc   = $(document),
-	$win   = $(window),
-	$intro = $('#intro'),
-	$bgVid = $('#bgVid'),
-	$nav   = $('nav[role="navigation"]'),
-	bgVidMaxOpacity = 0.4,
-	isMobile = isMobile;
-
-function intro(){
-	'use strict';
-	$bgVid.addClass('active');
-	$intro.find('.content').children().each(function(){
-		$(this).addClass('active');
-	});
-	var ipad = navigator.userAgent.match(/iPad/i) !== null;
-	if (ipad) {$('html').addClass('ipad');}
-}
+  	$intro = $('#intro'),
+  	// $bgVid = $('#bgVid'),
+  	$nav   = $('nav[role="navigation"]'),
+  	// bgVidMaxOpacity = 0.4,
+  	isMobile = isMobile;
 
 function toggleVideo(el){
 	'use strict';
@@ -48,7 +37,7 @@ function interfaces(){
 	'use strict';
 	// Affix
 	$nav.affix({
-		offset: { top: $intro.height() - $nav.height() }
+		offset: { top: $intro.height() }
 	});
 
 	// Scroll Spy
@@ -60,7 +49,7 @@ function interfaces(){
 			$('button.navbar-toggle').trigger('click');
 		});
 	}
-	
+
 	// Detect mobile; Activate appropriate class.
 	if ((isMobile.android.phone || isMobile.apple.phone || isMobile.other.device ) === true){
 		$('html').addClass('mobile');
@@ -84,31 +73,10 @@ function interfaces(){
 		toggleVideo($(this).siblings('video'));
 	});
 
-	// Window scroll fadeout hero
-	$(window).bind('scroll', function(){
-		var ratio = function(){
-			var alg = (($win.scrollTop() - $intro.outerHeight()) / -1200);
-			if (alg > 0){ return alg; }
-			else if (alg > bgVidMaxOpacity){
-				return bgVidMaxOpacity;
-			}
-			else{ return 0; }
-		};
-		$bgVid.css('opacity', ratio());
-		if ($win.scrollTop() > $intro.height()) {
-			$bgVid.find('video').get(0).pause();
-	  } else {
-	  	$bgVid.find('video').get(0).play();
-	  	$(window).trigger('resize');
-	  }
-	}).trigger('scroll');
 }
 
 $doc.ready(function(){
 	'use strict';
-	intro();
 	interfaces();
-	setTimeout(updateScrollSpy, 1200);
+	setTimeout(updateScrollSpy, 500);
 });
-
-
