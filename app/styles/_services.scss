@@ -1,0 +1,39 @@
+.services-section{
+    text-align: center;
+    .col{
+        @extend .col-md-4;
+        margin-top: 20px;
+        @media(max-width: $screen-md){
+            max-width: 500px;
+            float: none;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 80px;
+            &:first-child{
+                margin-top: 40px;
+            }
+        }
+        @media(max-width: $screen-sm){
+            &:first-child{
+                margin-top: 20px;
+            }
+        }
+    }
+    h4{
+      @media(min-width: $screen-md){
+        margin-bottom: 20px;
+      }
+    }
+    .image-container{
+        @extend %circle;
+        img{
+            width: 100%;
+            max-width: 340px;
+
+            @media(max-width: $screen-sm){
+              max-width: 280px;
+            }
+        }
+    }
+}

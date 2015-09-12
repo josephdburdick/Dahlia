@@ -4,7 +4,7 @@
 		box-shadow: none;
 		border: 1px solid rgba(black, 0);
 		&.white, &.white a{
-			.list-group &{ 
+			.list-group &{
 				background: $white;
 				color: black;
 				&:hover{
@@ -19,7 +19,7 @@
 			}
 		}
 		&.black, &.black a{
-			.list-group &{ 
+			.list-group &{
 				background: $black;
 				color: black;
 				&:hover{
@@ -34,7 +34,7 @@
 			}
 		}
 		&.grey, &.grey a{
-			.list-group &{ 
+			.list-group &{
 				background: $grey;
 				color: black;
 				&:hover{
@@ -49,7 +49,7 @@
 			}
 		}
 		&.emerald, &.emerald a{
-			.list-group &{ 
+			.list-group &{
 				background: $emerald;
 				color: black;
 				&:hover{
@@ -64,7 +64,7 @@
 			}
 		}
 		&.sunglo, &.sunglo a{
-			.list-group &{ 
+			.list-group &{
 				background: $sunglo;
 				color: black;
 				&:hover{

@@ -1,0 +1,43 @@
+.contact-section{
+    text-align: center;
+    .list-group{
+        margin: 10% 0 0 0;
+        .list-group-item{
+            background: none;
+            padding: 0;
+        }
+        a{
+            transition: all $base__speed $base__ease;
+            font-family: $font-family--secondary;
+            display: block;
+            font-size: 4vw;
+            line-height: 1.4;
+            text-decoration: none;
+            // padding: 10px 20px;
+            &:hover{
+                background: red;
+            }
+            @media (max-width: $screen-xs){
+                font-size: 10vw;
+            }
+        }
+    }
+    #contact-section--phone{
+        .mobile &{
+            opacity: 1;
+        }
+        .no-mobile &{
+            cursor: not-allowed;
+            &:active, &:hover, &:focus{
+                cursor: not-allowed;
+                a{
+                    cursor: not-allowed;
+                    .flip .card .back{
+                        cursor: not-allowed;
+                    }
+                }
+            }
+        }
+    }
+}
+@import "flip";

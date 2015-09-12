@@ -1,85 +1,20 @@
-#bgVid{
-	transition: opacity ($base__speed * 2) $base__ease;
-	opacity: 0;
-	position: fixed;
-	right: 0;
-	bottom: 0;
-	left:0;
-	top:0;
-	padding: 0;
-    min-width: 100%;
-    min-height: 100%;
+//@import "bigVid";
 
-    width: auto;
-    height: auto;
-    z-index: -100;
-
-    @media(max-width: $screen-md){
-    	display:none;
-    }
-	&:after{
-		@extend %pseudos;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: -99;
-		background: rgba(black, .5);
-	}
-	&.active{
-		opacity: 0.4;
-	}
-	video{
-		position: fixed;
-		right: 0;
-		bottom: 0;
-		left:0;
-		top:0;
-		padding: 0;
-	    min-width: 100%;
-	    min-height: 100%;
-
-	    width: auto;
-	    height: auto;
-		.ipad &{
-			display: none;
-		}
-	}
-}
 #intro{
-	background: none;
 	display: table;
 	height: 100%;
 	width: 100%;
 	padding-top: 0;
 	@extend %upcase;
-	-webkit-transform: translateZ(0);
-	
+	transform: translateZ(0);
+
 	h1, h2{
 		font-family: $font-family--primary;
 		text-shadow: 0 0 8px rgba(#000, .85);
+		letter-spacing: .75rem;
 	}
 
-	h1, h2, a{
-		transition: all ($base__speed * 5) $base__ease 0s;
-		transform: scale(.95); 
-		opacity: 0;
-
-		&.active{
-			transform: scale(1); 
-			opacity: 1;
-		}	
-	}
-	h1{
-		letter-spacing: 8px;
-		transform: scale(.85);
-		color: #ccc;
-	}
-	h2{
-		letter-spacing: 7px;
-		font-size: 120%;
-		transform: scale(.95)
-	}
+	h1{	 color: #ccc; }
 	a{
 		transition: all 1800ms $base__ease 1.5s;
 		transform: scale(.95);
@@ -95,7 +30,8 @@
 			border: 2px solid rgba($color-primary, .25);
 			margin-top: 10%;
 			text-align: center;
-			position: relative;
+			position: sticky;
+  		top: 0;
 			display: inline-block;
 			font-size: 150%;
 			padding: 15px 30px;
@@ -111,5 +47,5 @@
 		letter-spacing: 1px;
 		text-align: center;
 	}
-	
+
 }

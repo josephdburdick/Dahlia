@@ -1,0 +1,69 @@
+.arrows{
+    .arrow{
+        display: inline-block;
+        width: 50%;
+        font-family: $font-family--primary;
+        background: darken($purple-majesty, 20%);
+        padding: 1% 2%;
+        color: $purple-majesty;
+        text-align: center;
+        font-size: 125%;
+        text-decoration: none;
+        text-transform: uppercase;
+        line-height: 2.4;
+        text-shadow: 0 2px 1px darken($purple-majesty, 35%), 0 1px 0px darken($purple-majesty, 35%);
+        transition: all $base__speed $base__ease;
+        &:hover, &:active{
+            background: darken($purple-majesty, 40%);
+        }
+        &.top{ display: none;
+            @media(max-width: $screen-sm){
+                display: block;
+                margin-bottom: 3vw;
+            }
+        }
+
+        svg {
+            display: inline-block;
+            height: 5vw;
+            width: 3vw;
+            top: -4px;
+            margin: 0 20px;
+            path{
+                fill: currentColor;
+            }
+            @media(max-width: $screen-sm){
+                display: none;
+            }
+        }
+        .hidden-text{
+            @extend .visible-md-inline-block;
+            @extend .visible-lg-inline-block;
+        }
+        &.left{
+            svg{
+                transform: rotate(180deg);
+            }
+            @media(max-width: $screen-md){
+                text-align: left;
+                padding-left: 10px;
+            }
+            @media(min-width: $screen-md){
+                svg{
+                    margin-left: -10vw;
+                }
+            }
+        }
+        &.right{
+            @media(max-width: $screen-md){
+                text-align: right;
+                padding-left: 10px;
+            }
+            @media(min-width: $screen-md){
+                svg{
+                    margin-right: -10vw;
+                }
+            }
+        }
+    }
+}

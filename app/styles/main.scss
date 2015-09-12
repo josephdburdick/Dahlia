@@ -13,6 +13,8 @@ $icon-font-path: '../../bower_components/bootstrap-sass-official/assets/fonts/bo
 @import "nav";
 @import "buttons";
 @import "tags";
+
+
 .fb-like{
     z-index: 99999;
     position: absolute !important;
@@ -27,33 +29,74 @@ $icon-font-path: '../../bower_components/bootstrap-sass-official/assets/fonts/bo
         display: none !important;
     }
 }
+
 h1, h2, h3, h4{
     text-align: center;
 }
+
+.Aligner {
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+  justify-content: center;
+}
+
+.Aligner-item {
+  flex: 1;
+}
+
+.Aligner-item--top {
+  align-self: flex-start;
+}
+
+.Aligner-item--bottom {
+  align-self: flex-end;
+}
+
+.Aligner-item--fixed {
+  flex: none;
+  max-width: 50%;
+}
+
 .center-block{ float: none; }
 .nopadding {
-   padding: 0 !important;
-   margin: 0 !important;
+ padding: 0 !important;
+ margin: 0 !important;
 }
+
 .vert-center{
-    vertical-align: middle;
-    display: table-cell;
-    text-align: center;
-    width: 100%;
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+  width: 100%;
 }
+.position-absolute{
+  position: absolute;
+}
+.fill-screen{
+  width: 100vw;
+  height: 100vh;
+}
+.tint-screen{
+  background-color: rgba(0,0,0,.85);
+}
+
 section {
     display:table;
     table-layout: fixed;
     width:100%;
     position: relative;
     height: auto;
-    min-height: 100%;
-    padding: 65px 0;
+    min-height: 100vh;
+    padding: 10vh 0;
     transition: padding-top .5s ease-in;
+    &#intro{
+      padding-top: 0;
+    }
     &.about-section, &.services-section{
         color: $black;
         background: #fff url(../images/photography.png);
-        @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi){ 
+        @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi){
             background-image: url(../images/photography_@2X.png);
             background-size: 412px;
         }
@@ -65,7 +108,7 @@ section {
         background: #000;
         color: #ccc;
     }
-    .col-xxs-12{ 
+    .col-xxs-12{
         @media(max-width: 420px){
             width: 100%;
             float: none;
@@ -74,7 +117,7 @@ section {
     header{ margin: 0 auto; }
     h2{
         @extend %content-padding;
-        font-family: $font-family--primary;        
+        font-family: $font-family--primary;
         margin-top: 0;
         margin-bottom: 20px;
         &:first-child{
@@ -102,246 +145,28 @@ section {
     }
 }
 
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+
+  iframe,
+  object,
+  embed {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  }
+}
+
 @import "intro";
-.about-section{
-   .content{
-        max-width: 600px;
-        margin: 0 auto;
-   }
-}
-.services-section{
-    text-align: center;
-    .col{
-        @extend .col-md-4;
-        margin-top: 20px;
-        @media(max-width: $screen-md){
-            max-width: 500px;
-            float: none;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 80px;
-            &:first-child{
-                margin-top: 40px;
-            }
-        }
-        @media(max-width: $screen-sm){
-            &:first-child{
-                margin-top: 20px;
-            }
-        }
-    }
-    h4{
-      @media(min-width: $screen-md){
-        margin-bottom: 20px;
-      }
-    }
-    .image-container{
-        @extend %circle;
-        img{
-            width: 100%;
-            max-width: 340px;
 
-            @media(max-width: $screen-sm){
-              max-width: 280px;
-            }
-        }
-    }
-}
+@import "about";
 
-.work-section{
-    padding-bottom: 0;
-    %content-padding{
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-    .container-fluid{
-        max-width: 1000px;
-    }
-    .carousel{
-        margin-bottom: 4%;
-    }
-    h3, h4, p{
-        text-align: left;
-    }
-    h4{
-        font-size: 120%;
-        letter-spacing: 2px;
-        color: rgba(174, 173, 173, 1);
-    }
-    video{
-        position: relative;
-        background-size: cover;
-        width: 100%;
-        height: auto;
-        @media(min-width: $screen-md){
-            min-height: 380px;
-        }
+@import "services";
 
-        &:after{
-            @extend %pseudos;
-            top: 0; right: 0; left: 0; bottom: 0;
-            content: "Play Video";
-            background: darken(rgba($color-primary, .85), 20%);
-        }
-        &.active{
-            box-shadow: 0 0 0px 2px #000;
-        }
-    }
-    .video-play{
-        font-family: $font-family--secondary;
-        $color: darken($color-primary, 10%);
-        text-transform: uppercase;
-        text-align: center;
-        color: $color;
-        display: none;
-        .text{
-            font-size: 2vw;
-            @media(max-width: $screen-sm){
-                font-size: 4vw;
-            }
-        }
-        svg{
-            height: 20vh;
-            max-height: 190px;
-            path{
-                fill: $color;
-            }
-        }
-        @media(min-width: $screen-lg){
-            display: block;
-        }
-    }
-}
+@import "work";
 
-.arrows{
-    .arrow{
-        display: inline-block;
-        width: 50%;
-        font-family: $font-family--primary;
-        background: darken($purple-majesty, 20%);
-        padding: 1% 2%;
-        color: $purple-majesty;
-        text-align: center;
-        font-size: 125%;
-        text-decoration: none;
-        text-transform: uppercase;
-        line-height: 2.4;
-        text-shadow: 0 2px 1px darken($purple-majesty, 35%), 0 1px 0px darken($purple-majesty, 35%);
-        transition: all $base__speed $base__ease;
-        &:hover, &:active{
-            background: darken($purple-majesty, 40%);
-        }
-        &.top{ display: none; 
-            @media(max-width: $screen-sm){
-                display: block;
-                margin-bottom: 3vw;
-            }
-        }
+@import "contact";
 
-        svg {
-            display: inline-block;
-            height: 5vw;
-            width: 3vw;
-            top: -4px;
-            margin: 0 20px;
-            path{
-                fill: currentColor;
-            }
-            @media(max-width: $screen-sm){
-                display: none;
-            }
-        }
-        .hidden-text{
-            @extend .visible-md-inline-block;
-            @extend .visible-lg-inline-block;
-        }
-        &.left{
-            svg{
-                transform: rotate(180deg);
-            }
-            @media(max-width: $screen-md){
-                text-align: left;
-                padding-left: 10px;
-            }
-            @media(min-width: $screen-md){
-                svg{
-                    margin-left: -10vw;
-                }
-            }
-        }
-        &.right{
-            @media(max-width: $screen-md){
-                text-align: right;
-                padding-left: 10px;
-            }
-            @media(min-width: $screen-md){
-                svg{
-                    margin-right: -10vw;
-                }
-            }
-        }
-    }
-}
-
-
-.contact-section{
-    text-align: center;
-    .list-group{
-        margin: 10% 0 0 0;
-        .list-group-item{ 
-            background: none; 
-            padding: 0;
-        }
-        a{
-            transition: all $base__speed $base__ease;
-            font-family: $font-family--secondary;
-            display: block;
-            font-size: 4vw;
-            line-height: 1.4;
-            text-decoration: none;
-            // padding: 10px 20px;
-            &:hover{
-                background: red;
-            }
-            @media (max-width: $screen-xs){
-                font-size: 10vw;
-            }
-        }
-    }
-    #contact-section--phone{
-        .mobile &{
-            opacity: 1; 
-        }
-        .no-mobile &{         
-            cursor: not-allowed;
-            &:active, &:hover, &:focus{
-                cursor: not-allowed;
-                a{
-                    cursor: not-allowed;
-                    .flip .card .back{
-                        cursor: not-allowed;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@import "flip";
-
-.dock-bottom{
-    position: relative;
-    width: 100%;
-    padding: 100px 0;
-    clear: both;
-    @media(max-width:$screen-xs){
-        padding: 65px 0;
-    }
-}
-.logo-joey{
-    position: relative;
-    padding: 0 10px;
-    max-width: 100px;
-
-}
+@import "footer";

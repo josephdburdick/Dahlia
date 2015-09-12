@@ -1,0 +1,14 @@
+.dock-bottom{
+    position: relative;
+    width: 100%;
+    padding: 100px 0 0;
+    clear: both;
+    @media(max-width:$screen-xs){
+        padding: 65px 0;
+    }
+}
+.logo-joey{
+    position: relative;
+    padding: 0 10px;
+    max-width: 100px;
+}
