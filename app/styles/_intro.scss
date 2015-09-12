@@ -7,6 +7,7 @@
 	padding-top: 0;
 	@extend %upcase;
 	transform: translateZ(0);
+	font-size: 4.5vw;
 
 	h1, h2{
 		font-family: $font-family--primary;
@@ -14,7 +15,19 @@
 		letter-spacing: .75rem;
 	}
 
-	h1{	 color: #ccc; }
+	h1{
+		font-size: 6vw;
+		color: #ccc;
+		@media(max-width: $screen-sm){
+			font-size: 12vw;
+		}
+	}
+	h2{
+		font-size: 2.5vw;
+		@media(max-width: $screen-sm){
+			font-size: 5vw;
+		}
+	}
 	a{
 		transition: all 1800ms $base__ease 1.5s;
 		transform: scale(.95);
@@ -30,10 +43,8 @@
 			border: 2px solid rgba($color-primary, .25);
 			margin-top: 10%;
 			text-align: center;
-			position: sticky;
-  		top: 0;
+
 			display: inline-block;
-			font-size: 150%;
 			padding: 15px 30px;
 			letter-spacing: 2px;
 			&:link, &:hover, &:active{

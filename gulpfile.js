@@ -136,7 +136,7 @@ gulp.task('watch', ['connect', 'views', 'serve'], function () {
 
 gulp.task('deploy', function() {
   return gulp.src('./dist/**/*')
-    .pipe($.ghPages());
+    .pipe($.ghPages({remoteUrl: 'https://github.com/josephdburdick/dahlia.git'}));
 });
 
 gulp.task('build', ['jshint', 'views', 'html', 'images', 'videos', 'fonts', 'extras'], function () {
