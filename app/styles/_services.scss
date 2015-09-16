@@ -25,15 +25,4 @@
         margin-bottom: 20px;
       }
     }
-    .image-container{
-        @extend %circle;
-        img{
-            width: 100%;
-            max-width: 340px;
-
-            @media(max-width: $screen-sm){
-              max-width: 280px;
-            }
-        }
-    }
 }
