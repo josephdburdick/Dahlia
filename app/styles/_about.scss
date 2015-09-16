@@ -1,25 +1,34 @@
 .about-section{
-  h1{
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
+
   .content{
     max-width: 100vw;
     margin: 0 auto;
-    column-count: 2;
-    column-gap: 4rem;
     font-size: 2rem;
     line-height: 1.5;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    @media(max-width: $screen-sm-min){
-      column-count: 1;
+    padding: 4rem;
+  }
+  .overlay{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    @extend .col-sm-6;
+    @media(max-width: $screen-xs-max){
+      position: relative;
+      @extend .col-sm-12;
+      transform: none;
+      top: auto;
+      h1{
+        text-align: center;
+      }
     }
-    p{
-      font-family: $font-family--secondary;
-      margin-bottom: 2.2rem;
-      font-weight: $font-weight--light;
-
-    }
+  }
+}
+.two-columns{
+  background:white;
+  margin-top: -10vh;
+  position: relative;
+  @media(max-width: $screen-xs-max){
+    margin-top: auto;
   }
 }

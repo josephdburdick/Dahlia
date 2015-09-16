@@ -7,13 +7,13 @@
 
 * { -moz-box-sizing: border-box; box-sizing: border-box; outline: none; }
 html, body { width: 100%; height: 100%;}
-section video{ 
+section video{
   width: 100% !important;
-  height: auto !important; cursor: pointer; 
+  height: auto !important; cursor: pointer;
   min-height: 47%;
-  min-width: 100%; 
+  min-width: 100%;
   @media(max-width: $screen-sm){
-    min-height: 52%; 
+    min-height: 52%;
   }
 }
 img.fit    { position: relative; margin: 0 auto; display: block; width: 100%; }
@@ -78,4 +78,8 @@ h4 {
   letter-spacing: 2px;
   color: #888;
 }
-
+p{
+  font-family: $font-family--secondary;
+  margin-bottom: 2.2rem;
+  font-weight: $font-weight--light;
+}

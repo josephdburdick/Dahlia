@@ -207,7 +207,7 @@ node_modules
 
 # Created by https://www.gitignore.io/api/meteor
 
-#!! ERROR: meteor is undefined. Use list command to see defined gitignore types !!#
+
 =======
 # Commenting this out is preferred by some people, see
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
