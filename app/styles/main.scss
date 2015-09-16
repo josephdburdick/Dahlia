@@ -1,175 +1,170 @@
 $icon-font-path: '../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/';
-
 // bower:scss
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
-
 @import "config";
 @import "utilities";
 @import "base";
 @import "helpers";
-
 @import "svgicons";
 @import "nav";
 @import "buttons";
 @import "tags";
-
-.fb-like{
+.fb-like {
     z-index: 99999;
     position: absolute !important;
     bottom: 3.5%;
     left: 30px;
     opacity: 0;
     transition: opacity 1s $base__ease 2s;
-    &.fb_iframe_widget{
+    &.fb_iframe_widget {
         opacity: 1;
     }
-    @media(max-width: $screen-sm){
+    @media(max-width: $screen-sm) {
         display: none !important;
     }
 }
-
-h1, h2, h3, h4{
+h1,
+h2,
+h3,
+h4 {
     text-align: center;
 }
-
 .Aligner {
-  display: flex;
-  align-items: center;
-  min-height: 100%;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+    justify-content: center;
 }
-
 .Aligner-item {
-  flex: 1;
+    flex: 1;
 }
-
 .Aligner-item--top {
-  align-self: flex-start;
+    align-self: flex-start;
 }
-
 .Aligner-item--bottom {
-  align-self: flex-end;
+    align-self: flex-end;
 }
-
 .Aligner-item--fixed {
-  flex: none;
-  max-width: 50%;
+    flex: none;
+    max-width: 50%;
 }
-
-.center-block{ float: none; }
+.center-block {
+    float: none;
+}
 .nopadding {
- padding: 0 !important;
- margin: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
-
-.vert-center{
-  vertical-align: middle;
-  display: table-cell;
-  text-align: center;
-  width: 100%;
+.vert-center {
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+    width: 100%;
 }
-.position-absolute{
-  position: absolute;
+.position-absolute {
+    position: absolute;
 }
-.position-relative{
-  position: relative;
+.position-relative {
+    position: relative;
 }
-
-.fill-screen{
-  width: 100vw;
-  height: 100vh;
+.fill-screen {
+    width: 100vw;
+    height: 100vh;
 }
-.tint-screen{
-  background-color: rgba(0,0,0,.85);
+.tint-screen {
+    background-color: rgba(0, 0, 0, .85);
 }
-
 section {
-    display:table;
+    display: table;
     table-layout: fixed;
-    width:100%;
+    width: 100%;
     position: relative;
     height: auto;
     min-height: 100vh;
     padding: 10vh 0;
     transition: padding-top .5s ease-in;
-    &#intro{
-      padding-top: 0;
+    &#intro {
+        padding-top: 0;
     }
-    &.about-section, &.services-section{
+    &.about-section,
+    &.services-section {
         color: $black;
         background: #fff url(../images/photography.png);
-        @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi){
+        @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
             background-image: url(../images/photography_@2X.png);
             background-size: 412px;
         }
-        h1{
+        h1 {
             color: #666;
         }
     }
-    &.work-section, &.contact-section{
+    &.work-section,
+    &.contact-section {
         background: #000;
         color: #ccc;
     }
-    .col-xxs-12{
-        @media(max-width: 420px){
+    .col-xxs-12 {
+        @media(max-width: 420px) {
             width: 100%;
             float: none;
         }
     }
-    header{ margin: 0 auto; }
-    h2{
-        @extend %content-padding;
+    header {
+        margin: 0 auto;
+    }
+    h2 {
         font-family: $font-family--primary;
+    }
+    > h2 {
+        @extend %content-padding;
         margin-top: 0;
         margin-bottom: 20px;
-        &:first-child{
+        &:first-child {
             margin-top: 0;
         }
     }
     h3 {
         font-family: $font-family--secondary;
+    }
+    > h3 {
         @extend %content-padding;
         letter-spacing: 3px;
     }
-    .col{ position: relative; }
-    .content{
+    .col {
+        position: relative;
+    }
+    .content {
         @extend %clearfix;
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
         padding: 0 12px;
         text-align: left;
-        p, blockquote{
-            &:last-child{
+        p, blockquote {
+            &:last-child {
                 margin-bottom: 0;
             }
         }
     }
 }
-
 .embed-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-
-  iframe,
-  object,
-  embed {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  }
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    iframe, object, embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
-
 @import "intro";
-
 @import "about";
-
 @import "services";
-
 @import "work";
-
 @import "contact";
-
 @import "footer";

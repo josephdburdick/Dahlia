@@ -8574,7 +8574,7 @@ Module: Tags
   }
 }
 
-/* line 17, main.scss */
+/* line 13, main.scss */
 .fb-like {
   z-index: 99999;
   position: absolute !important;
@@ -8583,23 +8583,26 @@ Module: Tags
   opacity: 0;
   transition: opacity 1s cubic-bezier(0.05, 0.76, 0.82, 1) 2s;
 }
-/* line 24, main.scss */
+/* line 20, main.scss */
 .fb-like.fb_iframe_widget {
   opacity: 1;
 }
 @media (max-width: 768px) {
-  /* line 17, main.scss */
+  /* line 13, main.scss */
   .fb-like {
     display: none !important;
   }
 }
 
-/* line 32, main.scss */
-h1, h2, h3, h4 {
+/* line 27, main.scss */
+h1,
+h2,
+h3,
+h4 {
   text-align: center;
 }
 
-/* line 36, main.scss */
+/* line 33, main.scss */
 .Aligner {
   display: -webkit-flex;
   display: flex;
@@ -8610,43 +8613,43 @@ h1, h2, h3, h4 {
   justify-content: center;
 }
 
-/* line 43, main.scss */
+/* line 39, main.scss */
 .Aligner-item {
   -webkit-flex: 1;
   flex: 1;
 }
 
-/* line 47, main.scss */
+/* line 42, main.scss */
 .Aligner-item--top {
   -webkit-align-self: flex-start;
   align-self: flex-start;
 }
 
-/* line 51, main.scss */
+/* line 45, main.scss */
 .Aligner-item--bottom {
   -webkit-align-self: flex-end;
   align-self: flex-end;
 }
 
-/* line 55, main.scss */
+/* line 48, main.scss */
 .Aligner-item--fixed {
   -webkit-flex: none;
   flex: none;
   max-width: 50%;
 }
 
-/* line 60, main.scss */
+/* line 52, main.scss */
 .center-block {
   float: none;
 }
 
-/* line 61, main.scss */
+/* line 55, main.scss */
 .nopadding {
   padding: 0 !important;
   margin: 0 !important;
 }
 
-/* line 66, main.scss */
+/* line 59, main.scss */
 .vert-center {
   vertical-align: middle;
   display: table-cell;
@@ -8654,28 +8657,28 @@ h1, h2, h3, h4 {
   width: 100%;
 }
 
-/* line 72, main.scss */
+/* line 65, main.scss */
 .position-absolute {
   position: absolute;
 }
 
-/* line 75, main.scss */
+/* line 68, main.scss */
 .position-relative {
   position: relative;
 }
 
-/* line 79, main.scss */
+/* line 71, main.scss */
 .fill-screen {
   width: 100vw;
   height: 100vh;
 }
 
-/* line 83, main.scss */
+/* line 75, main.scss */
 .tint-screen {
   background-color: rgba(0, 0, 0, 0.85);
 }
 
-/* line 87, main.scss */
+/* line 78, main.scss */
 section {
   display: table;
   table-layout: fixed;
@@ -8686,62 +8689,68 @@ section {
   padding: 10vh 0;
   transition: padding-top .5s ease-in;
 }
-/* line 96, main.scss */
+/* line 87, main.scss */
 section#intro {
   padding-top: 0;
 }
-/* line 99, main.scss */
+/* line 90, main.scss */
 section.about-section, section.services-section {
   color: #0b0b0b;
   background: #fff url(../images/photography.png);
 }
 @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-  /* line 99, main.scss */
+  /* line 90, main.scss */
   section.about-section, section.services-section {
     background-image: url(../images/photography_@2X.png);
     background-size: 412px;
   }
 }
-/* line 106, main.scss */
+/* line 98, main.scss */
 section.about-section h1, section.services-section h1 {
   color: #666;
 }
-/* line 110, main.scss */
+/* line 102, main.scss */
 section.work-section, section.contact-section {
   background: #000;
   color: #ccc;
 }
 @media (max-width: 420px) {
-  /* line 114, main.scss */
+  /* line 107, main.scss */
   section .col-xxs-12 {
     width: 100%;
     float: none;
   }
 }
-/* line 120, main.scss */
+/* line 113, main.scss */
 section header {
   margin: 0 auto;
 }
-/* line 121, main.scss */
+/* line 116, main.scss */
 section h2 {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+}
+/* line 119, main.scss */
+section > h2 {
   margin-top: 0;
   margin-bottom: 20px;
 }
-/* line 126, main.scss */
-section h2:first-child {
+/* line 123, main.scss */
+section > h2:first-child {
   margin-top: 0;
 }
-/* line 130, main.scss */
+/* line 127, main.scss */
 section h3 {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+}
+/* line 130, main.scss */
+section > h3 {
   letter-spacing: 3px;
 }
-/* line 135, main.scss */
+/* line 134, main.scss */
 section .col {
   position: relative;
 }
-/* line 136, main.scss */
+/* line 137, main.scss */
 section .content {
   max-width: 600px;
   margin-left: auto;
@@ -8749,7 +8758,7 @@ section .content {
   padding: 0 12px;
   text-align: left;
 }
-/* line 144, main.scss */
+/* line 145, main.scss */
 section .content p:last-child, section .content blockquote:last-child {
   margin-bottom: 0;
 }
@@ -8762,10 +8771,8 @@ section .content p:last-child, section .content blockquote:last-child {
   overflow: hidden;
   max-width: 100%;
 }
-/* line 158, main.scss */
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
+/* line 157, main.scss */
+.embed-container iframe, .embed-container object, .embed-container embed {
   position: absolute;
   top: 0;
   left: 0;
@@ -8858,7 +8865,7 @@ section .content p:last-child, section .content blockquote:last-child {
   margin: 0 auto;
   font-size: 2rem;
   line-height: 1.5;
-  padding: 4rem;
+  padding: 2.5vw;
 }
 /* line 10, ../../../../../../Applications/MAMP/htdocs/Code/Github/josephdburdick/js/gulp/dahlia-latest/app/styles/_about.scss */
 .about-section .overlay {
@@ -8948,7 +8955,7 @@ section .content p:last-child, section .content blockquote:last-child {
   padding-bottom: 0;
 }
 /* line 3, ../../../../../../Applications/MAMP/htdocs/Code/Github/josephdburdick/js/gulp/dahlia-latest/app/styles/_work.scss */
-.work-section section h2, section .work-section h2, .work-section section h3, section .work-section h3 {
+.work-section section > h2, .work-section section > h3 {
   margin-left: 15px;
   margin-right: 15px;
 }
