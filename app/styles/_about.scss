@@ -15,7 +15,7 @@
     @extend .col-sm-6;
     @media(max-width: $screen-xs-max){
       position: relative;
-      @extend .col-sm-12;
+      width: 100%;
       transform: none;
       top: auto;
       h1{

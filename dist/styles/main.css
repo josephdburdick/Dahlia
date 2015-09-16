@@ -2091,7 +2091,7 @@ pre code {
 }
 
 /* line 11, ../../../../../../Applications/MAMP/htdocs/Code/Github/josephdburdick/js/gulp/dahlia-latest/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .services-section .col, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .services-section .col, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .about-section .overlay, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -2360,7 +2360,7 @@ pre code {
 
 @media (min-width: 768px) {
   /* line 27, ../../../../../../Applications/MAMP/htdocs/Code/Github/josephdburdick/js/gulp/dahlia-latest/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .about-section .overlay, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left;
   }
 
@@ -2390,7 +2390,7 @@ pre code {
   }
 
   /* line 35, ../../../../../../Applications/MAMP/htdocs/Code/Github/josephdburdick/js/gulp/dahlia-latest/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-6 {
+  .col-sm-6, .about-section .overlay {
     width: 50%;
   }
 
@@ -8862,27 +8862,37 @@ section .content p:last-child, section .content blockquote:last-child {
 }
 /* line 10, ../../../../../../Applications/MAMP/htdocs/Code/Github/josephdburdick/js/gulp/dahlia-latest/app/styles/_about.scss */
 .about-section .overlay {
+  position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   background: white;
 }
-
-/* line 16, ../../../../../../Applications/MAMP/htdocs/Code/Github/josephdburdick/js/gulp/dahlia-latest/app/styles/_about.scss */
-.two-columns {
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  column-count: 2;
-  -webkit-column-gap: 4rem;
-  -moz-column-gap: 4rem;
-  column-gap: 4rem;
+@media (max-width: 767px) {
+  /* line 10, ../../../../../../Applications/MAMP/htdocs/Code/Github/josephdburdick/js/gulp/dahlia-latest/app/styles/_about.scss */
+  .about-section .overlay {
+    position: relative;
+    width: 100%;
+    -webkit-transform: none;
+    transform: none;
+    top: auto;
+  }
+  /* line 21, ../../../../../../Applications/MAMP/htdocs/Code/Github/josephdburdick/js/gulp/dahlia-latest/app/styles/_about.scss */
+  .about-section .overlay h1 {
+    text-align: center;
+  }
 }
-@media (max-width: 768px) {
-  /* line 16, ../../../../../../Applications/MAMP/htdocs/Code/Github/josephdburdick/js/gulp/dahlia-latest/app/styles/_about.scss */
+
+/* line 27, ../../../../../../Applications/MAMP/htdocs/Code/Github/josephdburdick/js/gulp/dahlia-latest/app/styles/_about.scss */
+.two-columns {
+  background: white;
+  margin-top: -10vh;
+  position: relative;
+}
+@media (max-width: 767px) {
+  /* line 27, ../../../../../../Applications/MAMP/htdocs/Code/Github/josephdburdick/js/gulp/dahlia-latest/app/styles/_about.scss */
   .two-columns {
-    -webkit-column-count: 1;
-    -moz-column-count: 1;
-    column-count: 1;
+    margin-top: auto;
   }
 }
 
