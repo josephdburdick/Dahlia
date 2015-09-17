@@ -1,13 +1,13 @@
-/*global Modernizr */
+/*global Modernizr:true */
+/*global isMobile:true */
 
 (function () {
   'use strict';
   var $doc   = $(document),
     	$intro = $('#intro'),
     	// $bgVid = $('#bgVid'),
-    	$nav   = $('nav[role="navigation"]'),
-    	// bgVidMaxOpacity = 0.4,
-    	isMobile = isMobile;
+    	$nav   = $('nav[role="navigation"]');
+    	// bgVidMaxOpacity = 0.4
 
   function toggleVideo(el){
 
@@ -31,9 +31,7 @@
 
   function interfaces(){
   	// Affix
-  	$nav.affix({
-  		offset: { top: $intro.height() }
-  	});
+  	$nav.affix({ offset: { top: $intro.height() } });
 
   	// Scroll Spy
   	$('body').scrollspy({ target: '.navbar-ex1-collapse' });
