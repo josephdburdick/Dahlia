@@ -11,12 +11,10 @@ block content
 					//- source(src="videos/SmokeLoopSlow.ogv" type="video/ogg")
 
 		.position-absolute.fill-screen.tint-screen
-			.position-absolute.position-top
-			.position-absolute.position-bottom
 			.position-absolute.fill-screen
 				.Aligner
 					.Aligner-item
-						.container-fluid
+						.container
 							.content
 								h1 Dalia
 								h2 An experimental short film that explores the story of a domestic violence victim in a new perspective
@@ -24,19 +22,21 @@ block content
 	//- About Section
 	section#about.about-section(style="padding-top:0")
 		.vert-center
-			.position-relative
-				img(src="images/dahlia-rooftop-1.jpg" width="100%")
-				.position-absolute.fill-parent
-					.Aligner
-						.Aligner-item.Aligner-item--center
-							.overlay-content
-								h1.section-title About
-								p Mandy (Anies Castillo) faces one of her husband's violent outbreaks when she is discovered with her suitcases packed to leave him. As she is beaten up memories of her past flood her mind.
-						.Aligner-item.Aligner-item--center
-							.overlay-content. PLAY BUTTON
+			.container
+				.row.position-relative
+					.responsive-media
+						img(src="images/dahlia-rooftop-1.jpg" width="100%")
+					.position-absolute.fill-parent
+						.Aligner
+							.Aligner-item.Aligner-item--center
+								.overlay-content.depth-container(style="background: white")
+									h1.section-title About
+									p Mandy (Anies Castillo) faces one of her husband's violent outbreaks when she is discovered with her suitcases packed to leave him. As she is beaten up memories of her past flood her mind.
+							.Aligner-item.Aligner-item--center.flex-2
+								.overlay-content. PLAY BUTTON
 							
 
-			.container-fluid.two-columns
+			.container.two-columns.depth-container
 				hr.visible-xs-block.visible-sm-block
 				.content
 					.row
@@ -49,7 +49,7 @@ block content
 								p We take our role as filmmakers in society very responsibly and want to make a piece that will make a difference in creating awareness about this subject in the most accurate way we can. 					
 	
 	section.team-section
-		.container-fluid
+		.container
 			.row
 				header.page-header
 					h2 THE TEAM
@@ -95,7 +95,7 @@ block content
 	
 	section.cta-section 
 		.vert-center
-			.container-fluid
+			.container
 				.row
 					header
 						h2 CALL TO ACTION
@@ -103,7 +103,7 @@ block content
 					
 	section#contact.contact-section
 		.vert-center
-			.container-fluid
+			.container
 				.row
 					header
 						h2 Want to work together<br>or just say hola?

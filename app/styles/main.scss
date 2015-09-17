@@ -1,7 +1,6 @@
 $icon-font-path: '../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/';
 // bower:scss
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-@import "../../bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 @import "config";
 @import "utilities";
@@ -53,6 +52,24 @@ h4 {
   flex: none;
   max-width: 50%;
 }
+
+/* Crazy Ass Grid Loop */
+[class^=grid-] {
+    float:left;
+    margin:0;
+    padding:0 2%; // gutters
+}
+@for $i from 1 through 100 {
+
+    .grid-#{$i}-of-100 {
+        width: ($i / 100) * 100%;
+    }
+}
+
+%content-padding{
+    margin-left: 15px;
+    margin-right: 15px;
+}
 .center-block {
   float: none;
 }
@@ -61,7 +78,7 @@ h4 {
   margin: 0 !important;
 }
 .vert-center {
-  vertical-align: middle;
+vertical-align: middle;
   display: table-cell;
   text-align: center;
   width: 100%;
@@ -83,7 +100,11 @@ h4 {
   left: 0;
 }
 .tint-screen {
-    background-color: rgba(0, 0, 0, .85);
+  background-color: rgba(255, 255, 255, .85);
+}
+.depth-container{
+  z-index: 10;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15)
 }
 section {
     display: table;
@@ -94,21 +115,21 @@ section {
     min-height: 100vh;
     padding: 10vh 0;
     transition: padding-top .5s ease-in;
+
+    color: $black;
+    background: #fff url(../images/photography.png);
+    @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+        background-image: url(../images/photography_@2X.png);
+        background-size: 412px;
+    }
+    h1 {
+        color: #666;
+    }
+
     &#intro {
         padding-top: 0;
     }
-    &.about-section,
-    &.services-section {
-        color: $black;
-        background: #fff url(../images/photography.png);
-        @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-            background-image: url(../images/photography_@2X.png);
-            background-size: 412px;
-        }
-        h1 {
-            color: #666;
-        }
-    }
+
     &.work-section,
     &.contact-section {
         background: #000;
@@ -158,7 +179,7 @@ section {
         }
     }
 }
-.embed-container {
+.embed-container, .responsive-media {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
@@ -175,11 +196,11 @@ section {
 @import "intro";
 @import "about";
 .overlay-content{
-  background: white;
+  padding: 2vw;
+  transform: scale(1.1);
 }
 
 @import "services";
 @import "team";
-@import "work";
 @import "contact";
 @import "footer";

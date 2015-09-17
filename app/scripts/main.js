@@ -44,21 +44,21 @@
   	}
 
   	// Detect mobile; Activate appropriate class.
-  	if ((isMobile.android.phone || isMobile.apple.phone || isMobile.other.device ) === true){
+  	if (!!isMobile.android.phone ||
+        !!isMobile.apple.phone ||
+        !! isMobile.other.device ){
   		$('html').addClass('mobile');
-  	}
-  	else{
+  	} else {
   		$('html').addClass('no-mobile');
-  	}
-
+    }
   	// Pause videos on carousel slide
-  	$('.carousel').carousel('pause')
-  		.on('slid.bs.carousel', function (e) {
-  			var video = $(e.currentTarget).find('.item video');
-  			$(video).each(function(i, el){
-  				el.pause();
-  			});
-  		});
+  	// $('.carousel').carousel('pause')
+  	// 	.on('slid.bs.carousel', function (e) {
+  	// 		var video = $(e.currentTarget).find('.item video');
+  	// 		$(video).each(function(i, el){
+  	// 			el.pause();
+  	// 		});
+  	// 	});
 
   	// Activate video play posters
   	$('.video-play').on('click touchstart mousedown', function(e){
