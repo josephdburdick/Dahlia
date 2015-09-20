@@ -29,19 +29,29 @@
       });
   }
 
+  //FUNCTION TO GET AND AUTO PLAY YOUTUBE VIDEO FROM DATATAG
+  function autoPlayYouTubeModal() {
+
+      var trigger = $("body").find('[data-toggle="modal"]');
+      trigger.click(function () {
+          var theModal = $(this).data("target"),
+              videoSRC = $(this).attr("data-theVideo"),
+              videoSRCauto = videoSRC + "?autoplay=1";
+          $(theModal + ' iframe').attr('src', videoSRCauto);
+          $(theModal + ' button.close').click(function () {
+              $(theModal + ' iframe').attr('src', videoSRC);
+          });
+          $('.modal').click(function () {
+              $(theModal + ' iframe').attr('src', videoSRC);
+          });
+      });
+  }
   function interfaces(){
   	// Affix
   	$nav.affix({ offset: { top: $intro.height() } });
 
   	// Scroll Spy
   	$('body').scrollspy({ target: '.navbar-ex1-collapse' });
-
-  	// Trigger mobile menu to close once a link is touched.
-  	if (Modernizr.touch && isMobile.any === true){
-  		$('.navbar-ex1-collapse a').on('click', function(){
-  			$('button.navbar-toggle').trigger('click');
-  		});
-  	}
 
   	// Detect mobile; Activate appropriate class.
   	if (!!isMobile.android.phone ||
@@ -51,21 +61,13 @@
   	} else {
   		$('html').addClass('no-mobile');
     }
-  	// Pause videos on carousel slide
-  	// $('.carousel').carousel('pause')
-  	// 	.on('slid.bs.carousel', function (e) {
-  	// 		var video = $(e.currentTarget).find('.item video');
-  	// 		$(video).each(function(i, el){
-  	// 			el.pause();
-  	// 		});
-  	// 	});
 
   	// Activate video play posters
   	$('.video-play').on('click touchstart mousedown', function(e){
   		$(e.currentTarget).hide(100);
   		toggleVideo($(this).siblings('video'));
   	});
-
+    autoPlayYouTubeModal();
   }
 
   $doc.ready(function(){

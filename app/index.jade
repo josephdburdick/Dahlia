@@ -3,22 +3,19 @@ extends layout
 block content
 	//- Intro Section
 	section#intro.intro-section
-		.position-absolute.fill-screen
-			.embed-container
+		.position-fixed.fill-screen
+			.embed-container.fade-to-white.hidden-sm.hidden-xs
 				video(autoplay loop muted)
 					source(src="videos/bench_looping_background.mp4" type="video/mp4")
-					//- source(src="videos/SmokeLoopSlow.webm" type="video/webm")
-					//- source(src="videos/SmokeLoopSlow.ogv" type="video/ogg")
-
-		.position-absolute.fill-screen.tint-screen
-			.position-absolute.fill-screen
-				.Aligner
-					.Aligner-item
-						.container
-							.content
-								h1 Dalia
-								h2 An experimental short film that explores the story of a domestic violence victim in a new perspective
-								a.btn.btn-lg.stroke.emerald.page-scroll#bgVid-trigger(href="#donate") Help Our Kickstarter
+			.position-absolute.fill-screen.tint-screen(style="top:0")
+				.position-absolute.fill-screen
+					.Aligner
+						.Aligner-item
+							.container
+								.content
+									h1 Dalia
+									h2 An experimental short film that explores the story of a domestic violence victim in a new perspective
+									a.btn.btn-lg.stroke.page-scroll.bgVid-trigger(href="#donate") Help Our Kickstarter
 	//- About Section
 	section#about.about-section(style="padding-top:0")
 		.vert-center
@@ -26,17 +23,19 @@ block content
 				.row.position-relative
 					.responsive-media
 						img(src="images/dahlia-rooftop-1.jpg" width="100%")
-					.position-absolute.fill-parent
-						.Aligner
-							.Aligner-item.Aligner-item--center
-								.overlay-content.depth-container(style="background: white")
-									h1.section-title About
-									p Mandy (Anies Castillo) faces one of her husband's violent outbreaks when she is discovered with her suitcases packed to leave him. As she is beaten up memories of her past flood her mind.
-							.Aligner-item.Aligner-item--center.flex-2
-								.overlay-content. PLAY BUTTON
-							
+					a.display-block.position-absolute.fill-parent.playButton--container(data-toggle="modal" data-target="#videoModal" data-theVideo="http://www.youtube.com/embed/loFtozxZG0s")
+						.position-absolute.fill-parent.tint-screen
+						.col-sm-12.col-md-7.col-md-push-5.vert-middle
+							.btn-playButton
+								svg(id="play-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="90px" height="90px" viewBox="0 0 90 90" style="enable-background:new 0 0 90 90;" xml:space="preserve")
+									path(d="M90,26.958C90,19.525,83.979,13.5,76.55,13.5h-63.1C6.021,13.5,0,19.525,0,26.958v36.084 C0,70.475,6.021,76.5,13.45,76.5h63.1C83.979,76.5,90,70.475,90,63.042V26.958z M36,60.225V26.33l25.702,16.947L36,60.225z")
 
 			.container.two-columns.depth-container
+				.row.position-relative
+					.col-sm-12.col-md-5
+						.overlay-content.depth-container.bg-white
+							h1.section-title About
+							p Mandy (Anies Castillo) faces one of her husband's violent outbreaks when she is discovered with her suitcases packed to leave him. As she is beaten up memories of her past flood her mind.
 				hr.visible-xs-block.visible-sm-block
 				.content
 					.row
@@ -48,85 +47,95 @@ block content
 								p Our goal is to dive into Mandy’s psychology in such depth that when we show her memories the viewer feels the way she felt. This means understanding her attraction and relationship with Noel by being seduced by his charm when they meet, emphasizing with his vulnerabilities, and ending up trapped in an unhealthy relationship. 
 								p We take our role as filmmakers in society very responsibly and want to make a piece that will make a difference in creating awareness about this subject in the most accurate way we can. 					
 	
-	section.team-section
+	section#team.team-section
 		.container
 			.row
 				header.page-header
 					h2 THE TEAM
-					h3 We are filmmakers who believe in the power of entertainment in creating awareness and inspiring people throughout the whole world.
+					.intro-text We are filmmakers who believe in the power of entertainment in creating awareness and inspiring people throughout the whole world.
 
-		.row
-			.col-xs-12
-				.col-md-4.col-sm-6
-					.text-center
-						figure.image-container.circular
-							img(src="http://placehold.it/300x300")
-					header
-						h3 Anies Castillo
-						h4 Author / Mandy
-					main
-						p Anies castillo is an actress and a writer based in New York City. 
-						p She grew up in the Dominican Republic and has been acting ever since she can remember. In 2008 she moved to the US to pursue bigger opportunities and to continue to grow as an artist. Anies has had the pleasure of participating in two Telemundo productions, such as El Fantasma de Elena, and Corazon Valiente.
-						p She started writing Dahlia back in 2013, and as she got deeper and deeper into the research, the story and the characters both really hit home, and it became a story that she felt had to be told and be shared with the world. 
+		.container
+			.row
+				.col-xs-12
+					.col-md-4.col-sm-6
+						.text-center
+							figure.image-container.circular
+								img(src="http://placehold.it/300x300")
+						header
+							h3 Anies Castillo
+							h4 Author / Mandy
+						main
+							p Anies castillo is an actress and a writer based in New York City. 
+							p She grew up in the Dominican Republic and has been acting ever since she can remember. In 2008 she moved to the US to pursue bigger opportunities and to continue to grow as an artist. Anies has had the pleasure of participating in two Telemundo productions, such as El Fantasma de Elena, and Corazon Valiente.
+							p She started writing Dahlia back in 2013, and as she got deeper and deeper into the research, the story and the characters both really hit home, and it became a story that she felt had to be told and be shared with the world. 
+					
+					.col-md-4.col-sm-6
+						.text-center
+							figure.image-container.circular
+								img(src="http://placehold.it/300x300")
+						header
+							h3 Macarena Carrizosa
+							h4 Director 
+						main
+							p Macarena Carrizosa is a director/producer based in NYC.
+							p She started her career in the entertainment industry by studying acting with a Theatre Group in Paraguay and practicing photography. After attaining her business degrees in Paraguay and France she came to NYC to further her capabilities by studying Filmmaking at the New York Film Academy, over a year of acting training with Anthony Abeson and workshops at the Acting Studio. Her sensitivity is translated into her work as she focuses all creative choices to awaken specific emotions from the audience. 
+							p Since the beginning of her film career, she has been through almost all film departments including Directing, AD, Camera, Lighting, Grip, Sound and Production in Commercials, Music Videos, Short Films, Documentaries and Feature Films in the US and abroad. 
+					
+					.col-md-4.col-sm-6.col-sm-offset-3.col-md-offset-0
+						.text-center
+							figure.image-container.circular
+								img(src="http://placehold.it/300x300")
+						header
+							h3 Michelle Polanco
+							h4 Producer
+						main
+							p Michelle Polanco was born and raised in New York City. 
+							p Growing up, Michelle mostly focused on academics. Her calling for the arts however, was never forgotten. Michelle used modeling, drawing, and acting as her creative outlets. In time, she found herself immersing in production as a host, writer, creative director, producer and project manager for various projects. 
+							p Her passion for production compelled her to change the course of her life.  In 2014, Michelle Polanco founded PureVida Media Productions. PureVida Media Productions is dedicated to creating empowering and uplifting content, that increases confidence, personal power and taking action. Michelle enjoys creating something out nothing that can bring value and shower  a new perspective. Being able to bring an idea or story to life has captivated her.
 
-				.col-md-4.col-sm-6
-					.text-center
-						figure.image-container.circular
-							img(src="http://placehold.it/300x300")
-					header
-						h3 Macarena Carrizosa
-						h4 Director 
-					main
-						p Macarena Carrizosa is a director/producer based in NYC.
-						p She started her career in the entertainment industry by studying acting with a Theatre Group in Paraguay and practicing photography. After attaining her business degrees in Paraguay and France she came to NYC to further her capabilities by studying Filmmaking at the New York Film Academy, over a year of acting training with Anthony Abeson and workshops at the Acting Studio. Her sensitivity is translated into her work as she focuses all creative choices to awaken specific emotions from the audience. 
-						p Since the beginning of her film career, she has been through almost all film departments including Directing, AD, Camera, Lighting, Grip, Sound and Production in Commercials, Music Videos, Short Films, Documentaries and Feature Films in the US and abroad. 
-				
-				.col-md-4.col-sm-6.col-sm-offset-3.col-md-offset-0
-					.text-center
-						figure.image-container.circular
-							img(src="http://placehold.it/300x300")
-					header
-						h3 Michelle Polanco
-						h4 Producer
-					main
-						p Michelle Polanco was born and raised in New York City. 
-						p Growing up, Michelle mostly focused on academics. Her calling for the arts however, was never forgotten. Michelle used modeling, drawing, and acting as her creative outlets. In time, she found herself immersing in production as a host, writer, creative director, producer and project manager for various projects. 
-						p Her passion for production compelled her to change the course of her life.  In 2014, Michelle Polanco founded PureVida Media Productions. PureVida Media Productions is dedicated to creating empowering and uplifting content, that increases confidence, personal power and taking action. Michelle enjoys creating something out nothing that can bring value and shower  a new perspective. Being able to bring an idea or story to life has captivated her.
-	
-	section.cta-section 
+	section#donate.cta-section 
 		.vert-center
 			.container
 				.row
-					header
-						h2 CALL TO ACTION
-						h3 Join our efforts in making this film a reality by going to our Indiegogo Campaign. There are several amazing perks. If you feel there is something else you can help us with or want to give us feedback, email us and tell us what’s in your mind. And please don’t forget to share the link and spread the love!								
+					.col-sm-12.depth-container.bg-white.content
+						header
+							h2 CALL TO ACTION
+							.intro-text Join our efforts in making this film a reality by going to our Indiegogo Campaign. There are several amazing perks. If you feel there is something else you can help us with or want to give us feedback, email us and tell us what’s in your mind. And please don’t forget to share the link and spread the love!								
+							a.btn.btn-lg.stroke.upcase.page-scroll.bgVid-trigger(href="#donate") Indiegogo Campaign
 					
 	section#contact.contact-section
 		.vert-center
 			.container
 				.row
 					header
-						h2 Want to work together<br>or just say hola?
-				.row
+						h2 Contact Us
+				.row(style="margin-top: 4rem")
 					.col-md-6.col-md-offset-3
-						ul.list-group
-							li.list-group-item.stroke.emerald
-								a(href="https://www.linkedin.com/in/macarenacarrizosa")
-									.flip
-										.card
-											.face.front Endorse Me
-											.face.back on LinkedIn
-							li.list-group-item.stroke.emerald
-								a(href="mailto:mc@macarena.productions?subject=Hello!")
-									.flip
-										.card
-											.face.front Send Email
-											.face.back mc@macarena.productions
-							li.list-group-item.stroke.emerald#contact-section--phone
-								a(href="tel:3476748286")
-									.flip
-										.card
-											.face.front Call Me
-											.face.back (347) 674-8286
+						form 
+						.row
+							.form-group.col-sm-6
+									label(for="name" class="h4") Name
+									input(type="text" class="form-control" id="name" placeholder="Enter name" required)
+							.form-group.col-sm-6
+								label(for="email" class="h4") Email
+								input(type="email" class="form-control" id="email" placeholder="Enter email" required)
+						.row(style="margin-top: 4rem")
+							.form-group.col-sm-12
+								label(for="message" class="h4") Message
+								textarea#message(class="form-control" rows="5" placeholder="Enter your message" required)
+
+								button(type="submit" id="form-submit" class="btn btn-success btn-lg pull-right") Submit
+							#msgSubmit(class="h3 text-center hidden") Message Submitted!
+					
 					.dock-bottom.
 						Built by <a href="http://j0ey.co"><img class="logo-joey" src="images/logo_joey.png" alt="This site was built by JOEY"></a>
+
+			
+
+	.modal.fade#videoModal(tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true")
+		.modal-dialog
+			.modal-content
+				.modal-body
+					button(type="button" class="close" data-dismiss="modal" aria-hidden="true") &times;
+					div
+						iframe(width="100%" height="350" src="")

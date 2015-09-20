@@ -77,7 +77,6 @@ Collapsing Mobile Menu
 		float: right;
 	}
 	@media(max-width:$screen-sm){
-
 		padding: 0;
 		.navbar-nav{
 			margin: 0;
@@ -90,7 +89,7 @@ Collapsing Mobile Menu
 		}
 	}
 	@media(max-width:$screen-xs){
-		background:black;
+		background: rgba(white, .9);
 	}
 	@media (max-width: 480px){
 		.navbar-nav{
@@ -123,4 +122,41 @@ Collapsing Mobile Menu
 .navbar-inverse .navbar-nav > .active > a:focus{
 	color: $color-primary;
 	background-color: rgba(darken($color-primary, 20%), .15)
+}
+
+.navbar-toggle {
+	transition: all .2s ease-in;
+	background-color: transparent;
+	.navbar-inverse &:hover,.navbar-inverse &:focus{
+		background-color: transparent;
+	}
+	.toggle-text{
+		font-size: 12px;
+		padding-left: 8px;
+		vertical-align: text-top;
+	}
+	.affix-top &{
+		&:hover,&:focus{
+			background-color: rgba(255,255,255,.9);
+		}
+		background-color: rgba(255,255,255,.9);
+		.icon-bar{
+			background-color: #222;
+		}
+		.toggle-text{
+			color: #222;
+		}
+	}
+	.affix &{
+		&:hover,&:focus{
+			background-color: transparent;
+		}
+		background-color: transparent;
+		.icon-bar{
+			background-color: #fff;
+		}
+		.toggle-text{
+			color: white;
+		}
+	}
 }

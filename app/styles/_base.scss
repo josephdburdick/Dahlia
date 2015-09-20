@@ -4,7 +4,9 @@
     background: $sunglo;
     color: #000;
 }
-
+.inline-block{
+  display: inline-block;
+}
 * { -moz-box-sizing: border-box; box-sizing: border-box; outline: none; }
 html, body { width: 100%; height: 100%;}
 section video{
@@ -75,8 +77,12 @@ h4 {
   @extend %upcase;
   font-size: 120%;
   margin-bottom: 5px;
-  letter-spacing: 2px;
   color: #888;
+}
+.intro-text{
+  font-family: $font-family--secondary;
+  font-weight: $font-weight--light;
+  font-size: 4vw;
 }
 p{
   font-family: $font-family--secondary;
@@ -88,10 +94,10 @@ p{
   &.circular{ @extend %circle; }
   img{
     width: 100%;
-    max-width: 340px;
+    max-width: 200px;
 
     @media(max-width: $screen-sm){
-      max-width: 280px;
+      max-width: 170px;
     }
   }
 }
