@@ -1,4 +1,4 @@
-/*global Modernizr:true */
+/*global Modernizr:false */
 /*global isMobile:true */
 
 (function () {
@@ -7,10 +7,10 @@
     	$intro = $('#intro'),
     	$nav   = $('nav[role="navigation"]');
 
-  $("textarea").keyup(function(e) {
-    while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
+  $('textarea').keyup(function() {
+    while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css('borderTopWidth')) + parseFloat($(this).css('borderBottomWidth'))) {
       $(this).height($(this).height()+1);
-    };
+    }
   });
 
   function toggleVideo(el){
@@ -36,19 +36,34 @@
   //FUNCTION TO GET AND AUTO PLAY YOUTUBE VIDEO FROM DATATAG
   function autoPlayYouTubeModal() {
 
-      var trigger = $("body").find('[data-toggle="modal"]');
-      trigger.click(function () {
-          var theModal = $(this).data("target"),
-              videoSRC = $(this).attr("data-theVideo"),
-              videoSRCauto = videoSRC + "?autoplay=1";
-          $(theModal + ' iframe').attr('src', videoSRCauto);
-          $(theModal + ' button.close').click(function () {
+      var trigger = $('body').find('[data-toggle="modal"]'),
+          theModal = $('#videoModal'),
+          videoSRC,
+          iframe = $('iframe');
+      $(theModal).on('shown.bs.modal', function () {
+        $(iframe).focus();
+      });
+      $(theModal).on('hide.bs.modal', function () {
+        $(iframe).remove();
+      });
+      trigger.click(function (e) {
+        videoSRC = $(this).attr('data-theVideo');
+        if (!$('.modal iframe').length){
+          $(theModal).find('.embed-container').append(iframe);
+        }
+        $(theModal).find('iframe').attr({
+            'allowfullscreen': true,
+            'src': videoSRC + 'html5=1&enablejsapi=1',
+            'frameBorder': 0,
+            'width' : '100%'
+        });
+        $('.modal button.close').click(function () {
+            $(theModal).find('iframe').remove();
+        });
 
-              $(theModal + ' iframe').attr('src', videoSRC);
-          });
-          $('.modal').click(function () {
-              $(theModal + ' iframe').attr('src', videoSRC);
-          });
+        // $('.modal').click(function (e) {
+        //     $('#' + e.currentTarget + ' iframe').attr('src', videoSRC);
+        // });
       });
   }
   function interfaces(){
