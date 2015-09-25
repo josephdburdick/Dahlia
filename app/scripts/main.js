@@ -5,9 +5,13 @@
   'use strict';
   var $doc   = $(document),
     	$intro = $('#intro'),
-    	// $bgVid = $('#bgVid'),
     	$nav   = $('nav[role="navigation"]');
-    	// bgVidMaxOpacity = 0.4
+
+  $("textarea").keyup(function(e) {
+    while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
+      $(this).height($(this).height()+1);
+    };
+  });
 
   function toggleVideo(el){
 
@@ -39,6 +43,7 @@
               videoSRCauto = videoSRC + "?autoplay=1";
           $(theModal + ' iframe').attr('src', videoSRCauto);
           $(theModal + ' button.close').click(function () {
+
               $(theModal + ' iframe').attr('src', videoSRC);
           });
           $('.modal').click(function () {
