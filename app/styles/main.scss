@@ -167,8 +167,7 @@ section {
         padding-top: 0;
     }
 
-    &.work-section,
-    &.contact-section {
+    &.work-section{
         background: #000;
         color: #ccc;
     }
@@ -215,6 +214,7 @@ section {
             }
         }
     }
+
 }
 .embed-container, .responsive-media {
     position: relative;
@@ -319,11 +319,10 @@ section {
 @import "team";
 .cta-section{
   .intro-text{
+    font-size: 3vw;
+
     @media(max-width: $screen-sm){
       font-size: 6vw;
-    }
-    @media(min-width: $screen-sm){
-      font-size: 4vw;
     }
   }
   .content{

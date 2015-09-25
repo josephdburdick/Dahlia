@@ -59,6 +59,7 @@
 .text-center{ text-align: center; }
 .text-right{ text-align: right; }
 .upcase { text-transform: uppercase; }
+
 .form-group{
   @extend .text-left;
   input[type="text"],
@@ -68,21 +69,19 @@
     border: 0;
     box-shadow: none !important;
     height: auto;
-    font-size: 3rem;
+    font-size: 2vw;
     padding: 2rem 0 0 0;
     border-bottom: 1px dotted $grey;
-    color: white;
-  }
-  textarea{
-    font-size: 1.5vw;
-    height: 20vh;
-    border-bottom: 0;
-    color: white;
-    margin-bottom: 2rem;
+    color: #222;
+    margin-bottom: 2vw;
+    &:focus{
+      border-bottom-color: $brand-primary;
+    }
     @media(max-width: $screen-md){
-      font-size: 6vw;
+      font-size: 4vw;
     }
   }
+
   .btn{
     @media(max-width: $screen-md){
       display: block;

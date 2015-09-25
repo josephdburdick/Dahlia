@@ -15,7 +15,7 @@ block content
 								.content
 									h1 Dalia
 									h2 An experimental short film that explores the story of a domestic violence victim in a new perspective
-									a.btn.btn-lg.stroke.page-scroll.bgVid-trigger(href="#donate") Help Our Kickstarter
+									a.btn.btn-lg.stroke.page-scroll.bgVid-trigger(href="#take-action") Make it Happen with Us
 	//- About Section
 	section#about.about-section(style="padding-top:0")
 		.vert-center
@@ -23,7 +23,7 @@ block content
 				.row.position-relative
 					.responsive-media
 						img(src="images/dahlia-rooftop-1.jpg" width="100%")
-					a.display-block.position-absolute.fill-parent.playButton--container(data-toggle="modal" data-target="#videoModal" data-theVideo="http://www.youtube.com/embed/loFtozxZG0s")
+					a.display-block.position-absolute.fill-parent.playButton--container(data-toggle="modal" data-target="#videoModal" data-theVideo="http://www.youtube.com/embed/NmP1BynfBFs?autoplay=1&controls=0&modestbranding=1&showinfo=0&theme=light")
 						.position-absolute.fill-parent.tint-screen
 						.col-sm-12.col-md-7.col-md-push-5.vert-middle
 							.btn-playButton
@@ -60,19 +60,19 @@ block content
 					.col-md-4.col-sm-6
 						.text-center
 							figure.image-container.circular
-								img(src="http://placehold.it/300x300")
+								img(src="images/profile-anies.jpg")
 						header
 							h3 Anies Castillo
 							h4 Author / Mandy
 						main
-							p Anies castillo is an actress and a writer based in New York City. 
+							p Anies Castillo is an actress and a writer based in New York City. 
 							p She grew up in the Dominican Republic and has been acting ever since she can remember. In 2008 she moved to the US to pursue bigger opportunities and to continue to grow as an artist. Anies has had the pleasure of participating in two Telemundo productions, such as El Fantasma de Elena, and Corazon Valiente.
 							p She started writing Dahlia back in 2013, and as she got deeper and deeper into the research, the story and the characters both really hit home, and it became a story that she felt had to be told and be shared with the world. 
 					
 					.col-md-4.col-sm-6
 						.text-center
 							figure.image-container.circular
-								img(src="http://placehold.it/300x300")
+								img(src="images/profile-macarena.jpg")
 						header
 							h3 Macarena Carrizosa
 							h4 Director 
@@ -84,7 +84,7 @@ block content
 					.col-md-4.col-sm-6.col-sm-offset-3.col-md-offset-0
 						.text-center
 							figure.image-container.circular
-								img(src="http://placehold.it/300x300")
+								img(src="images/profile-michelle.jpg")
 						header
 							h3 Michelle Polanco
 							h4 Producer
@@ -93,15 +93,15 @@ block content
 							p Growing up, Michelle mostly focused on academics. Her calling for the arts however, was never forgotten. Michelle used modeling, drawing, and acting as her creative outlets. In time, she found herself immersing in production as a host, writer, creative director, producer and project manager for various projects. 
 							p Her passion for production compelled her to change the course of her life.  In 2014, Michelle Polanco founded PureVida Media Productions. PureVida Media Productions is dedicated to creating empowering and uplifting content, that increases confidence, personal power and taking action. Michelle enjoys creating something out nothing that can bring value and shower  a new perspective. Being able to bring an idea or story to life has captivated her.
 
-	section#donate.cta-section 
+	section#take-action.cta-section 
 		.vert-center
 			.container
 				.row
 					.col-sm-12.depth-container.bg-white.content
 						header
 							h2 CALL TO ACTION
-							.intro-text Join our efforts in making this film a reality by going to our Indiegogo Campaign. There are several amazing perks. If you feel there is something else you can help us with or want to give us feedback, email us and tell us what’s in your mind. And please don’t forget to share the link and spread the love!								
-							a.btn.btn-lg.stroke.upcase.page-scroll.bgVid-trigger(href="#donate") Indiegogo Campaign
+							.intro-text Join our efforts in making this film a reality by going to <a href="#">our Indiegogo campaign</a>. There are several amazing perks. If you feel there's something else you can help us with or want to give us feedback, email us and tell us what’s in your mind. And please don’t forget to share the link and spread the love!								
+							a.btn.btn-lg.stroke.upcase.page-scroll.bgVid-trigger(href="#take-action") Indiegogo Campaign
 					
 	section#contact.contact-section
 		.vert-center
@@ -122,20 +122,10 @@ block content
 						.row(style="margin-top: 4rem")
 							.form-group.col-sm-12
 								label(for="message" class="h4") Message
-								textarea#message(class="form-control" rows="5" placeholder="Enter your message" required)
+								textarea#message(class="form-control" placeholder="Enter your message" required)
 
 								button(type="submit" id="form-submit" class="btn btn-success btn-lg pull-right") Submit
 							#msgSubmit(class="h3 text-center hidden") Message Submitted!
 					
 					.dock-bottom.
 						Built by <a href="http://j0ey.co"><img class="logo-joey" src="images/logo_joey.png" alt="This site was built by JOEY"></a>
-
-			
-
-	.modal.fade#videoModal(tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true")
-		.modal-dialog
-			.modal-content
-				.modal-body
-					button(type="button" class="close" data-dismiss="modal" aria-hidden="true") &times;
-					div
-						iframe(width="100%" height="350" src="")

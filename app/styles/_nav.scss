@@ -4,7 +4,13 @@ nav[role="navigation"]{
 	margin-bottom: 0;
 	z-index: 50;
 	a{
+		transition: all .2s ease-in-out;
 		font-size:16px;
+		color: #999;
+
+		&:hover{
+			color: #666;
+		}
 	}
 
 	&.navbar{
@@ -25,16 +31,13 @@ nav[role="navigation"]{
 			visibility:hidden;
 			opacity:0;
  		}
-		a:hover{
-			color: #222;
-		}
 	}
 
 	&.affix{
 		position: fixed;
 		top:0;
 		bottom: auto;
-		background-color: rgba(black, .95);
+		background-color: rgba(white, .95);
 		.navbar-brand{
 			visibility:visible;
 			opacity:1;
@@ -45,9 +48,6 @@ nav[role="navigation"]{
 			@media(max-width: $screen-xs){
 				padding-top: 85px;
 			}
-		}
-		a:hover{
-			color: rgba(white, .95);
 		}
 	}
 }
@@ -61,6 +61,7 @@ nav[role="navigation"]{
 		transition: color $base__speed $base__ease;
 		outline: none;
 	}
+
 }
 
 /*

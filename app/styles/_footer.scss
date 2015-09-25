@@ -1,11 +1,13 @@
 .dock-bottom{
   position: absolute;
   width: 100%;
-  padding: 0 2rem 2rem;
+  padding: 2vw;
   clear: both;
   text-align: right;
   bottom: 0;
   right: 0;
+  color: white
+  background: #222;
 
   @media(max-width:$screen-xs){
     padding: 65px 0 0;
@@ -13,6 +15,7 @@
     text-align: center
   }
 }
+
 .logo-joey{
     position: relative;
     padding: 0 10px;
