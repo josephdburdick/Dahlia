@@ -109,24 +109,23 @@ block content
 				.row
 					header
 						h2 Contact Us
+						#msgSubmit(class="h3 text-center hidden text-success") Message Submitted!
 				.row(style="margin-top: 4rem")
 					.col-md-6.col-md-offset-3
-						form 
-						.row
-							.form-group.col-sm-6
-									label(for="name" class="h4") Name
-									input(type="text" class="form-control" id="name" placeholder="Enter name" required)
-							.form-group.col-sm-6
-								label(for="email" class="h4") Email
-								input(type="email" class="form-control" id="email" placeholder="Enter email" required)
-						.row(style="margin-top: 4rem")
-							.form-group.col-sm-12
-								label(for="message" class="h4") Message
-								textarea#message(class="form-control" placeholder="Enter your message" required)
-
-								button(type="submit" id="form-submit" class="btn btn-success btn-lg pull-right") Submit
-							#msgSubmit(class="h3 text-center hidden") Message Submitted!
 					
+						form(id="form-contact" method="post" action="http://formspree.io/josephdburdick@gmail.com")
+							.row
+								.form-group.col-sm-12
+									label(for="email" class="h4") Email
+									input(type="email" class="form-control" id="contact-form--email" placeholder="Enter your email" required)
+							.row
+								.form-group.col-sm-12
+									label(for="message" class="h4") Message
+									textarea(id="contact-form--body" name="body" class="form-control" placeholder="Enter your message" required)
+							.row
+								.form-group.col-sm-12
+									input(type="submit" id="form-submit" class="btn btn-success btn-lg pull-right" value="Send")		
+												
 					.dock-bottom.
 						Built by <a href="http://j0ey.co"><img class="logo-joey" src="images/logo_joey.png" alt="This site was built by JOEY"></a>
 	.modal.fade#videoModal(tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true")

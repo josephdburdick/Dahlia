@@ -1,5 +1,5 @@
-/*global Modernizr:false */
 /*global isMobile:true */
+/*global alert:true */
 
 (function () {
   'use strict';
@@ -14,7 +14,6 @@
   });
 
   function toggleVideo(el){
-
   	var video = el.get(0);
   	if (el.visible(true)){
   		if (video.paused) {
@@ -26,14 +25,13 @@
   		}
   	}
   }
-
   function updateScrollSpy() {
+    if (!!$('[data-spy="scroll"]')){
       $('[data-spy="scroll"]').each(function () {
       	$(this).scrollspy('refresh');
       });
+    }
   }
-
-  //FUNCTION TO GET AND AUTO PLAY YOUTUBE VIDEO FROM DATATAG
   function autoPlayYouTubeModal() {
 
       var trigger = $('body').find('[data-toggle="modal"]'),
@@ -46,7 +44,7 @@
       $(theModal).on('hide.bs.modal', function () {
         $(iframe).remove();
       });
-      trigger.click(function (e) {
+      trigger.click(function () {
         videoSRC = $(this).attr('data-theVideo');
         if (!$('.modal iframe').length){
           $(theModal).find('.embed-container').append(iframe);
@@ -60,11 +58,30 @@
         $('.modal button.close').click(function () {
             $(theModal).find('iframe').remove();
         });
-
-        // $('.modal').click(function (e) {
-        //     $('#' + e.currentTarget + ' iframe').attr('src', videoSRC);
-        // });
       });
+  }
+  function contactForm(){
+    var $form = $('#form-contact');
+    var $btnSubmit = $('#form-submit');
+    $btnSubmit.on('click', function(e){
+      e.preventDefault();
+
+      if (!$form.find('[required]').val()){
+        alert('Please fill out all fields in contact form to send.');
+      } else {
+        $('#msgSubmit').removeClass('hidden').show();
+        setTimeout(function(){
+          $form.submit();
+        }, 300);
+      }
+    });
+    $('#form-contact input, #form-contact textarea').on('blur keyup', function(){
+      if( !$(this).val() ) {
+        $(this).closest('.form-group').addClass('has-error');
+      } else {
+        $(this).closest('.form-group').removeClass('has-error');
+      }
+    });
   }
   function interfaces(){
   	// Affix
@@ -88,10 +105,11 @@
   		toggleVideo($(this).siblings('video'));
   	});
     autoPlayYouTubeModal();
+    contactForm();
   }
 
   $doc.ready(function(){
   	interfaces();
   	setTimeout(updateScrollSpy, 500);
   });
-}());
+})();

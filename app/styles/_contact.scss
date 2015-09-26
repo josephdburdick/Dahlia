@@ -40,4 +40,11 @@
         }
     }
 }
-@import "flip";
+.form-group{
+  transition: all .5s ease-in-out;
+}
+.has-error{
+  color: white !important;;
+  border-color: red !important;
+  background: rgba(red, .9) !important;
+}
