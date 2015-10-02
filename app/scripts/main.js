@@ -34,31 +34,28 @@
   }
   function autoPlayYouTubeModal() {
 
-      var trigger = $('body').find('[data-toggle="modal"]'),
-          theModal = $('#videoModal'),
-          videoSRC,
-          iframe = $('iframe');
-      $(theModal).on('shown.bs.modal', function () {
-        $(iframe).focus();
+    var trigger = $('body').find('[data-toggle="modal"]'),
+        theModal = $('#videoModal'),
+        videoSRC,
+        iframe = theModal.find('iframe');
+    $(theModal).on('shown.bs.modal', function () {
+      iframe.focus();
+    });
+    $(theModal).on('hide.bs.modal', function () {
+      iframe.remove();
+    });
+    trigger.click(function () {
+      videoSRC = $(this).attr('data-theVideo');
+      if (!$('.modal iframe').length){
+        $(theModal).find('.embed-container').append(iframe);
+      }
+      iframe.attr({
+        'allowfullscreen': true,
+        'src': videoSRC + 'html5=1&enablejsapi=1',
+        'frameBorder': 0,
+        'width' : '100%'
       });
-      $(theModal).on('hide.bs.modal', function () {
-        $(iframe).remove();
-      });
-      trigger.click(function () {
-        videoSRC = $(this).attr('data-theVideo');
-        if (!$('.modal iframe').length){
-          $(theModal).find('.embed-container').append(iframe);
-        }
-        $(theModal).find('iframe').attr({
-            'allowfullscreen': true,
-            'src': videoSRC + 'html5=1&enablejsapi=1',
-            'frameBorder': 0,
-            'width' : '100%'
-        });
-        $('.modal button.close').click(function () {
-            $(theModal).find('iframe').remove();
-        });
-      });
+    });
   }
   function contactForm(){
     var $form = $('#form-contact');
