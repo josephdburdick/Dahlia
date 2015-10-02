@@ -52,7 +52,7 @@ nav[role="navigation"]{
 	}
 }
 
-.navbar-inverse {
+.navbar {
 	border: none;
 	@media(max-width: $screen-sm){
 		background: none;
@@ -118,9 +118,9 @@ Collapsing Mobile Menu
 	}
 }
 
-.navbar-inverse .navbar-nav > .active > a,
-.navbar-inverse .navbar-nav > .active > a:hover,
-.navbar-inverse .navbar-nav > .active > a:focus{
+.navbar .navbar-nav > .active > a,
+.navbar .navbar-nav > .active > a:hover,
+.navbar .navbar-nav > .active > a:focus{
 	color: $color-primary;
 	background-color: rgba(darken($color-primary, 20%), .15)
 }
@@ -132,7 +132,7 @@ Collapsing Mobile Menu
 	margin-bottom: 0;
 	padding: 12px 10px;
 
-	.navbar-inverse &:hover,.navbar-inverse &:focus{
+	.navbar &:hover,.navbar &:focus{
 		background-color: transparent;
 	}
 	.toggle-text{
