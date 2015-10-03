@@ -129,6 +129,10 @@ Collapsing Mobile Menu
 	background-color: rgba(darken($color-primary, 20%), .15)
 }
 
+.nav > li > a:hover, .nav > li > a:focus{
+	background-color: transparent;
+}
+
 .navbar-toggle {
 	transition: all .2s ease-in;
 	background-color: transparent;
