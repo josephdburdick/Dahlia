@@ -17,8 +17,12 @@ $icon-font-path: '../../bower_components/bootstrap-sass-official/assets/fonts/bo
   z-index: 1049;
   position: absolute !important;
   bottom: 3.5%;
-  @media(max-width: $screen-sm) {
-    display: none !important;
+  opacity: 1;
+  transition: all .2s ease-in-out 0s;
+  .menu-open &{
+    @media(max-width: $screen-sm){
+      opacity: 0 !important;
+    }
   }
 }
 .instagram-icon{
@@ -27,10 +31,10 @@ $icon-font-path: '../../bower_components/bootstrap-sass-official/assets/fonts/bo
 .fb-like {
   left: 65px;
   opacity: 0;
-  transition: opacity 1s $base__ease 2s;
+  // transition: opacity 1s $base__ease 2s;
   &.fb_iframe_widget {
-      opacity: 1;
-      z-index: 1049;
+    opacity: 1;
+    z-index: 1049;
   }
 }
 h1,

@@ -81,6 +81,12 @@
     });
   }
   function interfaces(){
+    // Toggle Social Button visibility
+    var navToggleBtn = $('.navbar-toggle');
+    navToggleBtn.on('click', function(){
+      $('body').toggleClass('menu-open');
+    });
+
   	// Affix
   	$nav.affix({ offset: { top: $intro.height() } });
 
