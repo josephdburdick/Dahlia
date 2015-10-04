@@ -72,6 +72,7 @@ gulp.task('fonts', function () {
 
 gulp.task('extras', function () {
   return gulp.src([
+    'CNAME',
     'app/*.*',
     '!app/*.jade',
     'node_modules/apache-server-configs/dist/.htaccess'
@@ -135,7 +136,7 @@ gulp.task('watch', ['connect', 'views', 'serve'], function () {
 });
 
 gulp.task('deploy', function() {
-  return gulp.src('./dist/**/*')
+  return gulp.src(['./dist/**/*'])
     .pipe($.ghPages({remoteUrl: 'git@github.com:josephdburdick/dahlia'}));
 });
 
