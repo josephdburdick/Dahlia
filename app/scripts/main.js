@@ -84,6 +84,12 @@
     // Toggle Social Button visibility
     var navToggleBtn = $('.navbar-toggle');
     navToggleBtn.on('click', function(){
+      var $this = $(this),
+          $btnText = $this.find('.toggle-text');
+
+      $btnText.text(function(){
+        return !!$('body').hasClass('menu-open') ? 'MENU' : 'CLOSE MENU';
+      });
       $('body').toggleClass('menu-open');
     });
 
