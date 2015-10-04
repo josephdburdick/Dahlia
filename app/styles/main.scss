@@ -16,7 +16,7 @@ $icon-font-path: '../../bower_components/bootstrap-sass-official/assets/fonts/bo
 .instagram-icon, .fb-like{
   z-index: 1049;
   position: absolute !important;
-  bottom: 3.5%;
+  bottom: 24px;
   opacity: 1;
   transition: all .2s ease-in-out 0s;
   .menu-open &{
