@@ -4,9 +4,16 @@ Global config
 
 */
 
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('../fonts/BebasNeue.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/BebasNeue.woff2')           format('woff2'),
+  url('../fonts/BebasNeue.woff')            format('woff');
+}
+
 // Font Stacks
 $font-url--google        : 'http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+San:300|700';
-$font-family--primary    : 'Montserrat', 'Helvetica Neue', Helvetica, Arial, Sans-serif;
+$font-family--primary    : 'BebasNeue', 'Montserrat', 'Helvetica Neue', Helvetica, Arial, Sans-serif;
 $font-family--secondary  : 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans-serif;
 
 
