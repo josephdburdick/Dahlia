@@ -16,6 +16,17 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('dist/styles'));
 });
 
+
+gulp.task('uncss', ['styles'], function () {
+  return gulp.src('dist/styles/main.css')
+    .pipe($.plumber())
+    .pipe($.uncss({
+      html: ['dist/*.html']
+    }))
+    .pipe($.cssnano())
+    .pipe(gulp.dest('dist/styles'));
+});
+
 gulp.task('jshint', function () {
   return gulp.src('app/scripts/*.js')
     .pipe($.plumber())
@@ -31,7 +42,7 @@ gulp.task('views', function () {
         .pipe(gulp.dest('.tmp'));
 });
 
-gulp.task('html', ['views', 'styles'], function () {
+gulp.task('html', ['views', 'uncss'], function () {
   var lazypipe = require('lazypipe');
   var cssChannel = lazypipe()
     .pipe($.csso)
