@@ -1,14 +1,11 @@
 .dock-bottom{
-  position: absolute;
+  position: relative;
   width: 100%;
   padding: 2vw;
   clear: both;
   text-align: right;
-  bottom: 0;
-  right: 0;
   color: white;
   background: #222;
-  margin-top: 20px;
 
   @media(max-width: $screen-sm){
     margin-top: 6vw;
