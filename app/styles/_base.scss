@@ -83,6 +83,12 @@ h4 {
   font-family: $font-family--secondary;
   font-weight: $font-weight--light;
   font-size: 4vw;
+  @media(min-width: $screen-lg){
+    font-size: 48px;
+  }
+  @media(max-width: $screen-sm){
+    font-size: 6vw;
+  }
 }
 p{
   font-family: $font-family--secondary;

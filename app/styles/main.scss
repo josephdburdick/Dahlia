@@ -325,13 +325,10 @@ section {
 @import "services";
 @import "team";
 .cta-section{
-  .intro-text{
-    font-size: 3vw;
-
-    @media(max-width: $screen-sm){
-      font-size: 6vw;
-    }
-  }
+  // .intro-text{
+  //   font-size: 3vw;
+  //
+  // }
   .content{
     max-width: none;
     padding: 5vw 0;
