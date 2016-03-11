@@ -6,12 +6,10 @@ var $ = require('gulp-load-plugins')();
 gulp.task('styles', function () {
   return gulp.src('app/styles/main.scss')
     .pipe($.plumber())
-    .pipe($.rubySass({
-      style: 'expanded',
-      precision: 10,
-      lineNumbers: true
-    }))
+    .pipe($.sourcemaps.init())
+    .pipe($.sass().on('error', $.sass.logError))
     .pipe($.autoprefixer('last 1 version'))
+    .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
     .pipe(gulp.dest('dist/styles'));
 });
