@@ -28,7 +28,6 @@
     <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
     <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
     <link rel="stylesheet" href="styles/main.css">
-    <script src="scripts/vendor/modernizr.js"></script>
   </head>
   <body data-spy="scroll" data-target=".navbar-fixed-top">
     <div id="fb-root"><script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&appId=242451495933588&version=v2.0"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script></div><!--[if lt IE 10]>
@@ -53,11 +52,12 @@
     </nav>
     <section id="intro" class="intro-section">
       <div class="position-fixed fill-screen">
-        <div class="embed-container fade-to-white hidden-sm hidden-xs">
-          <video autoplay loop muted>
+        <div class="embed-responsive embed-responsive-16by9 fade-to-white hidden-md hidden-sm hidden-xs">
+          <video autoplay loop muted class="embed-responsive-item">
             <source src="videos/bench_looping_background.mp4" type="video/mp4">
           </video>
         </div>
+        <div id="intro-bg" style="background-image: url(images/dahlia-rooftop-1.jpg)" class="position-absolute fill-screen fade-to-white visible-md visible-sm visible-xs"></div>
         <div style="top:0" class="position-absolute fill-screen tint-screen">
           <div class="position-absolute fill-screen">
             <div class="Aligner">
@@ -91,9 +91,9 @@
         </div>
         <div class="container two-columns depth-container">
           <div class="row position-relative">
-            <div class="col-sm-12 col-md-5">
+            <div class="col-sm-12 col-md-6 col-lg-5">
               <div class="overlay-content depth-container bg-white">
-                <h1 class="section-title">About</h1>
+                <h2 class="section-title">About the film</h2>
                 <p>Mandy (Anies Castillo) faces one of her husband's violent outbreaks when she is discovered with her suitcases packed to leave him. As she is beaten up memories of her past flood her mind.</p>
               </div>
             </div>
@@ -256,7 +256,7 @@
     </section>
     <div class="dock-bottom">Built by <a href="http://j0ey.co"><img class="logo-joey" src="images/logo_joey.png" alt="This site was built by JOEY"></a></div>
     <div id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true" class="modal fade">
-      <div class="embed-container">
+      <div class="embed-responsive embed-responsive-16by9">
         <iframe width="100%" height="350" src="" frameBorder="0"></iframe>
       </div>
       <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
@@ -271,6 +271,7 @@
       ga('create','UA-55665812-2');ga('send','pageview');
       
     </script>
+    <script src="scripts/vendor/modernizr.js"></script>
     <script src="scripts/vendor.js"></script>
     <script src="scripts/plugins.js"></script>
     <script src="scripts/main.js"></script>
