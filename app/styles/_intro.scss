@@ -13,7 +13,13 @@
 	@media(max-width: $screen-md){
 		font-size: 2vw;
 	}
-
+	#intro-bg{
+		background-size: cover;
+		background-position: center;
+		@media(max-width: $screen-sm){
+			background-position: 90% 0%;
+		}
+	}
 
 	h1, h2{
 		font-family: $font-family--primary;
@@ -23,7 +29,6 @@
 
 	h1{
 		font-size: 6vw;
-		color: #ccc;
 		@media(max-width: $screen-sm){
 			font-size: 12vw;
 		}

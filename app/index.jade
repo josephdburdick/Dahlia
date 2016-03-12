@@ -4,9 +4,10 @@ block content
 	//- Intro Section
 	section#intro.intro-section
 		.position-fixed.fill-screen
-			.embed-container.fade-to-white.hidden-sm.hidden-xs
-				video(autoplay loop muted)
+			.embed-responsive.embed-responsive-16by9.fade-to-white.hidden-md.hidden-sm.hidden-xs
+				video(class="embed-responsive-item" autoplay loop muted)
 					source(src="videos/bench_looping_background.mp4" type="video/mp4")
+			#intro-bg.position-absolute.fill-screen.fade-to-white.visible-md.visible-sm.visible-xs(style="background-image: url(images/dahlia-rooftop-1.jpg)")
 			.position-absolute.fill-screen.tint-screen(style="top:0")
 				.position-absolute.fill-screen
 					.Aligner
@@ -32,9 +33,9 @@ block content
 
 			.container.two-columns.depth-container
 				.row.position-relative
-					.col-sm-12.col-md-5
+					.col-sm-12.col-md-6.col-lg-5
 						.overlay-content.depth-container.bg-white
-							h1.section-title About
+							h2.section-title About the film
 							p Mandy (Anies Castillo) faces one of her husband's violent outbreaks when she is discovered with her suitcases packed to leave him. As she is beaten up memories of her past flood her mind.
 				hr.visible-xs-block.visible-sm-block
 				.content
@@ -155,6 +156,6 @@ block content
 	.dock-bottom
 		| Built by <a href="http://j0ey.co"><img class="logo-joey" src="images/logo_joey.png" alt="This site was built by JOEY"></a>
 	.modal.fade#videoModal(tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true")
-		.embed-container
+		.embed-responsive.embed-responsive-16by9
 			iframe(width="100%" height="350" src="" frameBorder="0")
 		button(type="button" class="close" data-dismiss="modal" aria-hidden="true") &times;
