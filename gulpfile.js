@@ -145,9 +145,9 @@ gulp.task('watch', ['connect', 'views', 'serve'], function () {
   gulp.watch('bower.json', ['wiredep']);
 });
 
-gulp.task('deploy', ['default'], function() {
+gulp.task('deploy', ['build'], function() {
   return gulp.src(['./dist/**/*'])
-    .pipe($.ghPages({remoteUrl: 'git@github.com:josephdburdick/Dahlia'}));
+    .pipe($.ghPages()); //{remoteUrl: 'git@github.com:josephdburdick/Dahlia'}
 });
 
 gulp.task('build', ['views', 'html', 'images', 'videos', 'fonts', 'extras'], function () {
