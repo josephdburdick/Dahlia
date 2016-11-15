@@ -2,6 +2,7 @@
 // generated on 2014-10-10 using generator-gulp-webapp 0.1.0
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+const imagemin = require('gulp-imagemin');
 
 gulp.task('styles', function () {
   return gulp.src('app/styles/main.scss')
@@ -44,14 +45,14 @@ gulp.task('html', ['views', 'uncss'], function () {
   var lazypipe = require('lazypipe');
   var cssChannel = lazypipe()
     .pipe($.csso)
-    .pipe($.replace, 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap','fonts');
+    .pipe($.replace, 'bower_components/bootstrap-sass/assets/fonts/bootstrap','fonts');
   var assets = $.useref.assets({searchPath: '{.tmp,app}'});
 
   return gulp.src('.tmp/*.html')
     .pipe($.plumber())
     .pipe(assets)
-    .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', cssChannel()))
+    // .pipe($.if('*.js', $.uglify()))
+    // .pipe($.if('*.css', cssChannel()))
     .pipe(assets.restore())
     .pipe($.useref())
     // .pipe(gulp.dest('.tmp'))
@@ -60,11 +61,11 @@ gulp.task('html', ['views', 'uncss'], function () {
 
 gulp.task('images', function () {
   return gulp.src('app/images/**/*')
-    .pipe($.cache($.imagemin({
-      progressive: true,
-      interlaced: true
-    })))
-    .pipe(gulp.dest('dist/images'));
+    .pipe(imagemin(
+      [ imagemin.gifsicle(), imagemin.jpegtran(), imagemin.optipng(), imagemin.svgo()],
+      { verbose: true }
+    ))
+    .pipe(gulp.dest('dist/images'))
 });
 
 gulp.task('videos', function () {
@@ -123,8 +124,8 @@ gulp.task('wiredep', function () {
     .pipe(wiredep())
     .pipe(gulp.dest('app/styles'));
 
-  gulp.src('app/*.html')
-    .pipe(wiredep({exclude: ['bootstrap-sass-official']}))
+  gulp.src('app/*.jade')
+    .pipe(wiredep({exclude: ['bootstrap-sass']}))
     .pipe(gulp.dest('app'));
 });
 
@@ -144,7 +145,7 @@ gulp.task('watch', ['connect', 'views', 'serve'], function () {
   gulp.watch('bower.json', ['wiredep']);
 });
 
-gulp.task('deploy', function() {
+gulp.task('deploy', ['default'], function() {
   return gulp.src(['./dist/**/*'])
     .pipe($.ghPages({remoteUrl: 'git@github.com:josephdburdick/dahlia'}));
 });
