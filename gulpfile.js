@@ -147,7 +147,7 @@ gulp.task('watch', ['connect', 'views', 'serve'], function () {
 
 gulp.task('deploy', ['default'], function() {
   return gulp.src(['./dist/**/*'])
-    .pipe($.ghPages({remoteUrl: 'git@github.com:josephdburdick/dahlia'}));
+    .pipe($.ghPages({remoteUrl: 'git@github.com:josephdburdick/Dahlia'}));
 });
 
 gulp.task('build', ['views', 'html', 'images', 'videos', 'fonts', 'extras'], function () {
